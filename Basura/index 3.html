@@ -1,0 +1,678 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cahuich.css</title>
+  <!--<link rel="stylesheet" href="src/builds/cahuich.css">-->
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="stylesheet" href="./cahuich-css/base/bluids/cahuich.css">
+
+  <meta name="description" content="">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://www.schema.org",
+      "@type": "WebSite",
+      "name": "cahuich.css",
+      "alternateName": "Cahuich.css",
+      "url": "https://css.cahuich.com/"
+    }
+  </script>
+
+  <script>
+    // eslint-disable-next-line no-useless-escape
+    window.navigator.clipboard || document.write('<script src="https://unpkg.com/clipboard-polyfill@2.8.6/dist/clipboard-polyfill.promise.js"><\/script>')
+  </script>
+
+  <!-- Use bright favicons when the browser is in dark mode. -->
+  <script type="module">
+    import faviconSwitcher from 'https://unpkg.com/favicon-mode-switcher@1.0.4/dist/index.min.mjs'
+    faviconSwitcher([
+      { element: '#icon-ico', href: { dark: './icons/light-favicon.ico' } },
+      { element: '#icon-16', href: { dark: './icons/light-favicon-16x16.png' } },
+      { element: '#icon-32', href: { dark: './icons/light-favicon-32x32.png' } }
+    ])
+  </script>
+</head>
+
+<body id="inicio-pag">
+    <nav id="nav">
+      <div class="titulo">
+        <a class="btn-nav" id="btn-nav-1" name="paginaUno">Cahuich.<b>css</b></a>
+      </div>
+      <ul class="left">
+        <li><a class="btn-nav" id="btn-nav-2" name="paginaDos">Demo</a></li>
+        <li><a class="btn-nav" id="btn-nav-3" name="paginaModulos">Modulos</a></li>
+        <li><a class="btn-nav" id="btn-nav-4" name="pagina-generar">Generar</a></li>
+        <!--<li><a id="btn paginaUno" href="#uso">Uso</a></li>-->
+      </ul>
+      <ul class="right">
+        <li><a id="external-link" href="https://github.com/LeonardoCahuichMX/cahuich.css">
+          <svg style="margin-right: 5px;align-content: center;margin-top: -2px" width="25" height="25" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>github</title><g><path d="M12.0000994,0.296208061 C5.37349618,0.296208061 0,5.66871064 0,12.2963074 C0,17.5982657 3.43839372,22.0964151 8.20640035,23.6831673 C8.80612709,23.7942498 9.02630512,23.4228485 9.02630512,23.1058956 C9.02630512,22.8197436 9.01517698,21.8744486 9.01001035,20.8717245 C5.67157111,21.5976364 4.96712069,19.4558685 4.96712069,19.4558685 C4.42124609,18.0688266 3.63472575,17.7000085 3.63472575,17.7000085 C2.54595736,16.9552186 3.71679568,16.9705197 3.71679568,16.9705197 C4.9218133,17.0551731 5.55631547,18.2071334 5.55631547,18.2071334 C6.6266032,20.0416852 8.36358518,19.5113105 9.04836267,19.2046908 C9.15606708,18.4290998 9.46705865,17.8997187 9.81024216,17.600054 C7.14485616,17.2966137 4.34295178,16.2676591 4.34295178,11.6695551 C4.34295178,10.3594164 4.81172426,9.28893008 5.5793666,8.44855747 C5.45477126,8.14630949 5.04402403,6.925792 5.69561582,5.27286715 C5.69561582,5.27286715 6.70330783,4.95035006 8.99649761,6.50292302 C9.95371571,6.23704018 10.9802857,6.10370133 12.0000994,6.09913086 C13.0199131,6.10370133 14.047278,6.23704018 15.0062843,6.50292302 C17.2966922,4.95035006 18.302993,5.27286715 18.302993,5.27286715 C18.9561747,6.925792 18.5452287,8.14630949 18.4206334,8.44855747 C19.1900642,9.28893008 19.6556571,10.3594164 19.6556571,11.6695551 C19.6556571,16.2785885 16.8483875,17.2934344 14.1762451,17.5905157 C14.6066653,17.9629107 14.9901884,18.6931941 14.9901884,19.8127637 C14.9901884,21.418394 14.9762783,22.7106482 14.9762783,23.1058956 C14.9762783,23.4252331 15.1922831,23.7994165 15.8005547,23.6815776 C20.565978,22.0930369 24,17.5964772 24,12.2963074 C24,5.66871064 18.6272988,0.296208061 12.0000994,0.296208061 Z M4.49442743,17.390603 C4.46799811,17.4502179 4.37420386,17.4681024 4.28875572,17.4271669 C4.20171783,17.3880196 4.15283356,17.3067445 4.18105132,17.2469309 C4.20688448,17.1855273 4.30087743,17.1684377 4.38771659,17.2095721 C4.47495321,17.2487192 4.52463236,17.3307892 4.49442743,17.390603 Z M5.08469899,17.9172944 C5.02746861,17.9703518 4.91559116,17.9457109 4.83968139,17.8618525 C4.76118832,17.7781928 4.74648331,17.6663153 4.80450855,17.6124631 C4.86352738,17.5594058 4.97202668,17.5842453 5.05071845,17.6679051 C5.12921149,17.7525583 5.14451268,17.8636409 5.08469899,17.9172944 Z M5.48964763,18.5911781 C5.41612249,18.6422484 5.29589893,18.5943576 5.22157891,18.4876468 C5.14805375,18.3809359 5.14805375,18.2529624 5.22316865,18.2016936 C5.29768736,18.1504246 5.41612249,18.196527 5.49143607,18.3024429 C5.56476252,18.4109421 5.56476252,18.5389156 5.48964763,18.5911781 Z M6.17450243,19.3716306 C6.10872723,19.4441624 5.96863203,19.4246881 5.86609423,19.3257272 C5.76117187,19.2289521 5.73196052,19.091639 5.79793444,19.0191074 C5.8645045,18.9463771 6.00539458,18.966845 6.10872723,19.065011 C6.21285475,19.1615873 6.2446494,19.2998941 6.17450243,19.3716306 Z M7.05961079,19.6351026 C7.03059819,19.7290957 6.89566959,19.7718197 6.75974741,19.7318777 C6.62402397,19.6907433 6.53519763,19.5806544 6.56262053,19.4856678 C6.59083828,19.3910788 6.72636301,19.3465662 6.86327877,19.3892902 C6.99880351,19.4302258 7.08782857,19.53952 7.05961079,19.6351026 Z M8.06690128,19.7468606 C8.07027944,19.8458214 7.95502379,19.9278914 7.81234527,19.9296799 C7.66887188,19.9328594 7.55282137,19.8527766 7.55123163,19.7554054 C7.55123163,19.655451 7.66390395,19.5741759 7.80737735,19.5717913 C7.9500559,19.5690092 8.06690128,19.6484958 8.06690128,19.7468606 Z M9.05645129,19.708929 C9.07354093,19.8055053 8.97438132,19.9046648 8.83269637,19.9310942 C8.69339603,19.9565298 8.56442893,19.8969149 8.54674316,19.8011335 C8.52945483,19.7021726 8.63040287,19.6030131 8.7695045,19.5773787 C8.91138816,19.5527378 9.03836809,19.610763 9.05645129,19.708929 Z" fill="currentColor"></path></g></svg>
+          Github</a></li>
+        <li><a id="external-link" href="">Blog</a></li>
+        <li><!--<a href=""><svg data-testid="geist-icon" height="20" stroke-linejoin="round" viewBox="0 0 16 16" width="20" style="color: currentcolor;"><g clip-path="url(#clip0_872_3147)">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C3.58 0 0 3.57879 0 7.99729C0 11.5361 2.29 14.5251 5.47 15.5847C5.87 15.6547 6.02 15.4148 6.02 15.2049C6.02 15.0149 6.01 14.3851 6.01 13.7154C4 14.0852 3.48 13.2255 3.32 12.7757C3.23 12.5458 2.84 11.836 2.5 11.6461C2.22 11.4961 1.82 11.1262 2.49 11.1162C3.12 11.1062 3.57 11.696 3.72 11.936C4.44 13.1455 5.59 12.8057 6.05 12.5957C6.12 12.0759 6.33 11.726 6.56 11.5261C4.78 11.3262 2.92 10.6364 2.92 7.57743C2.92 6.70773 3.23 5.98797 3.74 5.42816C3.66 5.22823 3.38 4.40851 3.82 3.30888C3.82 3.30888 4.49 3.09895 6.02 4.1286C6.66 3.94866 7.34 3.85869 8.02 3.85869C8.7 3.85869 9.38 3.94866 10.02 4.1286C11.55 3.08895 12.22 3.30888 12.22 3.30888C12.66 4.40851 12.38 5.22823 12.3 5.42816C12.81 5.98797 13.12 6.69773 13.12 7.57743C13.12 10.6464 11.25 11.3262 9.47 11.5261C9.76 11.776 10.01 12.2558 10.01 13.0056C10.01 14.0752 10 14.9349 10 15.2049C10 15.4148 10.15 15.6647 10.55 15.5847C12.1381 15.0488 13.5182 14.0284 14.4958 12.6673C15.4735 11.3062 15.9996 9.67293 16 7.99729C16 3.57879 12.42 0 8 0Z" fill="currentColor"></path>
+          </g>
+          <defs>
+          <clipPath id="clip0_872_3147">
+          <rect width="16" height="16" fill="white"></rect>
+          </clipPath>
+          </defs></svg>--><a class="btn-nav" id="btn-nav-5" name="paginaAcercaDe">Acerca de</a></li>
+      </ul>
+    </nav>
+  <div class="pagina paginaUno" id="paginaUno">
+    <header class="header-2">
+      <div class="coleccion">
+        <div class="caja caja-1">Classless</div>
+        <div class="caja caja-2">Modular</div>
+        <div class="caja caja-3">Minimal</div>
+        <div class="caja caja-4">Actualizacida</div>
+      </div>
+      <div class="titulo">Colección CSS & JS</div>
+      <div class="botones">
+        <button type="button" class="btn-nav button button-color-two" id="btn-nav-6" name="pagina-generar">Empezar</button>
+        <button type="button" onclick="window.location.href='https://github.com/LeonardoCahuichMX/cahuich.css'">Github</button>
+      </div>
+    </header>
+  <!--<header class="header">
+    <div class="portada" id="header">
+      <div class="titulo">
+        Una colección <span>[css tipo classless][JavaScript Puro]</span>, simple, minimal.
+      </div>
+      <div class="sub-titulo">
+        (basado en <a href="https://watercss.kognise.dev/">water.css</a>)
+      </div>
+      <div class="botones">
+        <span id="description"><b>Uso y/o instalación</b></span>
+        <div style="display: inline-block;">
+          <div>
+            <button type="button" id="dialog-trigger-empezar">
+              Empenzar
+            </button>
+            <span id="dialog-result-empezar"></span>
+          </div>
+          <dialog id="dialog-empezar">
+            <header>¿Cual usaras?</header>
+            <form method="dialog">
+              <h5>Puedes cerrar con <kbd>ESC</kbd></h5>
+              <h3><b>Existen 3 versiones actualmente</b></h3>
+              <h3>Minimal</h3>
+                <p>Permite la modificaion y ya tienes los colores usados en el demo.</p>
+              <h3>Style</h3>
+                <p>Permite la modificacion pero las variables de color (etc) vienen vacias.</p>
+              <h3>Direct</h3>
+                <p>Solo instala y listo.</p>
+                <pre>
+                  <code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"&gt;</code>
+                </pre>
+              <menu style="padding-left: 0;padding-right: 0;">
+                <p><b>Escoge:</b></p>
+                <button value="minimal">Minimal</button>
+                <button value="style">Style</button>
+                <button value="direct">Direct (copy CDN)</button>
+              </menu>
+            </form>
+          </dialog>
+        </div>
+
+        <button type="button" onclick="window.location.href='https://github.com/LeonardoCahuichMX/cahuich.css'">Github</button>
+      </div>
+    </div>
+  </header>-->
+  <nav id="nav-pag">
+    <ul class="left">
+      <li><a href="#presentacion">Presentación</a></li>
+      <li><a href="#color-neutro">Colores neutros</a></li>
+      <li><a href="#caracteristicas">Caracteristicas</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#poweredby">Powered By</a></li>
+    </ul>
+    <ul class="right">
+      <li><a href="#inicio-pag">Arriba</a></li>
+    </ul>
+  </nav>
+  <div class="presentacion" id="presentacion">
+    <div class="titulo">
+      <div class="titulo"><span class="principal">Ponlo <b>debajo</b> y construye encima tus estilos</span>, solo ten lo que usas.</div>
+      <!--<h1>Caso de uso</h1>
+        <p>1. Usa la platilla de tu preferencia</p>
+        <p>2. Elige la version de <b>Cahuich.css</b> a usar</p>
+        <p>3. ¿Modulos?, si usas modulos escogelos e instalalos encima.<p>
+        <p>4. Instala tus estilos.</h2>-->
+    </div>
+    <div class="ilustracion">
+      <div class="dibujo">
+        <div class="front">
+          Style.css
+        </div>
+        <div class="cahuich-css-sobre">
+          <div class="caja">
+            Directo ↑
+          </div>
+          <div class="caja modulos">
+            Modulos
+          </div>
+        </div>
+        <div class="cahuich-css">
+          Cahuich.css
+        </div>
+        <div class="base">
+          Template-html5 (ej. HTML5 ★ Boilerplate)
+        </div>
+      </div>
+      <!--<div class="texto">
+        <h1>Caso de uso</h1>
+        <p>1. Usa la platilla de tu preferencia</p>
+        <p>2. Elige la version de <b>Cahuich.css</b> a usar</p>
+        <p>3. ¿Modulos?, si usas modulos escogelos e instalalos encima.<p>
+        <p>4. Instala tus estilos.</h2>
+      </div>-->
+    </div>
+  </div>
+  <div class="colores-seccion" id="color-neutro">
+    <div class="fondo">
+      <div class="titulo">
+        <div class="titulo">Neutro en los <b>colores</b></div>
+        <p>Los colores usado en las bases son a base blanco y negro; en distintas trnasparencias, estos son neutros a tu paleta de colores,
+          <strong>resaltan tus colores</strong>.
+        </p>
+      </div>
+      <div class="contenido">
+        <div class="escalon">
+          <button type="button">Boton</button>
+          <button type="button">Boton</button>
+        </div>
+        <hr>
+        <div class="escalon-2">
+          <button type="button">Boton</button>
+          <button type="button">Boton</button>
+        </div>
+        <hr>
+        <div class="escalon-3">
+          <button type="button">Boton</button>
+          <button type="button">Boton</button>
+        </div>
+        <hr>
+        <div class="escalon-4">
+          <button type="button">Boton</button>
+          <button type="button">Boton</button>
+          <input disabled="" style="display: inline-block;" name="disabled" id="disabled" placeholder="Because why not?">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--<div class="minimal-and-modular">
+    <div class="titulo">
+      Minimal <b>&</b> modular
+    </div>
+  </div>-->
+  <div class="caracteristicas" id="caracteristicas">
+    <!--<div class="titulo">
+      Caracteristicas
+    </div>-->
+    <div class="contenido-especial">
+      <div class="car">
+        <div class="titulo"><b>Minimo</b></div>
+        <div class="contenido">
+          <p>Codigo lo mas minimos posible para que tu construyas sobre el el propio estilo de tu proyecto.</p>
+        </div>
+      </div>
+      <div class="car" style="background-color:#41FA98;color: #000;">
+        <div class="ilustracion">[  ] [ ] [ ] [ ]<br>[ ] [ ] [ ] [ ]</div>
+        <div class="titulo">Modular</div>
+        <div class="contenido">
+          <p>La base es css, el resto puede instalarlo en modulos, desde dexplazamiento a hash animados, hasta animaciones de secciones.</p>        </div>
+      </div>
+      <div class="car">
+        <div class="ilustracion">&lt;body&gt;<br>&lt;div&gt;</div>
+        <div class="titulo"><b>Classless</b></div>
+        <div class="contenido">
+          <p>Sin clases, solo estilos para las etiquetas de html.</p>
+        </div>
+      </div>
+      <div class="car" style="background-color:burlywood;color: #000;">
+        <div class="ilustracion">document.getElementById('id')<br></div>
+        <div class="titulo">JavaScript Puro</div>
+        <div class="contenido">
+          <p>Los modulos estan construidos completamente sin el uso de algun Framework o biblioteca, todo en JavaScript Puro,
+            mas rapido, mas eficiente.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="contenido">
+      <div class="car">
+        <div class="titulo"><h3>Ligero</h3></div>
+        <div class="contenido">
+          <p>Apenas pesa **** en su versio ****.</p>
+        </div>
+      </div>
+      <div class="car">
+        <div class="titulo"><h3>Actualizado</h3></div>
+        <div class="contenido">
+          <p>CSS se actualiza cada cierto tiempo, entonces estamos atentos a esas nuevas actualizaciónes para
+            implementarlas si es el caso.
+          </p>
+        </div>
+      </div>
+      <div class="car">
+        <div class="titulo"><h3>Actualizado</h3></div>
+        <div class="contenido">
+          <p>CSS se actualiza cada cierto tiempo, entonces estamos atentos a esas nuevas actualizaciónes para
+            implementarlas si es el caso.
+          </p>
+        </div>
+      </div>
+      <div class="car">
+        <div class="titulo"><h3>Actualizado</h3></div>
+        <div class="contenido">
+          <p>CSS se actualiza cada cierto tiempo, entonces estamos atentos a esas nuevas actualizaciónes para
+            implementarlas si es el caso.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="new-css" id="blog">
+    <div class="titulo">
+      Cahuich <b>Blog</b>
+    </div>
+    <div class="contenido">
+      <h2 style="margin-top: 0">Un blog con novedades de la coleccion, ademas de cosas extra.</h2>
+      <p>Estaremos atentos a las nuevas novedades CSS, para traer esas novedades a este sitio.
+      CSS se actualiza cada cierto tiempo, entonces estamos atentos a esas nuevas actualizaciónes para implementarlas si es el caso.
+      CSS se actualiza cada cierto tiempo, entonces estamos atentos a esas nuevas actualizaciónes para implementarlas si es el caso.
+      CSS se actualiza cada cierto tiempo, entonces estamos atentos a esas nuevas actualizaciónes para implementarlas si es el caso.
+      </p>
+      <p><a href="">Ir al blog</a></p>
+    </div>
+  </div>
+
+  <div class="poweredBy" id="poweredby">
+    <div class="titulo">
+      <b>Dessarrollado con/sobre</b>
+    </div>
+    <h2 style="font-weight: normal;margin-bottom: 20px;">Base</h2>
+    <div class="contenido">
+      <div class="caja" onclick="window.location.href='https://html5boilerplate.com/'">
+        <div class="titulo">
+          <img width="50px" src="./img/poweredBy/icon.svg" alt="Example kitten" />
+          <h3>HTML 5 Boilerplate</h3>
+        </div>
+        <div class="contenido">
+          <p>"HTML5 Boilerplate helps you build fast, robust, and adaptable web apps or sites..." - <a href="https://html5boilerplate.com/">html5boilerplate.com</a></p>
+          <h5>Use the full code</h5>
+        </div>
+      </div>
+    </div>
+    <h2 style="font-weight: normal;margin: 20px 0;">Code parts</h2>
+    <div class="contenido">
+      <div class="caja" onclick="window.location.href='https://watercss.kognise.dev/'">
+        <div class="titulo">
+          <img width="50px" src="./img/poweredBy/icon-dark.svg" alt="Example kitten" />
+          <h3>Watter.css</h3>
+        </div>
+        <div class="contenido">
+          <p>"Water.css is a drop-in collection of CSS styles to make simple websites like this just a little bit nicer."
+             - <a href="https://watercss.kognise.dev/">Water.com</a></p>
+            <h5>Use the full code</h5><!--<h5>Use code parts</h5>-->
+        </div>
+      </div>
+      <div class="caja" onclick="window.location.href='http://getskeleton.com/'">
+        <div class="titulo"><h3>Sekeleton</h3></div>
+        <div class="contenido">
+          <p>"A dead simple, responsive boilerplate."
+            - <a href="http://getskeleton.com/">Getskeleton.com</a>
+          </p>
+        </div>
+      </div>
+      <div class="caja" onclick="window.location.href='https://minstyle.io/'">
+        <img width="50px" src="./img/poweredBy/minstyle.png" alt="Example kitten" />
+        <div class="titulo"><h3>Minsyle</h3></div>
+        <div class="contenido">
+          <p>"Simple & light open source CSS framework, including dark mode."
+            - <a href="https://minstyle.io/">Minstyle.io</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <h2 style="font-weight: normal;margin: 20px 0;">Modulos</h2>
+    <div class="contenido">
+      <div class="caja" onclick="window.location.href='https://babeljs.io/'">
+        <div class="titulo">
+          <img width="90px" src="./img/poweredBy/babel.svg" alt="Example kitten" />
+          <h3>Babel</h3>
+        </div>
+        <div class="contenido">
+          <p>"Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments."
+             - <a href="https://babeljs.io/">babeljs.io</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!--<div class="uso" id="uso">
+    <div class="contenedor">
+      <div class="titulo">
+        <h1>Uso - instalación</h1>
+      </div>
+      <div class="contenido">
+        <h3>Local</h3>
+        <button type="button">Descargar</button>
+        <h3>CDN</h3>
+        <pre>
+          <code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"&gt;</code>
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>-->
+<div class="pagina paginaDos" id="paginaDos">
+  <div class="demo">
+    <div class="contenedor">
+      <div class="caja">
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum hendrerit velit, quis
+          ullamcorper sem congue ac. Quisque id magna rhoncus, sodales massa vel, vestibulum elit. Duis
+          ornare accumsan egestas. Proin maximus lacus interdum leo molestie convallis. Orci varius
+          natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut iaculis risus eu
+          felis feugiat, eu mollis neque elementum. Donec interdum, nisl id dignissim iaculis, felis dui
+          aliquet dui, non fermentum velit lectus ac quam. Class aptent taciti sociosqu ad litora
+          torquent per conubia nostra, per inceptos himenaeos.
+          <strong>This is strong,</strong> this is normal, <b>this is just bold,</b>
+          <em>and this is emphasized!</em> And heck, <a href="/">here</a>'s a link.
+        </p>
+        <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+          "The HTML blockquote Element (or HTML Block Quotation Element) indicates that the enclosed
+          text is an extended quotation. Usually, this is rendered visually by indentation (see
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote#Usage_notes"
+            >Notes</a
+          >
+          for how to change it). A URL for the source of the quotation may be given using the
+          <code>cite</code> attribute, while a text representation of the source can be given using the
+          <code>&lt;cite&gt;</code> cite element."
+    
+          <footer>
+            <cite>MDN, "The Block Quotation element"</cite>
+          </footer>
+        </blockquote>
+        <ul>
+          <li>Unordered list item 1</li>
+          <li>Unordered list item 2</li>
+          <li>Unordered list item 3</li>
+        </ul>
+        <ol>
+          <li>Ordered list item 1</li>
+          <li>Ordered list item 2</li>
+          <li>Ordered list item 3</li>
+        </ol>
+        <dl>
+          <dt>Description list item 1</dt>
+          <dd>Description list item 1.1</dd>
+        </dl>
+        <address>
+          <a href="mailto:john.doe@example.com">john.doe@example.com</a><br />
+          <a href="tel:778-330-2389">778-330-2389</a><br />
+          <a href="sms:666-666-6666">666-666-6666</a><br />
+        </address>
+        <p>
+          Below is some code, you can copy it with <kbd>Ctrl-C</kbd>. Did you know,
+          <code>alert(1)</code> can show an alert in JavaScript!
+        </p>
+        <pre><code>// This logs a message to the console and check out the scrollbar.<br>console.log('Hello, world!')</code></pre>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Quantity</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Godzilla</td>
+              <td>2</td>
+              <td>$299.99</td>
+            </tr>
+            <tr>
+              <td>Mozilla</td>
+              <td>10</td>
+              <td>$100,000.00</td>
+            </tr>
+            <tr>
+              <td>Quesadilla</td>
+              <td>1</td>
+              <td>$2.22</td>
+            </tr>
+          </tbody>
+        </table>
+        <details>
+          <summary>Some summary/details can't hurt!</summary>
+          <p>Lorem ipsum dolor sit blah blah.</p>
+        </details>
+        <hr>
+          <details name="cookies">
+            <summary>Chispas de chocolate</summary>
+            Deliciosas chispas de chocolate
+          </details>
+          <details name="cookies">
+            <summary>Chispas de chocolate</summary>
+            Deliciosas chispas de chocolate
+          </details>
+          <details name="cookies">
+            <summary>Chispas de chocolate</summary>
+            Deliciosas chispas de chocolate
+          </details>
+          <details name="cookies">
+            <summary>Chispas de chocolate</summary>
+            Deliciosas chispas de chocolate
+          </details>
+        </div>
+        <div class="caja">
+          <p>Here's a horizontal rule and image because I don't know where else to put them.</p>
+          <img src="./img/space-8571725_1920 4.jpg" alt="Example kitten" />
+          <form>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="john.doe@gmail.com" />
+
+            <label for="id">User id (read only)</label>
+            <input readonly name="id" id="id" value="04D6H89Z" />
+
+            <label for="disabled">Random disabled input</label>
+            <input disabled name="disabled" id="disabled" placeholder="Because why not?" />
+
+            <label for="about">About me</label>
+            <textarea name="about" id="about" placeholder="I am a textarea..."></textarea>
+          </form>
+          <h3 id="form-elements">Form elements</h3>
+          <form>
+            <label>Choose a Doe:</label>
+            <div>
+              <input type="radio" id="john" name="drone" value="john" checked />
+              <label for="john">John Doe</label>
+            </div>
+            <div>
+              <input type="radio" id="jane" name="drone" value="jane" checked />
+              <label for="jane">Jane Doe</label>
+            </div>
+            <div>
+              <input type="radio" id="johnny" name="drone" value="johnny" checked />
+              <label for="johnny">Johnny Doe</label>
+            </div>
+            <label>Choose a Doe:</label>
+            <select required>
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+            </select>
+            <br />
+
+            <input type="checkbox" name="remember" id="remember" checked />
+            <label for="remember">Remember me</label>
+
+            <input type="submit" value="Submit" />
+            <input type="reset" value="Reset" />
+          </form>
+          <div>
+            <button type="button" id="dialog-trigger">
+              Show me the dialog!
+            </button>
+            <span id="dialog-result"></span>
+          </div>
+  
+          <dialog id="dialog">
+            <header>This is a sample dialog</header>
+            <form method="dialog">
+              <p>What is your favorite pet animal?</p>
+              <menu>
+                <button value="feline">Cats</button>
+                <button value="canine">Dogs</button>
+                <button value="other">Others</button>
+              </menu>
+            </form>
+          </dialog>
+
+          <h2>Codigo usado en el ejemplo</h2>
+          <pre>
+            <code>
+function example() {
+document.getElementById('dialog-trigger').addEventListener('click', () => {
+document.getElementById('dialog-result').innerText = ''
+document.getElementById('dialog').showModal()
+})
+                
+document.getElementById('dialog').addEventListener('close', (event) => {
+document.getElementById('dialog-result').innerText = `Your answer: ${event.target.returnValue}`
+})
+}
+            </code>
+          </pre>
+          <p>Fuente: watter.css</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pagina modulos-pag" id="paginaModulos">
+  <div class="demo-new" id="modulos-pag">
+    <div class="titulo">
+      <h1>Modulos</h1>
+    </div>
+    <h2 style="margin: 20px;">JavaScript Puro</h2>
+    <div class="contenido">
+      <div class="car" onclick="window.location.href='./js/modulos/eventoANewNew.js'" style="height: auto;">
+        <div class="titulo"><h3>Ancla Scroll</h3></div>
+        <div class="contenido">
+          <p>Anima el desplazamiento hacia las anclas, con dos opcionalizades (hash en url, debug).</p>
+            <code>
+              anclaAnimation(true, false)
+            </code>
+          <p><a href="./js/modulos/eventoANewNew.js">Usar</a></p>
+          <h6>JavaScript Vanilla - <a href="https://github.com/LeonardoCahuichMX/cahuich.css/blob/daec117335df894e7685493bfe2813fc953e7982/LICENSE">Mit License</a></h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="pagina pagina-generar" id="pagina-generar">
+  <!--<div class="titulo">
+    Comenzar a usar Cahuich.css
+  </div>
+  <div class="contenido">
+    <p>Cahuich.css esta disponible un basico classsless (sin clases), pero si desea usar algun modulo JS o CSS, haga la instalacion
+      del cahuichcss.js en su pagina y especifique que modulos quiere usar, asi automaticamente estos modulos se instalaran.
+    </p>
+    <h2>Instalación</h2>
+    <details name="instalacion">
+      <summary>Base</summary>
+      <pre>
+        <code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"&gt;</code>
+      </pre>
+    </details>
+    <details name="instalacion">
+      <summary>Base y modulos</summary>
+      <pre>
+        <code>&lt;script type="modular" data-cahuich-domulos="" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"&gt;&lt;/script&gt;</code>
+      </pre>
+      <p>En el atributo "data-cahuich-domulos" ingresa el nombre de los modulos que quieres usar,
+        estos separados por ','.
+      </p>
+    </details>
+  </div>-->
+</div>
+<div class="pagina acercaDe" id="paginaAcercaDe">
+  <h1><b>¿Por que Cahuich.css?</b></h1>
+  <p>Cahuich.css es una pequeña framework de base que me sirve para mis proyectos, para agilisar estos, agilizar en
+    los primeros pasos de este en lo correspondiente e los estilos y animaciones en forntend.
+  </p>
+  <h2>Inicio y futuro de Cahuich.css</h2>
+  <p>Cahuich.css al inicio usara como base <b>water.css</b> quitandole todos los estilos de color hasta dejandola en escala de grises
+  quitando margenes, y contra margenes innecesarios, despues se le iran agregando las actualizaciones correspondientes a los
+  nuevos estandares csss, para despues dejar eso como una base y lanzar partes obtables.</p>
+</div>
+<!--<div class="pagina acercaDe" id="acercaDe"></div>
+<div class="funcionnueva" id="funcionnueva"></div>-->
+<div class="paleta-de-colores">
+  <div class="titulo">Colores</div>
+  <div class="fondo-1">Fondo 1</div>
+  <div class="fondo-2">Fondo 2</div>
+  <div class="primary">Color 1</div>
+  <div class="secondary">Color 2</div>
+  <div class="action-color-one">Color 3</div>
+  <div class="action-color-two">Color 4</div>
+  <div class="action-color-five">Color 5</div>
+</div>
+  <footer class="footerDos">
+    <div class="contenedor">
+      <div class="caja">Contacto y Equipo</div>
+      <div class="caja">Terminos de uso</div>
+      <div class="caja">Privacidad y cookies</div>
+      <div class="caja">Leonardo Cahuich © 2024</div>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js" data-type="module" data-presets="env" data-plugins="proposal-class-properties"></script>
+  <script src="js/app_alt.js"></script>
+  <!-- Add your site or application content here -->
+  <!--<p>Hello world! This is HTML5 Boilerplate.</p>-->
+  <!--<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>-->
+
+  <script type="module" src="js/app.js"></script>
+  <script src="js/part/script.js" defer></script>
+  
+  <!-- Load Babel -->
+    <!-- v6 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> -->
+    <!--<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>-->
+    <!--<script src="https://unpkg.com/@babel/standalone/babel.min.js" data-type="module" data-presets="env,react" data-plugins="proposal-class-properties"></script>-->
+    <!--<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" data-type="module" data-presets="env,react" data-plugins="proposal-class-properties"></script>-->
+  <!-- Your custom script here -->
+
+  <!--<script type="text/babel" data-type="module" src="./js/compiler/index.js"></script>-->
+</body>
+
+</html>

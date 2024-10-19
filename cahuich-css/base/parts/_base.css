@@ -1,0 +1,41 @@
+*, html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+
+  /* Include padding and border and size calculation */
+  box-sizing: border-box;
+  /* prevent grid and felx items from spilling out of their countainer */
+  min-width: 0;
+  /* fuente: https://x.com/souporserious/status/1746311121949356469 */
+}
+html {
+  scrollbar-color: var(--scrollbar-thumb) var(--background-body);
+  scrollbar-width: thin;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
+  line-height: 1.6;
+  /* Ensure that the body fills the entire viewport */
+  min-height: 100dvh;
+  /* fuente: https://x.com/souporserious/status/1746311121949356469 */
+  color: var(--text-main);
+  background: var(--background-body);
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea {
+  transition:
+    background-color var(--animation-duration) linear,
+    border-color var(--animation-duration) linear,
+    color var(--animation-duration) linear,
+    box-shadow var(--animation-duration) linear,
+    transform var(--animation-duration) ease;
+}

@@ -1,0 +1,642 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="src/builds/cahuich.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <meta name="description" content="">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://www.schema.org",
+      "@type": "WebSite",
+      "name": "cahuich.css",
+      "alternateName": "Cahuich.css",
+      "url": "https://css.cahuich.com/"
+    }
+  </script>
+
+  <script>
+    // eslint-disable-next-line no-useless-escape
+    window.navigator.clipboard || document.write('<script src="https://unpkg.com/clipboard-polyfill@2.8.6/dist/clipboard-polyfill.promise.js"><\/script>')
+  </script>
+
+  <!-- Use bright favicons when the browser is in dark mode. -->
+  <script type="module">
+    import faviconSwitcher from 'https://unpkg.com/favicon-mode-switcher@1.0.4/dist/index.min.mjs'
+    faviconSwitcher([
+      { element: '#icon-ico', href: { dark: './icons/light-favicon.ico' } },
+      { element: '#icon-16', href: { dark: './icons/light-favicon-16x16.png' } },
+      { element: '#icon-32', href: { dark: './icons/light-favicon-32x32.png' } }
+    ])
+  </script>
+</head>
+
+<body>
+    <nav>
+      <div class="titulo">
+        <a id="btn paginaUno"><b>Cahuich</b>.css</a>
+      </div>
+      <ul>
+        <li><a id="btn paginaUno" href="#caracteristicas">Caracteristicas</a></li>
+        <!--<li><a id="btn paginaUno" href="#uso">Uso</a></li>-->
+        <li><a id="btn paginaDos">Demo</a></li>
+        <li><a href="https://github.com/LeonardoCahuichMX/cahuich.css">Github</a></li>
+        <li><a id="btn acercaDe">Acerca de</a></li>
+      </ul>
+    </nav>
+    <div class="pagina paginaUno">
+  <header class="header">
+    <div class="portada">
+      <div class="titulo">
+        Una colección css tipo classless, simple, minimal.
+      </div>
+      <div class="sub-titulo">
+        (basado en <a href="https://watercss.kognise.dev/">water.css</a>)
+      </div>
+      <div class="botones">
+        <span id="description"><b>Uso y/o instalación</b></span>
+        <div style="display: inline-block;">
+          <div>
+            <button type="button" id="dialog-trigger-empezar">
+              Empenzar
+            </button>
+            <span id="dialog-result-empezar"></span>
+          </div>
+          <dialog id="dialog-empezar">
+            <header>¿Cual usaras?</header>
+            <form method="dialog">
+              <h5>Puedes cerrar con <kbd>ESC</kbd></h5>
+              <h3><b>Existen 3 versiones actualmente</b></h3>
+              <h3>Minimal</h3>
+                <p>Permite la modificaion y ya tienes los colores usados en el demo.</p>
+              <h3>Style</h3>
+                <p>Permite la modificacion pero las variables de color (etc) vienen vacias.</p>
+              <h3>Direct</h3>
+                <p>Solo instala y listo.</p>
+                <pre>
+                  <code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"&gt;</code>
+                </pre>
+              <menu style="padding-left: 0;padding-right: 0;">
+                <p><b>Escoge:</b></p>
+                <button value="minimal">Minimal</button>
+                <button value="style">Style</button>
+                <button value="direct">Direct (copy CDN)</button>
+              </menu>
+            </form>
+          </dialog>
+        </div>
+
+        <button type="button" onclick="window.location.href='https://github.com/LeonardoCahuichMX/cahuich.css'">Github</button>
+      </div>
+    </div>
+  </header>
+  <div class="presentacion">
+    <div class="titulo">
+      Ponlo <b>debajo</b> y construye encima tus estilos, solo ten lo que usas.
+    </div>
+    <div class="ilustracion">
+      <div class="dibujo">
+        <div class="front">
+          Style.css
+        </div>
+        <div class="cahuich-css-sobre">
+          <div class="caja">
+            Directo ↑
+          </div>
+          <div class="caja modulos">
+            Modulos
+          </div>
+        </div>
+        <div class="cahuich-css">
+          Cahuich.css
+        </div>
+        <div class="base">
+          Template-html5 (ej. HTML5 ★ Boilerplate)
+        </div>
+      </div>
+      <div class="texto">
+        <h1>Caso de uso</h1>
+        <h2>1. Usa la platilla de tu preferencia</h2>
+        <h2>2. Elige la version de <b>Cahuich.css</b> a usar</h2>
+        <h2>3. ¿Modulos?, si usas modulos escogelos e instalalos encima.</h2>
+        <h2>4. Instala tus estilos.</h2>
+      </div>
+    </div>
+  </div>
+  <div class="caracteristicas" id="caracteristicas">
+    <div class="titulo">
+      <h1>Caracteristicas</h1>
+    </div>
+    <div class="contenido">
+      <div class="car">
+        <div class="titulo"><h3>Minimo</h3></div>
+        <div class="contenido">
+          <p>Codigo lo mas minimos posible para que tu construyas sobre el el propio estilo de tu proyecto.</p>
+        </div>
+      </div>
+      <div class="car">
+        <div class="titulo"><h3>Ligero</h3></div>
+        <div class="contenido">
+          <p>Apenas pesa **** en su versio ****.</p>
+        </div>
+      </div>
+      <div class="car">
+        <div class="titulo"><h3>Classles (sin clases)</h3></div>
+        <div class="contenido">
+          <p>Ninguna clase por aqui, ninguna clase por alla... no tienes que aprender mucho, la curva de aprendisaje es pequeña,
+            pequeña, solo se les de estilo a las etiquetas de html, nada mas.</p>
+        </div>
+      </div>
+      <div class="car">
+        <div class="titulo"><h3>Actualizado</h3></div>
+        <div class="contenido">
+          <p>CSS se actualiza cada cierto tiempo, entonces estamos atentos a esas nuevas actualizaciónes para
+            implementarlas si es el caso.
+          </p>
+        </div>
+      </div>
+      <div class="car">
+        <div class="titulo"><h3>Actualizado</h3></div>
+        <div class="contenido">
+          <p>CSS se actualiza cada cierto tiempo, entonces estamos atentos a esas nuevas actualizaciónes para
+            implementarlas si es el caso.
+          </p>
+        </div>
+      </div>
+      <div class="car">
+        <div class="titulo"><h3>Actualizado</h3></div>
+        <div class="contenido">
+          <p>CSS se actualiza cada cierto tiempo, entonces estamos atentos a esas nuevas actualizaciónes para
+            implementarlas si es el caso.
+          </p>
+        </div>
+      </div>
+      <div class="car">
+        <div class="titulo"><h3>Actualizado</h3></div>
+        <div class="contenido">
+          <p>CSS se actualiza cada cierto tiempo, entonces estamos atentos a esas nuevas actualizaciónes para
+            implementarlas si es el caso.
+          </p>
+        </div>
+      </div>
+      <div class="car">
+        <div class="titulo"><h3>Modular</h3></div>
+        <div class="contenido">
+          <p>En el futuro se le podran agregar modulos tanto tipo esqueleto hasta modulos con estilo "completo".
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="poweredBy">
+    <div class="titulo">
+      <b>Dessarrollado con/sobre</b>
+    </div>
+    <h2 style="font-weight: normal;margin-bottom: 20px;">Base</h2>
+    <div class="contenido">
+      <div class="caja" onclick="window.location.href='https://watercss.kognise.dev/'">
+        <div class="titulo">
+          <img width="50px" src="./img/poweredBy/icon-dark.svg" alt="Example kitten" />
+          <h3>Watter.css</h3>
+        </div>
+        <div class="contenido">
+          <p>"Water.css is a drop-in collection of CSS styles to make simple websites like this just a little bit nicer."
+             - <a href="https://watercss.kognise.dev/">Water.com</a></p>
+        </div>
+      </div>
+      <div class="caja" onclick="window.location.href='https://html5boilerplate.com/'">
+        <div class="titulo">
+          <img width="50px" src="./img/poweredBy/icon.svg" alt="Example kitten" />
+          <h3>HTML 5 Boilerplate</h3>
+        </div>
+        <div class="contenido">
+          <p>"HTML5 Boilerplate helps you build fast, robust, and adaptable web apps or sites..." - <a href="https://html5boilerplate.com/">html5boilerplate.com</a></p>
+        </div>
+      </div>
+      <div class="caja" onclick="window.location.href='http://getskeleton.com/'">
+        <div class="titulo"><h3>Sekeleton</h3></div>
+        <div class="contenido">
+          <p>"A dead simple, responsive boilerplate."
+            - <a href="http://getskeleton.com/">Getskeleton.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <h2 style="font-weight: normal;margin: 20px 0;">Modulos</h2>
+    <div class="contenido">
+      <div class="caja" onclick="window.location.href='https://babeljs.io/'">
+        <div class="titulo">
+          <img width="90px" src="./img/poweredBy/babel.svg" alt="Example kitten" />
+          <h3>Babel</h3>
+        </div>
+        <div class="contenido">
+          <p>"Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments."
+             - <a href="https://babeljs.io/">babeljs.io</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!--<div class="uso" id="uso">
+    <div class="contenedor">
+      <div class="titulo">
+        <h1>Uso - instalación</h1>
+      </div>
+      <div class="contenido">
+        <h3>Local</h3>
+        <button type="button">Descargar</button>
+        <h3>CDN</h3>
+        <pre>
+          <code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"&gt;</code>
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>-->
+<div class="pagina paginaDos">
+  <div class="demo">
+    <div class="titulo">
+      <h1><b>Demo</b></h1>
+      <h2>Demo, la cual esta usando el tema basico.</h2>
+    </div>
+    <div class="contenido">
+      <div class="caja">
+        <h1 id="typography">Tipografia</h1>
+        <div class="contenido">
+          <div class="caja">
+            <div class="caja">
+              <h2 id="typography">Heading</h2>
+            </div>
+            <div class="caja">
+              <h1>Heading 1</h1>
+              <h2>Heading 2</h2>
+              <h3>Heading 3</h3>
+              <h4>Heading 4</h4>
+              <h5>Heading 5</h5>
+              <h6>Heading 6</h6>
+            </div>
+          </div>
+          <div class="caja">
+            <div class="caja">
+              <h2 id="p">P</h2>
+            </div>
+            <div class="caja">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum hendrerit velit, quis
+                ullamcorper sem congue ac. Quisque id magna rhoncus, sodales massa vel, vestibulum elit. Duis
+                ornare accumsan egestas. Proin maximus lacus interdum leo molestie convallis. Orci varius
+                natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut iaculis risus eu
+                felis feugiat, eu mollis neque elementum. Donec interdum, nisl id dignissim iaculis, felis dui
+                aliquet dui, non fermentum velit lectus ac quam. Class aptent taciti sociosqu ad litora
+                torquent per conubia nostra, per inceptos himenaeos.
+                <strong>This is strong,</strong> this is normal, <b>this is just bold,</b>
+                <em>and this is emphasized!</em> And heck, <a href="/">here</a>'s a link.
+              </p>
+            </div>
+          </div>
+          <div class="caja">
+            <div class="caja">
+              <h2 id="blockquote">blockquote</h2>
+            </div>
+            <div class="caja">
+              <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+                "The HTML blockquote Element (or HTML Block Quotation Element) indicates that the enclosed
+                text is an extended quotation. Usually, this is rendered visually by indentation (see
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote#Usage_notes"
+                  >Notes</a
+                >
+                for how to change it). A URL for the source of the quotation may be given using the
+                <code>cite</code> attribute, while a text representation of the source can be given using the
+                <code>&lt;cite&gt;</code> cite element."
+          
+                <footer>
+                  <cite>MDN, "The Block Quotation element"</cite>
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+          <div class="caja">
+            <div class="caja">
+              <h2>List</h2>
+            </div>
+            <div class="caja">
+              <ul>
+                <li>Unordered list item 1</li>
+                <li>Unordered list item 2</li>
+                <li>Unordered list item 3</li>
+              </ul>
+              <ol>
+                <li>Ordered list item 1</li>
+                <li>Ordered list item 2</li>
+                <li>Ordered list item 3</li>
+              </ol>
+            </div>
+          </div>
+          <div class="caja">
+            <div class="caja">
+              <h2>Addresses are also styled to be <strong>awesome</strong>!</h2>
+            </div>
+            <div class="caja">
+              <address>
+                <a href="mailto:john.doe@example.com">john.doe@example.com</a><br />
+                <a href="tel:778-330-2389">778-330-2389</a><br />
+                <a href="sms:666-666-6666">666-666-6666</a><br />
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="caja">
+        <h1 id="typography">Code</h1>
+        <div class="contenido">
+          <div class="caja">
+            <div class="caja">
+              <h2 id="code">Code, kbd</h2>
+            </div>
+            <div class="caja">
+              <p>
+                Below is some code, you can copy it with <kbd>Ctrl-C</kbd>. Did you know,
+                <code>alert(1)</code> can show an alert in JavaScript!
+              </p>
+              <pre><code>// This logs a message to the console and check out the scrollbar.<br>console.log('Hello, world!')</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="caja">
+        <h1 id="table">Table</h1>
+        <div class="contenido">
+          <div class="caja">
+            <div class="caja">
+              <p>And here's a nicely marked up table!</p>
+            </div>
+            <div class="caja">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Godzilla</td>
+                    <td>2</td>
+                    <td>$299.99</td>
+                  </tr>
+                  <tr>
+                    <td>Mozilla</td>
+                    <td>10</td>
+                    <td>$100,000.00</td>
+                  </tr>
+                  <tr>
+                    <td>Quesadilla</td>
+                    <td>1</td>
+                    <td>$2.22</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="caja">
+        <h1 id="typography">Summary</h1>
+        <div class="contenido">
+          <div class="caja">
+            <div class="caja">
+              <h2>One summary</h2>
+            </div>
+            <div class="caja">
+              <details>
+                <summary>Some summary/details can't hurt!</summary>
+                <p>Lorem ipsum dolor sit blah blah.</p>
+              </details>
+            </div>
+          </div>
+          <div class="caja">
+            <div class="caja">
+              <h2 id="">Group summary</h2>
+            </div>
+            <div class="caja">
+              <details name="cookies">
+                <summary>Chispas de chocolate</summary>
+                Deliciosas chispas de chocolate
+              </details>
+              <details name="cookies">
+                <summary>Chispas de chocolate</summary>
+                Deliciosas chispas de chocolate
+              </details>
+              <details name="cookies">
+                <summary>Chispas de chocolate</summary>
+                Deliciosas chispas de chocolate
+              </details>
+              <details name="cookies">
+                <summary>Chispas de chocolate</summary>
+                Deliciosas chispas de chocolate
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="caja">
+        <h1 id="other">Other</h1>
+        <div class="contenido">
+          <div class="caja">
+            <div class="caja">
+              <h2 id="img">Img</h2>
+            </div>
+            <div class="caja">
+              <p>Here's a horizontal rule and image because I don't know where else to put them.</p>
+              <img src="./img/space-8571725_1920 4.jpg" alt="Example kitten" />
+            </div>
+          </div>
+          <div class="caja">
+            <div class="caja">
+              <h2 id="hr">Hr</h2>
+            </div>
+            <div class="caja">
+              <hr />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="caja">
+        <h1 id="forms">Forms</h1>
+        <div class="contenido">
+          <div class="caja">
+            <div class="caja">
+              <h2 id="typography">Heading</h2>
+            </div>
+            <div class="caja">
+              <form>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="john.doe@gmail.com" />
+    
+                <label for="id">User id (read only)</label>
+                <input readonly name="id" id="id" value="04D6H89Z" />
+    
+                <label for="disabled">Random disabled input</label>
+                <input disabled name="disabled" id="disabled" placeholder="Because why not?" />
+    
+                <label for="about">About me</label>
+                <textarea name="about" id="about" placeholder="I am a textarea..."></textarea>
+              </form>
+              <h3 id="form-elements">Form elements</h3>
+              <form>
+                <label>Choose a Doe:</label>
+                <div>
+                  <input type="radio" id="john" name="drone" value="john" checked />
+                  <label for="john">John Doe</label>
+                </div>
+                <div>
+                  <input type="radio" id="jane" name="drone" value="jane" checked />
+                  <label for="jane">Jane Doe</label>
+                </div>
+                <div>
+                  <input type="radio" id="johnny" name="drone" value="johnny" checked />
+                  <label for="johnny">Johnny Doe</label>
+                </div>
+                <label>Choose a Doe:</label>
+                <select required>
+                  <option value="option1">Option 1</option>
+                  <option value="option2">Option 2</option>
+                  <!-- ... -->
+                </select>
+                <br />
+
+                <input type="checkbox" name="remember" id="remember" checked />
+                <label for="remember">Remember me</label>
+
+                <input type="submit" value="Submit" />
+                <input type="reset" value="Reset" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="caja">
+        <h1 id="dialog-h1">Dialog</h1>
+        <div class="contenido">
+          <div class="caja">
+            <div class="caja">
+              <p>The dialog (form, and menu) tag</p>
+            </div>
+            <div class="caja">
+              <div>
+                <button type="button" id="dialog-trigger">
+                  Show me the dialog!
+                </button>
+                <span id="dialog-result"></span>
+              </div>
+      
+              <dialog id="dialog">
+                <header>This is a sample dialog</header>
+                <form method="dialog">
+                  <p>What is your favorite pet animal?</p>
+                  <menu>
+                    <button value="feline">Cats</button>
+                    <button value="canine">Dogs</button>
+                    <button value="other">Others</button>
+                  </menu>
+                </form>
+              </dialog>
+
+              <h2>Codigo usado en el ejemplo</h2>
+              <pre>
+                <code>
+function example() {
+  document.getElementById('dialog-trigger').addEventListener('click', () => {
+    document.getElementById('dialog-result').innerText = ''
+    document.getElementById('dialog').showModal()
+  })
+                    
+  document.getElementById('dialog').addEventListener('close', (event) => {
+    document.getElementById('dialog-result').innerText = `Your answer: ${event.target.returnValue}`
+  })
+}
+                </code>
+              </pre>
+              <p>Fuente: watter.css</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ejemeplo -->
+      <!--<div class="caja">
+        <h1 id="typography">Tipografia</h1>
+        <div class="contenido">
+          <div class="caja">
+            <div class="caja">
+              <h2 id="typography">Heading</h2>
+            </div>
+            <div class="caja">
+            </div>
+          </div>
+        </div>
+      </div>-->
+
+    </div>
+  </div>
+</div>
+<!--<div class="pagina acercaDe" id="acercaDe">
+  <h1><b>¿Por que Cahuich.css?</b></h1>
+  <p>Cahuich.css es una pequeña framework de base que me sirve para mis proyectos, para agilisar estos, agilizar en
+    los primeros pasos de este en lo correspondiente e los estilos y animaciones en forntend.
+  </p>
+  <h2>Inicio y futuro de Cahuich.css</h2>
+  <p>Cahuich.css al inicio usara como base <b>water.css</b> quitandole todos los estilos de color hasta dejandola en escala de grises
+  quitando margenes, y contra margenes innecesarios, despues se le iran agregando las actualizaciones correspondientes a los
+  nuevos estandares csss, para despues dejar eso como una base y lanzar partes obtables.</p>
+</div>-->
+<div class="pagina acercaDe" id="acercaDe"></div>
+  <div class="footerDos">
+    <div class="contenedor">
+      <div class="caja">Contacto y Equipo</div>
+      <div class="caja">Terminos de uso</div>
+      <div class="caja">Privacidad y cookies</div>
+      <div class="caja">Leonardo Cahuich © 2024</div>
+    </div>
+  </div>
+  <script src="js/app_alt.js"></script>
+  <!-- Add your site or application content here -->
+  <!--<p>Hello world! This is HTML5 Boilerplate.</p>-->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+  <script src="js/app.js"></script>
+  <script src="js/part/script.js" defer></script>
+  
+  <!-- Load Babel -->
+    <!-- v6 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> -->
+    <!--<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>-->
+    <!--<script src="https://unpkg.com/@babel/standalone/babel.min.js" data-type="module" data-presets="env,react" data-plugins="proposal-class-properties"></script>-->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" data-type="module" data-presets="env,react" data-plugins="proposal-class-properties"></script>
+  <!-- Your custom script here -->
+
+  <script type="text/babel" data-type="module" src="./js/compiler/index.js"></script>
+</body>
+
+</html>

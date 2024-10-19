@@ -1,0 +1,40 @@
+:root {
+  --primary-color: #000;
+  --secondary-color: #fff;
+  --action-color-one: #000;
+  --action-color-two: #fff;
+
+  --background-body: #000;
+  --background: rgba(255,255,255, 0.1);
+  --background-alt: #0b0b0b;
+
+  --selection: rgba(255,255,255, 0.1);
+
+  --text-main: #dbdbdb;
+  --text-bright: #fff;
+  --text-muted: #a9b1ba;
+
+  --links: inherit;
+
+  --focus: rgba(255,255,255, 0.2);
+
+  --border: rgba(255,255,255, 0.05);
+
+  --code: var(--text-bright);
+
+  --animation-duration: 0.2s;
+
+  --button-base: transparent;
+  --button-hover: rgba(255,255,255, 0.1);
+  --button-border: #888;
+
+  /*--scrollbar-thumb-hover: color-mod(var(--scrollbar-thumb) lightness(-30%));*/
+  --form-placeholder: #a9a9a9;
+  --form-text: #fff;
+
+  --variable: #d941e2;
+
+  --highlight: #efdb43;
+  
+  --select-arrow: svg-load('../assets/select-arrow.svg', fill: #efefef);
+}

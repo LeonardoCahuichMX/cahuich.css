@@ -1,0 +1,397 @@
+:root {
+    --primary-color: #000;
+    --secondary-color: rgba(255,255,255, 0.8);
+    --tertiary-color: rgba(255,255,255, 0.6);
+    --quaternary-color: rgba(255,255,255, 0.4);
+
+    --selection: rgba(255,255,255, 0.1);
+
+    --action-color-one: #000;
+    --action-color-two: rgba(255,255,255, 0.8);
+
+    --animation-duration: 0.2s;
+
+    --background-color: #000;
+    --background-color-two: #111;
+    --text-color: #fff;
+}
+
+*, html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+  }
+
+html, p {
+    font-size: 16px;
+}
+/*----------------------------
+ Code part with: watter.css */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
+    /* Se cambiara para mejorar legibilidad
+    1.5 pt × 0.3527 mm/pt ≈ 0.5295 mm
+  
+    Cada punto es: 0.3527 mm
+  
+    */
+    line-height: 1.8;
+    /*max-width: 800px;*/
+    word-wrap: break-word;
+    color: var(--text-color);
+    background: var(--background-color);
+    text-rendering: optimizeLegibility;
+}
+
+::-moz-selection {
+    background-color: var(--selection);
+    color: var(--text-color);
+  text-shadow: none;
+}
+
+::selection {
+  background-color: var(--selection);
+    color: var(--text-color);
+  text-shadow: none;
+}
+/*
+----------------------------*/
+
+/* ##########################
+    a
+############################*/
+
+a {
+    color: inherit;
+    text-decoration: underline;
+
+    margin: auto 0;
+}
+a:hover {
+    text-decoration: none;
+}
+
+/*----------------------------
+ Code part with: watter.css */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+/*
+----------------------------*/
+hr {
+    border: none;
+    border-top: 1px solid var(--tertiary-color);
+}
+/*----------------------------
+ Code part with: watter.css */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  color: var(--text-color);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong,
+th {
+  font-weight: 600;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 12px;
+  margin-top: 24px;
+}
+/*
+----------------------------*/
+
+h1 {
+    font-size: 42px;
+}
+h2 {
+    font-size: 27px;
+}
+h3 {
+    font-size: 20px;
+}
+h4 {
+    font-size: 18px;
+}
+h5 {
+    font-size: 16px;
+}
+h6 {
+    font-size: 14px;
+}
+/*----------------------------
+ Code part with: watter.css */
+table {
+  border-collapse: collapse;
+  margin-bottom: 10px;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  text-align: left;
+}
+
+td,
+th {
+  padding: 6px;
+  text-align: left;
+  vertical-align: top;
+  word-wrap: break-word;
+}
+
+thead {
+  border-bottom: 1px solid var(--quaternary-color);
+}
+
+tfoot {
+  border-top: 1px solid var(--quaternary-color);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--quaternary-color);
+  transition: var(--animation-duration) ease-in-out background-color;
+}
+tbody tr:nth-child(even):hover {
+    background-color: var(--tertiary-color);
+    transition: var(--animation-duration) ease-in-out background-color;
+}
+
+/*tbody tr:nth-child(even) button {
+  background-color: var(--background-alt);
+}
+
+tbody tr:nth-child(even) button:hover {
+  background-color: var(--tertiary-color);
+}*/
+/*
+----------------------------*/
+
+/*----------------------------
+ Code part with: watter.css */
+code,
+samp,
+time {
+  background: var(--background-color-two);
+  color: var(--code);
+  padding: 2.5px 5px;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+pre > code {
+  padding: 10px;
+  display: block;
+  overflow-x: auto;
+}
+
+var {
+  color: var(--variable);
+  font-style: normal;
+  font-family: monospace;
+}
+
+kbd {
+  background: var(--background-color-two);
+  border: 1px solid var(--quaternary-color);
+  border-radius: 2px;
+  color: var(--text-color);
+  padding: 2px 4px 2px 4px;
+}
+
+button,
+input,
+textarea {
+  transition:
+    background-color var(--animation-duration) linear,
+    border-color var(--animation-duration) linear,
+    color var(--animation-duration) linear,
+    box-shadow var(--animation-duration) linear,
+    transform var(--animation-duration) ease;
+}
+
+button,
+select,
+input[type='submit'],
+input[type='reset'],
+input[type='button'],
+input[type='checkbox'],
+input[type='range'],
+input[type='radio'] {
+  cursor: pointer;
+}
+
+input,
+select {
+  display: block;
+}
+
+[type='checkbox'],
+[type='radio'] {
+  display: initial;
+}
+
+input,
+button,
+textarea,
+select {
+  color: var(--text-color);
+  background-color: var(--background);
+  font-family: inherit;
+  font-size: inherit;
+  margin-right: 6px;
+  margin-bottom: 6px;
+  padding: 10px;
+  border: none;
+  box-shadow: 0 0 1px var(--button-border);
+  border-radius: 5px;
+  outline: none;
+}
+
+button,
+input[type='submit'],
+input[type='reset'],
+input[type='button'] {
+  background-color: var(--button-base);
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+button:hover,
+input[type='submit']:hover,
+input[type='reset']:hover,
+input[type='button']:hover {
+  background: var(--button-hover);
+}
+
+input[type='color'] {
+  min-height: 2rem;
+  padding: 8px;
+  cursor: pointer;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  height: 1em;
+  width: 1em;
+}
+
+input[type='radio'] {
+  border-radius: 100%;
+}
+
+input {
+  vertical-align: top;
+}
+
+label {
+  vertical-align: middle;
+  margin-bottom: 4px;
+  display: inline-block;
+}
+
+input:not([type='checkbox']):not([type='radio']),
+input[type='range'],
+select,
+button,
+textarea {
+  -webkit-appearance: none;
+}
+
+textarea {
+  display: block;
+  margin-right: 0;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+textarea:not([cols]) {
+  width: 100%;
+}
+
+textarea:not([rows]) {
+  min-height: 40px;
+  height: 140px;
+}
+
+select {
+  background: var(--background) var(--select-arrow) calc(100% - 12px) 50% / 12px no-repeat;
+  padding-right: 35px;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select[multiple] {
+  padding-right: 10px;
+  background-image: none;
+  overflow-y: auto;
+}
+
+input:focus,
+select:focus,
+button:focus,
+textarea:focus {
+  box-shadow: 0 0 0 2px var(--focus);
+}
+
+input[type='checkbox']:active,
+input[type='radio']:active,
+input[type='submit']:active,
+input[type='reset']:active,
+input[type='button']:active,
+input[type='range']:active,
+button:active {
+  transform: translateY(2px);
+}
+
+input:disabled,
+select:disabled,
+button:disabled,
+textarea:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+::placeholder {
+  color: var(--form-placeholder);
+}
+
+fieldset {
+  border: 1px var(--focus) solid;
+  border-radius: 6px;
+  margin: 0;
+  margin-bottom: 12px;
+  padding: 10px;
+}
+
+legend {
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+/*
+----------------------------*/

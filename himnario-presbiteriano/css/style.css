@@ -1,0 +1,633 @@
+/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+:root {
+  /* Fondos */
+  --fondo-primario: #000;
+  --fondo-secundario: #111;
+
+  --titulo-portada: 6dvh;
+  --titulo: 8dvh;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+
+  width: 100%;
+  max-width: 100%;
+  animation: opacityAnimacionParaPaginas5 .5s ease;
+
+  background-color: var(--fondo-primario) !important;
+}
+
+@keyframes opacityAnimacionParaPaginas5 {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.pagina {
+  animation: opacityAnimacionParaPaginas5 .5s ease;
+}
+
+nav {
+  width: 100%;
+  padding: 10px 5%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 5px;
+}
+nav :first-child {
+  opacity: 60%;
+}
+nav :last-child {
+  text-align: right;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li:first-child a {
+  text-decoration: none;
+}
+/* ==========================================================================
+   Nav-pag
+   ========================================================================== */
+
+   #nav-pag {
+    z-index: 999;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+
+    margin: 0 auto;
+    padding: 0 2%;
+
+    display: grid;
+    grid-template-columns: auto 20%;
+    column-gap: 20px;
+    row-gap: 20px;
+
+    /*background-color: rgba(0, 0, 0, 0.8);*/
+    /*background-color: rgba(0, 0, 0, 0.2) !important;*/
+    backdrop-filter: blur(20px) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    color: #fff;
+    text-align: center;
+  }
+  .scroll-down .nav-scroll {
+    transform: translateY(100px);
+    border-bottom: 1px dotted #444;
+    transition: 1s all ease-in-out !important;
+  }
+  .scroll-up .nav-scroll {
+    transform: translateY(0);
+    border-bottom: 1px dotted #444;
+    transition: .5s all ease-in-out !important;
+  }
+ #nav-pag ul.left {
+   text-align: left;
+ }
+ #nav-pag ul.right {
+   text-align: right;
+ }
+
+ #nav-pag ul li {
+   display: inline-block;
+   align-content: center;
+
+   opacity: 60%;
+ }
+   #nav-pag ul  li a:first-child {
+     margin-left: 0;
+   }
+
+   #nav-pag ul li.pag-actual {
+    opacity: 100%;
+   }
+
+   #nav-pag ul li.icono {
+    font-family: u2000;
+    transform: scale(150%);
+   }
+   #nav-pag ul li.icono-home {
+    font-family: u2000;
+    transform: scaleX(200%) scaleY(150%);
+   }
+
+ #nav-pag ul  li a {
+   padding: 15px 5px;
+   cursor: pointer;
+   display: inline-block;
+   transition: 0.2s ease-in-out all;
+ }
+ #nav-pag ul li a:hover {
+   background-color: rgba(0, 0, 0, 0.2);
+   backdrop-filter: blur(20px);
+   transition: 0.2s ease-in-out all;
+ }
+ #nav-pag ul li a::after {
+   content: none !important;
+ }
+ #nav-pag ul li a#external-link::after {
+   content: " →" !important;
+ }
+ #nav-pag a {
+   text-decoration: none;
+ }
+
+ #nav-pag a#btn-nav-3 {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px 5px;
+  margin: 5px 0;
+  border-radius: 5px;
+ }
+
+ /* ==========================================================================
+   Home
+   ========================================================================== */
+.home {
+  padding: 0 5%;
+}
+.home > .titulo {
+  font-size: var(--titulo-portada);
+
+  background: linear-gradient(to right, #b032fb, #41fa98);
+  border-radius: 5px;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.home > .titulo .titulo {
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(50px);
+  border-radius: 5px;
+  padding: 20px 5%;
+}
+
+.home .botones {
+  text-align: center;
+}
+
+.home .botones button {
+  width: 100%;
+}
+
+.home .continuar {
+  margin-top: 20px;
+}
+.home .continuar a {
+  background-color: #111;
+  margin: 5px 0;
+  padding: 20px;
+
+  border-radius: 5px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+  > .titulo {
+    opacity: 50%;
+  }
+}
+
+.home .continuar a .contenido {
+  display: grid;
+  grid-template-columns: 10% auto;
+  gap: 5px;
+}
+
+.home .recientes {
+  margin-top: 20px;
+}
+.home .recientes a {
+  background-color: #111;
+  margin: 5px 0;
+  padding: 20px;
+
+  border-radius: 5px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+  > .titulo {
+    opacity: 50%;
+  }
+}
+.home .recientes a .contenido {
+  display: grid;
+  grid-template-columns: 10% auto;
+  gap: 5px;
+}
+
+
+ /* ==========================================================================
+   pag-himnos
+   ========================================================================== */
+
+.pag-himnos {
+  padding: 0 5%;
+  display: none;
+
+  margin-bottom: 100px;
+}
+.pag-himnos .himnos {
+  margin-top: 20px;
+}
+.pag-himnos .himnos a {
+  background-color: #111;
+  margin: 10px 0;
+  padding: 20px;
+
+  border-radius: 5px;
+
+  display: grid;
+  grid-template-columns: 15% auto;
+  gap: 5px;
+  > .numero {
+    opacity: 50%;
+  }
+}
+
+.mostrar-himno {
+  display: none;
+  padding: 20px 5%;
+  margin-bottom: 100px;
+  background-color: #000;
+
+  text-align: center;
+}
+.mostrar-himno .parte {
+  margin: 10px 0;
+}
+.mostrar-himno .cabecera .himno-titulo {
+  font-size: 150%;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.mostrar-himno .cabecera .himno-titulo > div {
+  display: inline-block;
+}
+
+
+.pag-menu {
+  padding: 0 5%;
+  display: none;
+
+  margin-top: 20px;
+
+  min-height: 100dvh;
+}
+.pag-menu ul {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 10px 0;
+}
+.pag-menu ul li {
+  display: block;
+}
+.pag-menu ul li a {
+  padding: 10px 5px;
+  text-decoration: none;
+  display: block;
+}
+
+.pag-menu .caja-borrar-datos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+.pag-menu .caja-borrar-datos .texto {
+  align-content: center;
+}
+
+.acercaDe {
+  padding: 0 5%;
+  display: none;
+
+  margin-top: 20px;
+
+  padding-bottom: 100px;
+
+  min-height: 100dvh;
+}
+
+.pantalla-bienvenida {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background: linear-gradient(to right, #b032fb, #41fa98);
+
+  height: 100dvh;
+  width: 100%;
+
+  z-index: 99999;
+  display: none;
+}
+.pantalla-bienvenida .fondo {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(100px);
+  height: 100%;
+  width: 100%;
+  
+  padding: 20px 5%;
+
+  align-content: center;
+}
+
+.pagina.buscar {
+  height: 100dvh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(50px);
+
+  align-content: center;
+
+  display: none;
+}
+.pagina.buscar .fondo {
+  height: auto;
+  width: 90%;
+
+  margin: 0 auto;
+  padding-bottom: 100px;
+  margin-top: 20px;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(50px);
+
+  border-radius: 5px;
+}
+
+.pagina.buscar .fondo input[type="search"] {
+  width: 100%;
+}
+.pagina.buscar .fondo input[type="button"] {
+  position: absolute;
+  top: 0;
+  right: -5px;
+}
+
+.pagina.buscar #resultados {
+  margin-top: 10px;
+}
+
+.pagina.buscar #resultado {
+  background-color: #111;
+  margin: 5px 0;
+  padding: 20px;
+
+  border-radius: 5px;
+}
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .visually-hidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * The use of `table` rather than `block` is only necessary if using
+ * `::before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
