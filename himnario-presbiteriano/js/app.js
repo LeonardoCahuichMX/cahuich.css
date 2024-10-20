@@ -411,8 +411,32 @@ window.addEventListener('load', function() {
         });
     }
 
+    function pantallaDeBievenida() {
+        if(!localStorage.getItem('nombreUsuario')) {
+            document.getElementById("pantalla-bienvenida").style.display = 'block';
+
+            function nombreUsuario() {
+                const nombre = document.getElementById("text-nombre-usuario").value;
+                localStorage.setItem("nombreUsuario", nombre);
+
+                document.getElementById("pantalla-bienvenida").style.display = 'none';
+            }
+
+            document.getElementById("form-nombre-usuario").addEventListener("submit", function(event) {
+                event.preventDefault();
+                nombreUsuario()
+                //alert("hola 2");
+            });
+            document.getElementById("button-nombre-usuario").addEventListener('click', () => {
+                nombreUsuario()
+                //alert("hola");
+            });
+        }
+    }
+
     searchhimno(himnosVariable);
 
+    pantallaDeBievenida()
     tamanoFuenteHimnosCambiar();
     favoritos(3, 0, himnosVariable);
     borrarTodosLosDatos();
