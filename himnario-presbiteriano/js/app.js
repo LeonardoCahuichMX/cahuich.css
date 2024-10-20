@@ -73,19 +73,11 @@ window.addEventListener('load', function() {
                 /*let objeto = localStorage.getItem("favoritos");
                 console.log(objeto[1]);*/
             } else {
-                let hayFavoritos = false;
                 const retrievedArrayHimnosFavoritos = JSON.parse(localStorage.getItem('favoritos'));
-                let iDos = 0;
+                let iDos = 1;
                 document.getElementById("recientes").innerHTML = '';
                 document.getElementById("home").style.paddingBottom = '100px';
                 for (let i = 0; i < retrievedArrayHimnosFavoritos.length; i++) {
-                    if(i === 0) {
-                        iDos = 1;
-                        hayFavoritos = false;
-                    } else {
-                        iDos = i + 1;
-                        hayFavoritos = true;
-                    }
                     console.log(retrievedArrayHimnosFavoritos[i], himnos[iDos].titulo);
                     document.getElementById("recientes").innerHTML += `
                     <a class="btn-nav-2 button-himno" id="boton-himno-continuar-${himnos[iDos].numero}" name="mostrar-himno" data-himno="${himnos[iDos].numero}">
@@ -98,8 +90,9 @@ window.addEventListener('load', function() {
                             </div>
                         </div>
                     </a>`;
+                    iDos = iDos+i;
                 }
-                if(hayFavoritos === true) {
+                if(retrievedArrayHimnosFavoritos.length !== 0) {
                     botonesHimnos();
                 } else {
                     document.getElementById("recientes").innerHTML = `
