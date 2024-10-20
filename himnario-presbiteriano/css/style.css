@@ -225,8 +225,10 @@ body {
    cursor: pointer;
    display: inline-block;
    transition: 0.2s ease-in-out all;
+   appearance: auto;
  }
- #nav-pag ul li a:hover, #nav-pag ul li a:active {
+ #nav-pag ul li a:hover, #nav-pag ul li a:active, #nav-pag ul li a:focus, #nav-pag ul li a:focus-visible, #nav-pag ul li a:focus-within {
+  appearance: auto;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
    transition: 0.2s ease-in-out all;
