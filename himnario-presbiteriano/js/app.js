@@ -90,7 +90,7 @@ window.addEventListener('load', function() {
                             </div>
                         </div>
                     </a>`;
-                    iDos = iDos+i;
+                    iDos++;
                 }
                 if(retrievedArrayHimnosFavoritos.length !== 0) {
                     botonesHimnos();
