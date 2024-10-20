@@ -102,7 +102,7 @@ window.addEventListener('load', function() {
                 if(hayFavoritos === true) {
                     botonesHimnos();
                 } else {
-                    document.getElementById("recientes").innerHTML += `
+                    document.getElementById("recientes").innerHTML = `
                     <p>No hay favoritos actualmente.</p>`;
                 }
             }
