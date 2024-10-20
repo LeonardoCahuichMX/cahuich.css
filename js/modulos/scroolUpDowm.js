@@ -9,6 +9,7 @@ export function scroolUpDowm() {
         const currentScroll = window.pageYOffset;
         if (currentScroll == 0) {
             body.classList.remove(scrollUp);
+            body.classList.remove(scrollDown);
             return;
         }
         if (currentScroll > lastScroll && !body.classList.contains(scrollDown)) {
