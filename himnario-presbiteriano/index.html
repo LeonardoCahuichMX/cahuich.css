@@ -33,7 +33,7 @@
       nameMarquet: 'Himnario <b>Prebisteriano</b>',
       author: 'Leonardo Cahuich',
       dev: 'Leonardo Cahuich',
-      version: '0.0.1.2.4',
+      version: '0.0.1.2.5',
     }
   </script>
 </head>
@@ -188,15 +188,17 @@
 
   <main class="pantalla-bienvenida" id="pantalla-bienvenida">
     <div class="fondo">
-      <h1>Bievenido a la app <span id="app-name"><script>insertar('app-name', webSiteData.nameMarquet)</script></span></h1>
-      <p>Tu nombre:</p>
-      <form id="form-nombre-usuario">
-        <input type="text" placeholder="Pon tu nombre o apodo aqui" style="display: inline-block;" id="text-nombre-usuario">
-      </form>
-      <div class="bievenida-resultado"></div>
-      <h6>Versión: <span id="version-bienvenida"><script>insertar('version-bienvenida', webSiteData.version)</script></span></h6>
+      <div class="fondo">
+        <h1>Bievenido a la app <span id="app-name"><script>insertar('app-name', webSiteData.nameMarquet)</script></span></h1>
+        <p>Tu nombre:</p>
+        <form id="form-nombre-usuario">
+          <input type="text" placeholder="Pon tu nombre o apodo aqui" style="display: inline-block;" id="text-nombre-usuario">
+        </form>
+        <div class="bievenida-resultado"></div>
+        <h6>Versión: <span id="version-bienvenida"><script>insertar('version-bienvenida', webSiteData.version)</script></span></h6>
 
-      <button type="button" style="display: block;width: 90%;" id="button-nombre-usuario">Continuar</button>
+        <button type="button" style="display: block;width: 90%;" id="button-nombre-usuario">Continuar</button>
+      </div>
     </div>
   </main>
   <script type="module" src="js/app.js"></script>
