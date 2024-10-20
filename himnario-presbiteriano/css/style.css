@@ -123,7 +123,7 @@ body {
 .nav {
   width: 100%;
   padding: 10px 5%;
-  
+
   background-color: #000;
 
   display: grid;
@@ -177,15 +177,20 @@ body {
     }
   }
   
+  .nav-scroll{
+    transform: translateY(0);
+    border-bottom: 1px dotted #444;
+    transition: .2s all ease-in-out !important;
+  }
   .scroll-down .nav-scroll {
     transform: translateY(100px);
     border-bottom: 1px dotted #444;
-    transition: 1s all ease-in-out !important;
+    transition: .2s all ease-in-out !important;
   }
   .scroll-up .nav-scroll {
     transform: translateY(0);
     border-bottom: 1px dotted #444;
-    transition: .5s all ease-in-out !important;
+    transition: .2s all ease-in-out !important;
   }
  #nav-pag ul.left {
    text-align: left;
