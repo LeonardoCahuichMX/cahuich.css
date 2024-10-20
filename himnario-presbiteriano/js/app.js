@@ -431,6 +431,8 @@ window.addEventListener('load', function() {
                 nombreUsuario()
                 //alert("hola");
             });
+
+            document.getElementById("version-bienvenida").innerHTML = localStorage.getItem("nombreUsuario");
         }
     }
 
