@@ -339,6 +339,23 @@ window.addEventListener('load', function() {
                             <span>${himnosVariable[prop]['titulo']}</span>
                         </a>
                     </div>`;
+
+                    document.getElementById("mostrar-himno").style.display = "block";
+        
+                    document.body.setAttribute("data-himnoVisible", himnosVariable[prop]['numero'])
+                    mostarHimno(himnosVariable[prop]['numero']);
+                    localStorage.setItem("data-himnoVisible", himnosVariable[prop]['numero']);
+            
+                    let elements = document.getElementsByClassName("btn-nav");
+
+                    for(let prop in elements) {
+                        if(elements[prop]['name'] !== undefined && elements[prop]['id'] !== undefined && elements[prop]['name'] !== "mostrar-himno") {
+                            document.getElementById(elements[prop]['name']).style.display = "none";
+            
+                            document.body.setAttribute("data-pagePaginatorVisible", "mostrar-himno")
+                        }
+                    }
+                    
                     return;
                 } else if(str.search(re) != -1) {
                     document.getElementById("resultados").innerHTML += `

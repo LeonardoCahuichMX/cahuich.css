@@ -512,7 +512,7 @@ body {
   border-radius: 5px;
 }
 
-.pagina.buscar .fondo input[type="text"] {
+.pagina.buscar .fondo input[type="search"] {
   width: 100%;
 }
 .pagina.buscar .fondo input[type="button"] {
