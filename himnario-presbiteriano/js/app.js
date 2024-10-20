@@ -412,12 +412,18 @@ window.addEventListener('load', function() {
             location.reload(true);
         });
     }
+    function buttonReinstallApp() {
+        document.getElementById("btn-reinstall-app").addEventListener('click', () => {
+            location.reload(true);
+        });
+    }
 
     searchhimno(himnosVariable);
 
     tamanoFuenteHimnosCambiar();
     favoritos(3, 0, himnosVariable);
-    borrarTodosLosDatos()
+    borrarTodosLosDatos();
+    buttonReinstallApp();
     clickNavAShowPag();
     botonesHimnos();
     visorDeEventos();
