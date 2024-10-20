@@ -179,17 +179,14 @@ body {
   
   .nav-scroll{
     transform: translateY(0);
-    border-bottom: 1px dotted #444;
     transition: .2s all ease-in-out !important;
   }
   .scroll-down .nav-scroll {
     transform: translateY(100px);
-    border-bottom: 1px dotted #444;
     transition: .2s all ease-in-out !important;
   }
   .scroll-up .nav-scroll {
     transform: translateY(0);
-    border-bottom: 1px dotted #444;
     transition: .2s all ease-in-out !important;
   }
  #nav-pag ul.left {
