@@ -171,6 +171,13 @@ body {
     color: #fff;
     text-align: center;
   }
+  @supports (-webkit-touch-callout: none) {
+    /* CSS specific to iOS devices */ 
+    #nav-pag {
+      bottom: 20px;
+    }
+  }
+  
   .scroll-down .nav-scroll {
     transform: translateY(100px);
     border-bottom: 1px dotted #444;
@@ -206,10 +213,10 @@ body {
     font-family: u2000;
     transform: scale(150%);
    }
-   #nav-pag ul li.icono-home {
+   /*#nav-pag ul li.icono-home {
     font-family: u2000;
     transform: scaleX(200%) scaleY(150%);
-   }
+   }*/
 
  #nav-pag ul  li a {
    padding: 15px 5px;
