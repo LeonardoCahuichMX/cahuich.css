@@ -23,6 +23,19 @@
 
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#000">
+
+  <script>
+    function  insertar(id, variable) {
+      document.getElementById(id).innerHTML += variable;
+    }
+    webSiteData = {
+      name: 'Himnario Prebisteriano',
+      nameMarquet: 'Himnario <b>Prebisteriano</b>',
+      author: 'Leonardo Cahuich',
+      dev: 'Leonardo Cahuich',
+      version: '0.0.2',
+    }
+  </script>
 </head>
 
 <body>
@@ -143,6 +156,9 @@
       <p>Advertencia: Esta opcion recargara-reinstalara la app,
         por lo que si no cuenta con conexion a internet, no podra acceder a esta.
       </p>
+
+      <h3>Versión</h3>
+      <p id="version"><script>insertar('version', webSiteData.version)</script></p>
             
     </p>
   </main>
