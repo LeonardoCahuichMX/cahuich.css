@@ -123,8 +123,7 @@ body {
 .nav {
   width: 100%;
   padding: 10px 5%;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-
+  
   background-color: #000;
 
   display: grid;
