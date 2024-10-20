@@ -420,6 +420,8 @@ window.addEventListener('load', function() {
                 localStorage.setItem("nombreUsuario", nombre);
 
                 document.getElementById("pantalla-bienvenida").style.display = 'none';
+
+                document.getElementById("nombre-usario-en-home").innerHTML = localStorage.getItem("nombreUsuario");
             }
 
             document.getElementById("form-nombre-usuario").addEventListener("submit", function(event) {
@@ -431,8 +433,8 @@ window.addEventListener('load', function() {
                 nombreUsuario()
                 //alert("hola");
             });
-
-            document.getElementById("version-bienvenida").innerHTML = localStorage.getItem("nombreUsuario");
+        } else {
+            document.getElementById("nombre-usario-en-home").innerHTML = localStorage.getItem("nombreUsuario");
         }
     }
 
