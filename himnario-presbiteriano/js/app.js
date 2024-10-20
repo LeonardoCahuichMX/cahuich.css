@@ -303,22 +303,24 @@ window.addEventListener('load', function() {
             document.getElementById("mostrar-himno").style.fontSize = ''+localStorage.getItem("fuente-texto-himnos-opcion")+'';
         }
     }
+        function subVisorDeEventos() {
+            window.scroll(0,0);
+                visorDeHimnoVistoUltimo();
+                
+                if(document.body.getAttribute("data-pagePaginatorVisible") === 'mostrar-himno' || document.body.getAttribute("data-pagePaginatorVisible") === 'pag-himnos') {
+                    document.getElementById("nav-pag").classList.add("nav-scroll");
+                    scroolUpDowm();
+                } else if(document.body.getAttribute("data-pagePaginatorVisible") !== 'mostrar-himno' || document.body.getAttribute("data-pagePaginatorVisible") !== 'pag-himnos') {
+                    document.getElementById("nav-pag").classList.remove("nav-scroll");
+                }
+                
+                nombreDePaginasBarra()
+                favoritos(1, 2);
+                favoritos(3, 0, himnosVariable);
+        }
     function visorDeEventos() {
         document.addEventListener('click', () => {
-            window.scroll(0,0);
-            visorDeHimnoVistoUltimo();
-            
-            if(document.body.getAttribute("data-pagePaginatorVisible") === 'mostrar-himno' || document.body.getAttribute("data-pagePaginatorVisible") === 'pag-himnos') {
-                document.getElementById("nav-pag").classList.add("nav-scroll");
-                scroolUpDowm();
-            } else if(document.body.getAttribute("data-pagePaginatorVisible") !== 'mostrar-himno' || document.body.getAttribute("data-pagePaginatorVisible") !== 'pag-himnos') {
-                document.getElementById("nav-pag").classList.remove("nav-scroll");
-            }
-            
-            nombreDePaginasBarra()
-            favoritos(1, 2);
-            favoritos(3, 0, himnosVariable);
-
+            subVisorDeEventos();
         });
     }
     
@@ -408,6 +410,7 @@ window.addEventListener('load', function() {
             event.preventDefault();
             buscador(himnosVariable);
             botonesHimnos();
+            subVisorDeEventos();
         });
         document.getElementById("botton-buscar").addEventListener('click', () => {
             event.preventDefault();
