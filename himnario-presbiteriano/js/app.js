@@ -74,15 +74,10 @@ window.addEventListener('load', function() {
                 console.log(objeto[1]);*/
             } else {
                 const retrievedArrayHimnosFavoritos = JSON.parse(localStorage.getItem('favoritos'));
-                let iDos = 1;
                 document.getElementById("recientes").innerHTML = '';
                 document.getElementById("home").style.paddingBottom = '100px';
                 for (let i = 0; i < retrievedArrayHimnosFavoritos.length; i++) {
-                    if(i === 0) {
-                        iDos = 1;
-                    } else {
-                        iDos = i++;
-                    }
+                    let iDos = retrievedArrayHimnosFavoritos[i];
                     console.log(retrievedArrayHimnosFavoritos[i], himnos[iDos].titulo);
                     document.getElementById("recientes").innerHTML += `
                     <a class="btn-nav-2 button-himno" id="boton-himno-continuar-${himnos[iDos].numero}" name="mostrar-himno" data-himno="${himnos[iDos].numero}">
