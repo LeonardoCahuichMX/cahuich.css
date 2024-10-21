@@ -4,6 +4,9 @@ import {himnos} from './modulos/himnos.js'
 
 window.addEventListener('load', function() {
 
+    const himnosVariable = himnos;
+    himnosFuncion(himnosVariable);
+
     function himnosFuncion(himnos) {
         for(let prop in himnos) {
             document.getElementById("himnos").innerHTML += `
@@ -17,8 +20,36 @@ window.addEventListener('load', function() {
             </a>`;
         }
     }
-    const himnosVariable = himnos;
-    himnosFuncion(himnosVariable);
+
+    function tamanoFuenteHimnosCambiar(id) {
+        /*const select = document.getElementById('fuente-himnos-tamaño');
+        const valorSeleccionado = select.value;
+        alert(valorSeleccionado)*/
+
+        document.getElementById("mostrar-himno").style.fontSize = '1.084em';
+
+        const select = document.getElementById(id);
+            select.addEventListener('change', () => {
+                const valorSeleccionado = select.value;
+                const textoSeleccionado = select.options[select.selectedIndex].text;
+                /*console.log(`Valor seleccionado: ${valorSeleccionado}`);
+                console.log(`Texto seleccionado: ${textoSeleccionado}`);
+                alert(valorSeleccionado)*/
+                localStorage.setItem("fuente-texto-himnos-opcion", valorSeleccionado);
+                localStorage.setItem("fuente-texto-himnos-valor", textoSeleccionado);
+
+                document.getElementById("mostrar-himno").style.fontSize = ''+valorSeleccionado+'';
+
+                //select.value = 'opcion3';
+            });
+        if(!localStorage.getItem("fuente-texto-himnos-opcion")) {
+            document.getElementById("mostrar-himno").style.fontSize = '1.084em';
+        } else {
+            select.value = localStorage.getItem("fuente-texto-himnos-opcion");
+            document.getElementById("mostrar-himno").style.fontSize = ''+localStorage.getItem("fuente-texto-himnos-opcion")+'';
+        }
+    }
+
     function favoritos(opcion, supOpcion, himnos) {
         if(opcion === 1) {
             /* botonFavoritosDeMostrarHimnos */
@@ -29,11 +60,11 @@ window.addEventListener('load', function() {
                     if(!retrievedArray.includes(himnosActual)) {
                         document.getElementById("barra-de-pagina").innerHTML = '';
                         document.getElementById("barra-de-pagina").innerHTML = `
-                        <li id="agregar-himno-favoritos">Agregar a favoritos</li>`;
+                        <li id="agregar-himno-favoritos">☆</li>`;
                     } else {                
                         document.getElementById("barra-de-pagina").innerHTML = '';
                         document.getElementById("barra-de-pagina").innerHTML = `
-                        <li id="eliminar-himno-favoritos">Eliminar de favoritos</li>`;
+                        <li id="eliminar-himno-favoritos">★</li>`;
                     }
                 }
             } else if(supOpcion === 2) {
@@ -275,34 +306,6 @@ window.addEventListener('load', function() {
     }
     nombreDePaginasBarra()
 
-    function tamanoFuenteHimnosCambiar() {
-        /*const select = document.getElementById('fuente-himnos-tamaño');
-        const valorSeleccionado = select.value;
-        alert(valorSeleccionado)*/
-
-        document.getElementById("mostrar-himno").style.fontSize = '1.084em';
-
-        const select = document.getElementById('fuente-himnos-tamaño');
-            select.addEventListener('change', () => {
-                const valorSeleccionado = select.value;
-                const textoSeleccionado = select.options[select.selectedIndex].text;
-                /*console.log(`Valor seleccionado: ${valorSeleccionado}`);
-                console.log(`Texto seleccionado: ${textoSeleccionado}`);
-                alert(valorSeleccionado)*/
-                localStorage.setItem("fuente-texto-himnos-opcion", valorSeleccionado);
-                localStorage.setItem("fuente-texto-himnos-valor", textoSeleccionado);
-
-                document.getElementById("mostrar-himno").style.fontSize = ''+valorSeleccionado+'';
-
-                //select.value = 'opcion3';
-            });
-        if(!localStorage.getItem("fuente-texto-himnos-opcion")) {
-            document.getElementById("mostrar-himno").style.fontSize = '1.084em';
-        } else {
-            select.value = localStorage.getItem("fuente-texto-himnos-opcion");
-            document.getElementById("mostrar-himno").style.fontSize = ''+localStorage.getItem("fuente-texto-himnos-opcion")+'';
-        }
-    }
         function subVisorDeEventos() {
             window.scroll(0,0);
                 visorDeHimnoVistoUltimo();
@@ -460,7 +463,8 @@ window.addEventListener('load', function() {
     searchhimno(himnosVariable);
 
     pantallaDeBievenida()
-    tamanoFuenteHimnosCambiar();
+    tamanoFuenteHimnosCambiar("fuente-himnos-tamaño");
+        //tamanoFuenteHimnosCambiar("fuente-himnos-tamaño-2");
     favoritos(3, 0, himnosVariable);
     borrarTodosLosDatos();
     buttonReinstallApp();
