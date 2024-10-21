@@ -1,13 +1,21 @@
 {
   "short_name": "Himnario-Presbiteriano",
   "name": "Himanrio Presbiteriano",
-  "icons": [{
+  "icons": [
+    {
     "src": "icon.png",
     "type": "image/png",
     "sizes": "192x192"
-  }],
+    },
+    {
+      "src": "512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+],
   "start_url": "/himnario-presbiteriano/index.html",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#000",
   "theme_color": "#000"
 }

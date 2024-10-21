@@ -2,7 +2,7 @@ import {clickNavAShowPag} from '../../js/modulos/clickNavAShowPag.js';
 import {scroolUpDowm} from '../../js/modulos/scroolUpDowm.js';
 import {himnos} from './modulos/himnos.js'
 
-window.addEventListener('load', function() {
+document.addEventListener('DOMContentLoaded', () => {
 
     const himnosVariable = himnos;
     himnosFuncion(himnosVariable);
@@ -489,3 +489,16 @@ window.addEventListener('load', function() {
     botonesHimnos();
     visorDeEventos();
 });
+
+(function() {
+    // TODO add service worker code here
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('./regist_serviceWorker.js').then(function (registration) {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }, function (err) {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        });
+      }
+  })();
