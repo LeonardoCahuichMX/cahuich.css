@@ -187,7 +187,7 @@ body {
     transition: .2s all ease-in-out !important;
   }
   .scroll-down .nav-scroll {
-    transform: translateY(100px);
+    transform: translateY(120px);
     transition: .2s all ease-in-out !important;
   }
   .scroll-up .nav-scroll {
@@ -203,7 +203,7 @@ body {
 
  #nav-pag ul {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2px;
   align-content: center;
 
@@ -279,6 +279,39 @@ body {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
  }
+
+
+#reciente-nav {
+  width: 90%;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+
+  margin: 0 auto;
+
+  border-radius: 5px;
+
+  font-size: 2dvh;
+
+  z-index: 999;
+  align-content: center;
+}
+
+#reciente-nav.mh {
+  background-color: transparent !important;
+  font-size: 3dvh !important;
+  text-align: center;
+}
+#reciente-nav ul {}
+#reciente-nav ul li {
+  display: inline-flex;
+  }
+#reciente-nav ul li a {
+  height: 100%;
+  display: inline-flex;
+  text-decoration: none;
+}
 
  /* ==========================================================================
    Home

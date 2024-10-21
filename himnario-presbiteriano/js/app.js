@@ -161,7 +161,7 @@ window.addEventListener('load', function() {
             document.getElementById("mostrar-himno").innerHTML = '';
             document.getElementById("mostrar-himno").innerHTML += `
             <article>
-                <div class="cabecera">
+                <!--<div class="cabecera">
                     <div class="himno-titulo">
                         <div class="numero">
                         Himno #${himnos[numero]['numero']}: 
@@ -174,7 +174,7 @@ window.addEventListener('load', function() {
                     ${himnos[numero]['intro']}
                     </div>
                 </div>
-                    <br>`;
+                    <br>-->`;
                     for(let prop in himnos[numero]['referencias']) {
                         document.getElementById("mostrar-himno").innerHTML += `
                         <div class="referencia">
@@ -267,7 +267,7 @@ window.addEventListener('load', function() {
 
             document.getElementById("btn-nav-3").style.display = "inline-block"
             document.getElementById("btn-nav-3").innerHTML="";
-            document.getElementById("btn-nav-3").innerHTML= "Himno "+localStorage.getItem("data-himnoVisible");
+            document.getElementById("btn-nav-3").innerHTML= "Himno "+localStorage.getItem("data-himnoVisible")+" "+himnosVariable[localStorage.getItem("data-himnoVisible")].titulo;
         } else {
             document.getElementById("btn-nav-3").style.display = "none"
         }
@@ -306,6 +306,20 @@ window.addEventListener('load', function() {
     }
     nombreDePaginasBarra()
 
+    function barraHimnoAbierto() {
+        if(document.getElementById("mostrar-himno").style.display === 'block') {
+            document.getElementById("reciente-nav").classList.add("mh");
+        } else if(document.getElementById("mostrar-himno").style.display === 'none') {
+            document.getElementById("reciente-nav").classList.remove("mh");
+        }
+
+        if(document.body.getAttribute("data-pagepaginatorvisible") === "home" || !document.body.getAttribute("data-pagepaginatorvisible")) {
+            document.getElementById("reciente-nav").style.display = 'none';
+        } else {
+            document.getElementById("reciente-nav").style.display = 'block';
+        }
+    }
+
         function subVisorDeEventos() {
             window.scroll(0,0);
                 visorDeHimnoVistoUltimo();
@@ -320,6 +334,7 @@ window.addEventListener('load', function() {
                 nombreDePaginasBarra()
                 favoritos(1, 2);
                 favoritos(3, 0, himnosVariable);
+                barraHimnoAbierto()
         }
     function visorDeEventos() {
         document.addEventListener('click', () => {
@@ -461,6 +476,8 @@ window.addEventListener('load', function() {
     }
 
     searchhimno(himnosVariable);
+
+    barraHimnoAbierto()
 
     pantallaDeBievenida()
     tamanoFuenteHimnosCambiar("fuente-himnos-tamaño");
