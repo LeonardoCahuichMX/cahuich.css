@@ -155,12 +155,12 @@ body {
     height: auto;
 
     margin: 0 auto;
-    padding: 0 2%;
+    padding: 0 0%;
 
-    display: grid;
+    /*display: grid;
     grid-template-columns: auto 10%;
     column-gap: 20px;
-    row-gap: 20px;
+    row-gap: 20px;*/
 
     /*background-color: rgba(0, 0, 0, 0.8);*/
     /*background-color: rgba(0, 0, 0, 0.2) !important;*/
@@ -189,30 +189,41 @@ body {
     transform: translateY(0);
     transition: .2s all ease-in-out !important;
   }
- #nav-pag ul.left {
+ /*#nav-pag ul.left {
    text-align: left;
  }
  #nav-pag ul.right {
    text-align: right;
+ }*/
+
+ #nav-pag ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0px;
+  align-content: center;
+
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+  text-align: center;
  }
 
  #nav-pag ul li {
-   display: inline-block;
+  display: inline-flex;
    align-content: center;
+   text-align: center;
 
    opacity: 60%;
  }
-   #nav-pag ul  li a:first-child {
+/*   #nav-pag ul  li a:first-child {
      margin-left: 0;
-   }
+   }*/
 
    #nav-pag ul li.pag-actual {
     opacity: 100%;
    }
 
    #nav-pag ul li.icono {
-    font-family: u2000;
-    transform: scale(150%);
+    font-size: 3dvh;
    }
    /*#nav-pag ul li.icono-home {
     font-family: u2000;
@@ -220,12 +231,19 @@ body {
    }*/
 
  #nav-pag ul  li a {
+  width: 100%;
    padding: 15px 5px;
-   margin: 5px 2px;
+   margin: 10px 2px;
    cursor: pointer;
    display: inline-block;
    transition: 0.2s ease-in-out all;
    appearance: auto;
+   text-align: center;
+ }
+ #nav-pag ul li.icono a {
+  font-size: 3dvh;
+  padding: 8px 5px;
+  margin: 5px 2px;
  }
  #nav-pag ul li a:hover, #nav-pag ul li a:active, #nav-pag ul li a:focus, #nav-pag ul li a:focus-visible, #nav-pag ul li a:focus-within {
   appearance: auto;

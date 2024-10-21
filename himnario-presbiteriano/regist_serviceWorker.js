@@ -1,61 +1,68 @@
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function () {
-    navigator.serviceWorker.register('./Service_Worker.js').then(function (registration) {
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }, function (err) {
-      console.log('ServiceWorker registration failed: ', err);
-    });
-  });
-}
+var cacheName = "himnario-presbiteriano_v0.0.1";
+var filesToCache = [
+    './favicon.ico',
+    './icon.png',
+    './icon.svg',
+    './css/style.css',
+    '../cahuich-css/base/bluids/cahuich.css',
+    '../cahuich-css/base/variables/variables-light.css',
+    '../cahuich-css/base/variables/variables-dark.css',
+    '../cahuich-css/base/parts/core.css',
+    '../cahuich-css/base/parts/typography.css',
+    '../cahuich-css/base/parts/forms.css',
+    '../cahuich-css/base/parts/range.css',
+    '../cahuich-css/base/parts/links.css',
+    '../cahuich-css/base/parts/code.css',
+    '../cahuich-css/base/parts/misc.css',
+    '../cahuich-css/base/parts/print.css',
+];
 
-//asignar un nombre y versión al cache
-const CACHE_NAME = 'xamplepwa',
-    urlsToCache = [
-        '.',
-        './index.html',
-    ]
-//durante la fase de instalación, generalmente se almacena en caché los activos estáticos
-self.addEventListener('install', e => {
-    e.waitUntil(
-        caches.open(CACHE_NAME)
-            .then(cache => {
-                return cache.addAll(urlsToCache)
-                    .then(() => self.skipWaiting())
-            })
-            .catch(err => console.log('Falló registro de cache', err))
-    )
-})
-//una vez que se instala el SW, se activa y busca los recursos para hacer que funcione sin conexión
-self.addEventListener('activate', e => {
-    const cacheWhitelist = [CACHE_NAME]
-    e.waitUntil(
-        caches.keys()
-            .then(cacheNames => {
-                return Promise.all(
-                    cacheNames.map(cacheName => {
-                        //Eliminamos lo que ya no se necesita en cache
-                        if (cacheWhitelist.indexOf(cacheName) === -1) {
-                            return caches.delete(cacheName)
-                        }
-                    })
-                )
-            })
-            // Le indica al SW activar el cache actual
-            .then(() => self.clients.claim())
-    )
-})
-//cuando el navegador recupera una url
-self.addEventListener('fetch', e => {
-    //Responder ya sea con el objeto en caché o continuar y buscar la url real
-    e.respondWith(
-        caches.match(e.request)
-            .then(res => {
-                if (res) {
-                    //recuperar del cache
-                    return res
-                }
-                //recuperar de la petición a la url
-                return fetch(e.request)
-            })
-    )
-})
+var himnosCache = "himnos_v1";
+var files_Himnos = [
+  '.',
+  './index.html',
+  './js/app.js'
+];
+
+
+self.addEventListener('install', function(e) {
+  console.log('[ServiceWorker] Install');
+  e.waitUntil(
+    caches.open(cacheName).then(function(cache) {
+      console.log('[ServiceWorker] Caching app shell');
+      return cache.addAll(filesToCache);
+    })
+  );
+  e.waitUntil(
+    caches.open(himnosCache).then(function(cache) {
+      console.log('[ServiceWorker] Caching HimnosOffline');
+      return cache.addAll(files_Himnos);
+    })
+  );
+});
+
+self.addEventListener('activate', function(e) {
+  console.log('[ServiceWorker] Activate');
+  e.waitUntil(
+    caches.keys().then(function(keyList) {
+      return Promise.all(keyList.map(function(key) {
+        if (key !== himnosCache && key !== cacheName) {
+          console.log('[ServiceWorker] Removing old cache', key);
+          return caches.delete(key);
+        }
+      }));
+    })
+  );
+  return self.clients.claim();
+});
+
+self.addEventListener('fetch', function(e) {
+    console.log('[Service Worker] Fetch', e.request.url);
+  
+      e.respondWith(
+        caches.match(e.request).then(function(response) {
+          return response || fetch(e.request);
+        })
+      );
+  });
+  
