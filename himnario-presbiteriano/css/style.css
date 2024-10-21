@@ -401,7 +401,6 @@ body {
 
 .pag-himnos {
   padding: 0 5%;
-  display: none;
 
   margin-bottom: 100px;
 }
@@ -428,7 +427,6 @@ body {
    ========================================================================== */
 
 .mostrar-himno {
-  display: none;
   padding: 20px 5%;
   margin-bottom: 100px;
   background-color: #000;
@@ -563,8 +561,6 @@ body {
   backdrop-filter: blur(50px);
 
   align-content: center;
-
-  display: none;
 }
 .pagina.buscar .fondo {
   height: auto;

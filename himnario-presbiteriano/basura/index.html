@@ -1,0 +1,233 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+  <title>Himnario Presbiteriano</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="stylesheet" href="../cahuich-css/base/bluids/cahuich.css">
+
+  <meta name="description" content="">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#000">
+
+  <script>
+    function  insertar(id, variable) {
+      document.getElementById(id).innerHTML += variable;
+    }
+    webSiteData = {
+      name: 'Himnario Prebisteriano',
+      nameMarquet: 'Himnario <b>Prebisteriano</b>',
+      author: 'Leonardo Cahuich',
+      dev: 'Leonardo Cahuich',
+      version: '0.0.1.3.5',
+    }
+  </script>
+</head>
+
+<body>
+  <div class="app">
+    <header class="nav">
+      <ul>
+        <li><a id="nav-titulo"></a></li>
+      </ul>
+      <!--<ul>
+        <li><select id="fuente-himnos-tamaño-2">
+          <option value="1.001em">P 11</option>
+          <option value="1.084em" selected>P 13</option>
+          <option value="1.167em">P 14</option>
+          <option value="1.334em">P 16</option>
+          <option value="1.501em">P 18</option>
+          <option value="1.668em">P 20</option>
+      </select></li>
+      </ul>-->
+      <ul id="barra-de-pagina">
+      </ul>
+    </header>
+    <nav id="reciente-nav">
+      <ul id="left">
+        <li><a class="btn-nav"  id="btn-nav-3" name="mostrar-himno"></a></li>
+      </ul>
+      <ul id="right">
+
+      </ul>
+    </nav>
+    <nav id="nav-pag">
+      <ul class="left">
+        <li class="icono icono-home  pag-actual"><a class="btn-nav" id="btn-nav-1" name="home" href="#">⌂</a></li>
+        <!--<li class="icono-home  pag-actual"><a class="btn-nav" id="btn-nav-1" name="home">Inicio</a></li>-->
+        <!--<li><a class="btn-nav"  id="btn-nav-3" name="mostrar-himno"></a></li>-->
+        <li><a class="btn-nav" id="btn-nav-2" name="pag-himnos">Himnos</a></li>
+        <li><a class="btn-nav"  id="btn-nav-buscar" name="buscar">
+          <svg height="20px" width="20px" xmlns="http://www.w3.org/2000/svg" class="input-icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+          </svg>
+          <!--Ctrl + K-->
+        </a></li>
+        <li id="menu" class="icono"><a class="btn-nav"  id="btn-nav-4" name="pag-menu">☰</a></li>
+      </ul>
+      <!--<ul class="right">
+        <li id="menu" class="icono"><a class="btn-nav"  id="btn-nav-4" name="pag-menu">☰</a></li>
+      </ul>-->
+    </nav>
+  </div>
+  <main class="pagina home" id="home">
+    <div class="titulo">
+      <div class="titulo">
+      Hola, 
+      <span id="nombre-usario-en-home"></span>
+      </div>
+    </div>
+    <!--<div class="botones">
+      <button type="button">Favoritos</button>
+    </div>-->
+    <div class="continuar" id="continuar"></div>
+    <hr>
+    <h3>Favoritos</h3>
+    <div class="recientes" id="recientes">
+      <p>No hay favoritos actualmente.</p>
+    </div>
+  </main>
+  <main class="pagina pag-himnos" id="pag-himnos">
+    <div class="himnos" id="himnos">
+    </div>
+  </main>
+  <main class="pagina mostrar-himno" id="mostrar-himno">
+  </main>
+  <main class="pagina pag-menu" id="pag-menu">
+      <h2>Configuración</h2>
+      <details name="Opciones">
+        <summary>Pantalla</summary>
+        <hr>
+          <h3>Tamaño de fuente en himnos</h3>
+          <p>El tamaño de fuente afectado solo sera el la visualización de los himnos.</p>
+          <select id="fuente-himnos-tamaño">
+            <option value="1.001em">P 11</option>
+            <option value="1.084em" selected>P 13</option>
+            <option value="1.167em">P 14</option>
+            <option value="1.334em">P 16</option>
+            <option value="1.501em">P 18</option>
+            <option value="1.668em">P 20</option>
+          </select>
+        <hr>
+      </details>
+      <details name="Opciones">
+        <summary>Datos</summary>
+        <div class="caja-borrar-datos">
+          <div class="texto">
+            Borrar todos los datos
+          </div>
+          <button type="button" id="boton-borrar-datos">Borrar</button>
+        </div>
+        <h6 style="font-weight: normal;">Advertencia: la app se recargara, si no tiene conexión a internet puede perder el acceso a esta
+          hasta que se conecte a internet.
+        </h6>
+      </details>
+    <ul>
+      <li><a class="btn-nav"  id="btn-nav-5" name="acercaDe">Acerca de</a></li>
+    </ul>
+  </main>
+  <main class="pagina acercaDe" id="acercaDe">
+    <h2>Himnario Presbiteriano by Cahuich.com</h2>
+    <p>Una agradecimiento aqui ira.</p>
+    <br>
+    <p><b>Licencia:</b> MIT License</p>
+    <hr>
+    <h3>Datos tecnicos</h3>
+    <p><b>Desarrollador: </b><span id="desarrollador"><script>insertar('desarrollador', webSiteData.dev)</script></span></p>
+    <br>
+    <p>Esta aplicación esta construida usando</p>
+    <h3>Cahuich.<b>librarys</b></h3>
+    <p>Ademas de lo siguiente.</p>
+    <h3>Javascript Puro</h3>
+    <p>Esta aplicación solo usa Javascript Puro (JavaScript Vanilla).</p>
+    <br>
+    <p>
+      <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 630">
+      <rect width="630" height="630" fill="#f7df1e"/>
+      <path d="m423.2 492.19c12.69 20.72 29.2 35.95 58.4 35.95 24.53 0 40.2-12.26 40.2-29.2 0-20.3-16.1-27.49-43.1-39.3l-14.8-6.35c-42.72-18.2-71.1-41-71.1-89.2 0-44.4 33.83-78.2 86.7-78.2 37.64 0 64.7 13.1 84.2 47.4l-46.1 29.6c-10.15-18.2-21.1-25.37-38.1-25.37-17.34 0-28.33 11-28.33 25.37 0 17.76 11 24.95 36.4 35.95l14.8 6.34c50.3 21.57 78.7 43.56 78.7 93 0 53.3-41.87 82.5-98.1 82.5-54.98 0-90.5-26.2-107.88-60.54zm-209.13 5.13c9.3 16.5 17.76 30.45 38.1 30.45 19.45 0 31.72-7.61 31.72-37.2v-201.3h59.2v202.1c0 61.3-35.94 89.2-88.4 89.2-47.4 0-74.85-24.53-88.81-54.075z"/>
+      </svg>
+    </p>
+    <h3>Consuido con HTML5 (que engloba CSS3 y JavaScript)</h3>
+    <p>
+      <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 452 520">
+        <path fill="#e34f26" d="M41 460L0 0h451l-41 460-185 52" />
+        <path fill="#ef652a" d="M226 472l149-41 35-394H226" />
+        <path fill="#ecedee" d="M226 208h-75l-5-58h80V94H84l15 171h127zm0 147l-64-17-4-45h-56l7 89 117 32z"/>
+        <path fill="#fff" d="M226 265h69l-7 73-62 17v59l115-32 16-174H226zm0-171v56h136l5-56z"/>
+      </svg>
+      <svg width="100" height="100"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 452 520">
+        <path fill="#0c73b8" d="M41 460L0 0h451l-41 460-185 52"/>
+        <path fill="#30a9dc" d="M226 472l149-41 35-394H226"/>
+        <path fill="#ecedee" d="M226 208H94l5 57h127zm0-114H84l5 56h137zm0 261l-124-33 7 60 117 32z"/>
+        <path fill="#fff" d="M226 265h69l-7 73-62 17v59l115-32 26-288H226v56h80l-6 58h-74z"/>
+      </svg>
+      <hr>
+      <h3>Desarrollo</h3>
+      <button type="button" id="btn-reinstall-app">Reinstalar App</button>
+      <p>Advertencia: Esta opcion recargara-reinstalara la app,
+        por lo que si no cuenta con conexion a internet, no podra acceder a esta.
+      </p>
+
+      <h3>Versión</h3>
+      <p id="version"><script>insertar('version', webSiteData.version)</script></p>
+            
+    </p>
+  </main>
+
+  <main class="pagina buscar" id="buscar">
+    <div class="fondo">
+      <form id="form-buscar">
+        <input type="search" placeholder="Buscar himnos..." id="texto-buscar">
+        <input type="button" value="Buscar" id="botton-buscar">
+      </form>
+      <div class="ayuda" id="buscar-ayuda">
+        <h3>Directrices:</h3>
+        <p>Puede usted buscar por:</p>
+        <ul>
+          <li>Numero</li>
+          <li>Nombre</li>
+          <li>Autores</li>
+          <li>Referencias biblicas</li>
+        </ul>
+        <br>
+      </div>
+      <div id="resultados">
+      </div>
+    </div>
+  </main>
+
+  <main class="pantalla-bienvenida" id="pantalla-bienvenida">
+    <div class="fondo">
+      <div class="fondo">
+        <h1>Bievenido a la app <span id="app-name"><script>insertar('app-name', webSiteData.nameMarquet)</script></span></h1>
+        <p>Tu nombre:</p>
+        <form id="form-nombre-usuario">
+          <input type="text" placeholder="Pon tu nombre o apodo aqui" style="display: inline-block;" id="text-nombre-usuario">
+        </form>
+        <div class="bievenida-resultado"></div>
+        <h6>Versión: <span id="version-bienvenida"><script>insertar('version-bienvenida', webSiteData.version)</script></span></h6>
+
+        <button type="button" style="display: block;width: 90%;" id="button-nombre-usuario">Continuar</button>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="js/app.js"></script>
+
+  <script src="./regist_serviceWorker.js"></script>
+</body>
+
+</html>
