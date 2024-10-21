@@ -221,9 +221,9 @@ body {
 
    opacity: 60%;
 
-   max-height: 80px;
+   max-height: 65px;
   max-width: 100%;
-  height: 80px;
+  height: 65px;
   width: 100%;
  }
 /*   #nav-pag ul  li a:first-child {
@@ -300,8 +300,11 @@ body {
 
 #reciente-nav.mh {
   background-color: transparent !important;
-  font-size: 3dvh !important;
+  font-size: 3.5dvh !important;
+
+  font-weight: bold;
   text-align: center;
+  margin-bottom: 20px;
 }
 #reciente-nav ul {}
 #reciente-nav ul li {
