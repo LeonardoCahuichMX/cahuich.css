@@ -92,7 +92,9 @@ textarea {
   --titulo: 8dvh;
 }
 
-:root, body, html {
+:root,
+body,
+html {
   background-color: #000;
 }
 
@@ -111,6 +113,7 @@ body {
   0% {
     opacity: 0%;
   }
+
   100% {
     opacity: 100%;
   }
@@ -121,7 +124,7 @@ body {
 }
 
 .himno {
-  background-color: #111;
+  background-color: #222;
   margin: 5px 0;
   padding: 20px;
 
@@ -130,11 +133,22 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 5px;
-  > .titulo {
+
+  >.titulo {
     opacity: 50%;
     margin-bottom: 20px;
   }
 }
+  .himno:hover {
+    background-color: #333;
+  }
+  .himno:focus, .himno:focus-within {
+    background-color: #444;
+  }
+  .himno:visited,.himno:focus-visible {
+    background-color: #444;
+  }
+
 .himno .contenido {
   display: grid;
   grid-template-columns: 20% 80%;
@@ -149,6 +163,7 @@ body {
   text-align: center;
   display: none;
 }
+
 .actualizacion button {
   display: inline;
   background-color: #fff;
@@ -165,155 +180,179 @@ body {
   grid-template-columns: 50% 50%;
   gap: 5px;
 }
+
 .nav :first-child {
   opacity: 60%;
 }
+
 .nav :last-child {
   text-align: right;
 }
+
 .nav ul li {
   display: inline-flex;
 }
+
 .nav ul li:first-child a {
   text-decoration: none;
 }
 
-.nav ul li#agregar-himno-favoritos, .nav ul li#eliminar-himno-favoritos {
+.nav ul li#agregar-himno-favoritos,
+.nav ul li#eliminar-himno-favoritos {
   font-size: 3dvh;
 }
+
 /* ==========================================================================
    Nav-pag
    ========================================================================== */
 
-   #nav-pag {
-    z-index: 999;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
+#nav-pag {
+  z-index: 999;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
 
-    margin: 0 auto;
-    padding: 0 0%;
+  margin: 0 auto;
+  padding: 0 0%;
 
-    /*display: grid;
+  /*display: grid;
     grid-template-columns: auto 10%;
     column-gap: 20px;
     row-gap: 20px;*/
 
-    /*background-color: rgba(0, 0, 0, 0.8);*/
-    /*background-color: rgba(0, 0, 0, 0.2) !important;*/
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  /*background-color: rgba(0, 0, 0, 0.8);*/
+  /*background-color: rgba(0, 0, 0, 0.2) !important;*/
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 
-    color: #fff;
-    text-align: center;
+  color: #fff;
+  text-align: center;
+}
+
+@supports (-webkit-touch-callout: none) {
+
+  /* CSS specific to iOS devices */
+  #nav-pag {
+    padding-bottom: 20px;
   }
-  @supports (-webkit-touch-callout: none) {
-    /* CSS specific to iOS devices */ 
-    #nav-pag {
-      padding-bottom: 20px;
-    }
-  }
-  
-  .nav-scroll{
-    transform: translateY(0);
-    transition: .2s all ease-in-out !important;
-  }
-  .scroll-down .nav-scroll {
-    transform: translateY(120px);
-    transition: .2s all ease-in-out !important;
-  }
-  .scroll-up .nav-scroll {
-    transform: translateY(0);
-    transition: .2s all ease-in-out !important;
-  }
- /*#nav-pag ul.left {
+}
+
+.nav-scroll {
+  transform: translateY(0);
+  transition: .2s all ease-in-out !important;
+}
+
+.scroll-down .nav-scroll {
+  transform: translateY(120px);
+  transition: .2s all ease-in-out !important;
+}
+
+.scroll-up .nav-scroll {
+  transform: translateY(0);
+  transition: .2s all ease-in-out !important;
+}
+
+/*#nav-pag ul.left {
    text-align: left;
  }
  #nav-pag ul.right {
    text-align: right;
  }*/
 
- #nav-pag ul {
+#nav-pag ul {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2px;
   align-content: center;
 
-  justify-content: center; /* Centrado horizontal */
-  align-items: center; /* Centrado vertical */
+  justify-content: center;
+  /* Centrado horizontal */
+  align-items: center;
+  /* Centrado vertical */
   text-align: center;
   margin: 5px;
   margin-left: 15px;
- }
+}
 
- #nav-pag ul li {
+#nav-pag ul li {
   display: inline-flex;
-   align-content: center;
-   text-align: center;
+  align-content: center;
+  text-align: center;
 
-   opacity: 60%;
+  opacity: 60%;
 
-   max-height: 65px;
+  max-height: 65px;
   max-width: 100%;
   height: 65px;
   width: 100%;
- }
+}
+
 /*   #nav-pag ul  li a:first-child {
      margin-left: 0;
    }*/
 
-   #nav-pag ul li.pag-actual {
-    opacity: 100%;
-   }
+#nav-pag ul li.pag-actual {
+  opacity: 100%;
+}
 
-   #nav-pag ul li.icono {
-    font-size: 3dvh;
-   }
-   #nav-pag ul li.icono-home a {
-    font-family: u2000;
-    font-size: 5dvh;
-    transform: scaleX(120%);
-    width: 90%;
-   }
+#nav-pag ul li.icono {
+  font-size: 3dvh;
+}
 
- #nav-pag ul  li a {
+#nav-pag ul li.icono-home a {
+  font-family: u2000;
+  font-size: 5dvh;
+  transform: scaleX(120%);
+  width: 90%;
+}
+
+#nav-pag ul li a {
   max-height: 100%;
   max-width: 100%;
   height: 100%;
   width: 100%;
   align-content: center;
-   cursor: pointer;
-   display: inline-block;
-   transition: 0.2s ease-in-out all;
-   appearance: auto;
-   text-align: center;
- }
- #nav-pag ul li.icono a {
-  font-size: 3dvh;
- }
- #nav-pag ul li a:hover, #nav-pag ul li a:active, #nav-pag ul li a:focus, #nav-pag ul li a:focus-visible, #nav-pag ul li a:focus-within {
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.2s ease-in-out all;
   appearance: auto;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
-   transition: 0.2s ease-in-out all;
- }
- #nav-pag ul li a::after {
-   content: none !important;
- }
- #nav-pag ul li a#external-link::after {
-   content: " →" !important;
- }
- #nav-pag a {
-   text-decoration: none;
- }
+  text-align: center;
+}
 
- #nav-pag a#btn-nav-3 {
+#nav-pag ul li.icono a {
+  font-size: 3dvh;
+}
+
+#nav-pag ul li a:hover,
+#nav-pag ul li a:active,
+#nav-pag ul li a:focus,
+#nav-pag ul li a:focus-visible,
+#nav-pag ul li a:focus-within {
+  appearance: auto;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
- }
+  transition: 0.2s ease-in-out all;
+}
+
+#nav-pag ul li a::after {
+  content: none !important;
+}
+
+#nav-pag ul li a#external-link::after {
+  content: " →" !important;
+}
+
+#nav-pag a {
+  text-decoration: none;
+}
+
+#nav-pag a#btn-nav-3 {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
 
 
 #reciente-nav {
@@ -341,23 +380,27 @@ body {
   text-align: center;
   margin-bottom: 20px;
 }
+
 #reciente-nav ul {}
+
 #reciente-nav ul li {
   display: inline-flex;
-  }
+}
+
 #reciente-nav ul li a {
   height: 100%;
   display: inline-flex;
   text-decoration: none;
 }
 
- /* ==========================================================================
+/* ==========================================================================
    Home
    ========================================================================== */
 .home {
   padding: 0 5%;
 }
-.home > .titulo {
+
+.home>.titulo {
   font-size: var(--titulo-portada);
 
   background: linear-gradient(to right, #b032fb, #41fa98);
@@ -366,7 +409,8 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.home > .titulo .titulo {
+
+.home>.titulo .titulo {
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(50px);
   border-radius: 5px;
@@ -391,7 +435,7 @@ body {
 }
 
 
- /* ==========================================================================
+/* ==========================================================================
    pag-himnos
    ========================================================================== */
 
@@ -400,8 +444,17 @@ body {
 
   margin-bottom: 100px;
 }
+
 .pag-himnos .himnos {
   margin-top: 20px;
+}
+
+.pag-himnos .informacion {
+  background-color: #111;
+  padding: 10px;
+  border-radius: 5px;
+
+  margin-top: 10px;
 }
 
 /* ==========================================================================
@@ -415,15 +468,18 @@ body {
 
   text-align: center;
 }
+
 .mostrar-himno .parte {
   margin: 10px 0;
 }
+
 .mostrar-himno .cabecera .himno-titulo {
   font-size: 150%;
   font-weight: bold;
   margin-bottom: 20px;
 }
-.mostrar-himno .cabecera .himno-titulo > div {
+
+.mostrar-himno .cabecera .himno-titulo>div {
   display: inline-block;
 }
 
@@ -438,14 +494,17 @@ body {
 
   min-height: 100dvh;
 }
+
 .pag-menu ul {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   margin: 10px 0;
 }
+
 .pag-menu ul li {
   display: block;
 }
+
 .pag-menu ul li a {
   padding: 10px 5px;
   text-decoration: none;
@@ -457,6 +516,7 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 5px;
 }
+
 .pag-menu .caja-borrar-datos .texto {
   align-content: center;
 }
@@ -493,7 +553,8 @@ body {
   align-content: center;
   box-sizing: border-box;
 }
-.pantalla-bienvenida > .fondo {
+
+.pantalla-bienvenida>.fondo {
   background: linear-gradient(to right, #b032fb, #41fa98);
   height: 95%;
   width: 90%;
@@ -506,14 +567,15 @@ body {
 
   align-content: center;
 }
-.pantalla-bienvenida > .fondo >.fondo {
+
+.pantalla-bienvenida>.fondo>.fondo {
   background-color: rgba(0, 0, 0, 1);
   backdrop-filter: blur(100px);
   height: 95%;
   width: 90%;
 
   box-sizing: border-box;
-  
+
   padding: 20px 5%;
 
   margin: 20px auto;
@@ -541,6 +603,7 @@ body {
 
   align-content: end;
 }
+
 .pagina.buscar .fondo {
   height: auto;
   width: 90%;
@@ -559,12 +622,14 @@ body {
   display: grid;
   grid-template-columns: 75% 25%;
 }
+
 .pagina.buscar .fondo input[type="search"] {
   width: 100%;
   height: 60px;
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
+
 .pagina.buscar .fondo input[type="submit"] {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
@@ -685,9 +750,9 @@ body {
 }
 
 @media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */
 }
 
@@ -698,6 +763,7 @@ body {
    ========================================================================== */
 
 @media print {
+
   *,
   *::before,
   *::after {
@@ -757,4 +823,3 @@ body {
     page-break-after: avoid;
   }
 }
-

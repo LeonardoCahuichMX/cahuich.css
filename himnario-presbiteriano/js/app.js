@@ -1,13 +1,13 @@
 /*import {clickNavAShowPag} from '../../js/modulos/clickNavAShowPag.js';*/
-import {scroolUpDowm} from '../../js/modulos/scroolUpDowm.js';
-import {himnos} from './modulos/himnos.js'
+import { scroolUpDowm } from '../../js/modulos/scroolUpDowm.js';
+import { himnos } from './modulos/himnos.js'
 
 webSiteData = {
   name: 'Himnario Prebisteriano',
   nameMarquet: 'Himnario <b>Prebisteriano</b>',
   author: 'Leonardo Cahuich',
   dev: 'Leonardo Cahuich',
-  version: '0.0.1.4.11.2',
+  version: '0.0.1.4.12',
 }
 
 function serviceWorkerInit() {
@@ -30,21 +30,21 @@ function updateServiceWorker() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-/*  document.getElementById('#splash').addEventListener('transitionend', (event) => {
-    event.target.remove();
-  });
-  requestAnimationFrame(() => {
-    document.getElementById('#splash').classList.add('animate');
-  });*/
+  /*  document.getElementById('#splash').addEventListener('transitionend', (event) => {
+      event.target.remove();
+    });
+    requestAnimationFrame(() => {
+      document.getElementById('#splash').classList.add('animate');
+    });*/
 
-    const himnosVariable = himnos;
+  const himnosVariable = himnos;
 
-    if(!localStorage.getItem('data-himnoVisible')) {
-      localStorage.setItem('data-himnoVisible', 0)
-    }
+  if (!localStorage.getItem('data-himnoVisible')) {
+    localStorage.setItem('data-himnoVisible', 0)
+  }
 
-    function pantallaDeBievenida() {
-      document.body.innerHTML += `
+  function pantallaDeBievenida() {
+    document.body.innerHTML += `
       <main class="pantalla-bienvenida" id="pantalla-bienvenida">
         <div class="fondo">
           <div class="fondo">
@@ -61,34 +61,34 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </main>
       `;
+  }
+
+  function nombreDeUsuarioHome() {
+    if (localStorage.getItem('nombreUsuario')) {
+      document.getElementById("nombre-usario-en-home").innerHTML = localStorage.getItem("nombreUsuario");
     }
+  }
 
-    function nombreDeUsuarioHome() {
-      if(localStorage.getItem('nombreUsuario')) {
-        document.getElementById("nombre-usario-en-home").innerHTML = localStorage.getItem("nombreUsuario");
+  function pantallaDeBievenidaIniciador() {
+    if (!localStorage.getItem('nombreUsuario')) {
+      pantallaDeBievenida();
+      function nombreUsuario() {
+        const nombre = document.getElementById("text-nombre-usuario").value;
+        localStorage.setItem("nombreUsuario", nombre);
+
+        document.getElementById("pantalla-bienvenida").style.display = 'none';
       }
+
+      document.getElementById("form-nombre-usuario").addEventListener("submit", function (event) {
+        event.preventDefault();
+        nombreUsuario()
+        //alert("hola 2");
+      });
+      document.getElementById("button-nombre-usuario").addEventListener('click', () => {
+        nombreUsuario()
+        //alert("hola");
+      });
     }
-    
-    function pantallaDeBievenidaIniciador() {
-      if(!localStorage.getItem('nombreUsuario')) {
-        pantallaDeBievenida();
-          function nombreUsuario() {
-              const nombre = document.getElementById("text-nombre-usuario").value;
-              localStorage.setItem("nombreUsuario", nombre);
-
-              document.getElementById("pantalla-bienvenida").style.display = 'none';
-          }
-
-          document.getElementById("form-nombre-usuario").addEventListener("submit", function(event) {
-              event.preventDefault();
-              nombreUsuario()
-              //alert("hola 2");
-          });
-          document.getElementById("button-nombre-usuario").addEventListener('click', () => {
-              nombreUsuario()
-              //alert("hola");
-          });
-      }
   }
 
   /*function actualizacion() {
@@ -115,161 +115,161 @@ document.addEventListener('DOMContentLoaded', () => {
   actualizacion();*/
 
 
-    function tamanoLetraHimno(id) {
-      if(!localStorage.getItem("fuente-texto-himnos-opcion")) {
-        document.getElementById("mostrar-himno").style.fontSize = '1.084em';
-      } else {
-          document.getElementById(id).style.fontSize = ''+localStorage.getItem("fuente-texto-himnos-opcion")+'';
-      }
+  function tamanoLetraHimno(id) {
+    if (!localStorage.getItem("fuente-texto-himnos-opcion")) {
+      document.getElementById("mostrar-himno").style.fontSize = '1.084em';
+    } else {
+      document.getElementById(id).style.fontSize = '' + localStorage.getItem("fuente-texto-himnos-opcion") + '';
+    }
+  }
+
+  function mostarHimno(numero) {
+    tamanoLetraHimno("mostrar-himno");
+    //favoritos(1, 1,)
+    if (document.getElementById("agregar-himno-favoritos") !== null) {
+      //favoritos(2);
+    } else if (document.getElementById("eliminar-himno-favoritos") !== null) {
+      //favoritos(4);
     }
 
-    function mostarHimno(numero) {
-      tamanoLetraHimno("mostrar-himno");
-          //favoritos(1, 1,)
-          if(document.getElementById("agregar-himno-favoritos") !== null) {
-              //favoritos(2);
-          } else if(document.getElementById("eliminar-himno-favoritos") !== null) {
-              //favoritos(4);
-          }
-  
-          document.getElementById("mostrar-himno").innerHTML = '';
-          document.getElementById("mostrar-himno").innerHTML += `
-          <article>
-              <!--<div class="cabecera">
-                  <div class="himno-titulo">
-                      <div class="numero">
-                      Himno #${himnos[numero]['numero']}: 
-                      </div>
-                      <div class="titulo">
-                      ${himnos[numero]['titulo']}
-                      </div>
+    document.getElementById("mostrar-himno").innerHTML = '';
+    document.getElementById("mostrar-himno").innerHTML += `
+      <article>
+          <!--<div class="cabecera">
+              <div class="himno-titulo">
+                  <div class="numero">
+                  Himno #${himnos[numero]['numero']}: 
                   </div>
-                  <div class="intro">
-                  ${himnos[numero]['intro']}
+                  <div class="titulo">
+                  ${himnos[numero]['titulo']}
                   </div>
               </div>
-                  <br>-->`;
-                  for(let prop in himnos[numero]['referencias']) {
-                      document.getElementById("mostrar-himno").innerHTML += `
+              <div class="intro">
+              ${himnos[numero]['intro']}
+              </div>
+          </div>
+              <br>-->`;
+    for (let prop in himnos[numero]['referencias']) {
+      document.getElementById("mostrar-himno").innerHTML += `
                       <div class="referencia">
                       ${himnos[numero]['referencias'][prop]}
                       </div>`;
-                  }
-              document.getElementById("mostrar-himno").innerHTML += `<div class="cuerpo"><br>`;
-              for(let prop in himnos[numero]['versos']) {
-                  document.getElementById("mostrar-himno").innerHTML += `
+    }
+    document.getElementById("mostrar-himno").innerHTML += `<div class="cuerpo"><br>`;
+    for (let prop in himnos[numero]['versos']) {
+      document.getElementById("mostrar-himno").innerHTML += `
                   <div class"parte">
                   <div class="versos-numero">
                   ${himnos[numero]['versos'][prop]['nombre']}
                   </div>`;
-                  for(let propDos in himnos[numero]['versos'][prop]['lineas']) {
-                      document.getElementById("mostrar-himno").innerHTML += `
+      for (let propDos in himnos[numero]['versos'][prop]['lineas']) {
+        document.getElementById("mostrar-himno").innerHTML += `
                       <div class="linea">
                       ${himnos[numero]['versos'][prop]['lineas'][propDos]}
                       </div>`;
-                  }
-                  document.getElementById("mostrar-himno").innerHTML += `<br>
+      }
+      document.getElementById("mostrar-himno").innerHTML += `<br>
                   </div>`;
-              }
-              document.getElementById("mostrar-himno").innerHTML += `
-              </div>
-              <div class="autores">
-                  ${himnos[numero]['autores']}
-              </div>
-          </article>`;
-          console.log(himnos[numero]);
+    }
+    document.getElementById("mostrar-himno").innerHTML += `
+      </div>
+      <div class="autores">
+          ${himnos[numero]['autores']}
+      </div>
+    </article>`;
+    console.log(himnos[numero]);
   }
   function favoritos(opcion, himnos) {
     function agregar() {
       document.getElementById("barra-de-pagina").innerHTML = '';
       document.getElementById("barra-de-pagina").innerHTML = `
-      <li id="agregar-himno-favoritos">☆</li>`;
+        <li id="agregar-himno-favoritos">☆</li>`;
 
       const element = document.getElementById("agregar-himno-favoritos");
     }
     function eliminar() {
       document.getElementById("barra-de-pagina").innerHTML = '';
       document.getElementById("barra-de-pagina").innerHTML = `
-      <li id="eliminar-himno-favoritos">★</li>`;
+        <li id="eliminar-himno-favoritos">★</li>`;
 
       const element = document.getElementById("agregar-himno-favoritos");
     }
-    if(opcion === 1) {
-        /* botonFavoritosDeMostrarHimnos */
-                let himnosActual = localStorage.getItem("data-himnoVisible");
-                const retrievedArray = JSON.parse(localStorage.getItem('favoritos'));
-                if(!retrievedArray.includes(himnosActual)) {
-                  agregar()
+    if (opcion === 1) {
+      /* botonFavoritosDeMostrarHimnos */
+      let himnosActual = localStorage.getItem("data-himnoVisible");
+      const retrievedArray = JSON.parse(localStorage.getItem('favoritos'));
+      if (!retrievedArray.includes(himnosActual)) {
+        agregar()
 
-                    const element = document.getElementById("agregar-himno-favoritos");
-                    element.addEventListener('click', function(event) {
-                        let himnosActual = localStorage.getItem("data-himnoVisible");
-                        
-                        const retrievedArray = JSON.parse(localStorage.getItem('favoritos'));
-                        retrievedArray.push(himnosActual);
+        const element = document.getElementById("agregar-himno-favoritos");
+        element.addEventListener('click', function (event) {
+          let himnosActual = localStorage.getItem("data-himnoVisible");
 
-                        const jsonStringset = JSON.stringify(retrievedArray);
+          const retrievedArray = JSON.parse(localStorage.getItem('favoritos'));
+          retrievedArray.push(himnosActual);
 
-                        localStorage.setItem("favoritos", jsonStringset);
-                        console.log("retrievedArray");
-                        favoritos(1)
-                    });
-                } else {                
-                  eliminar()
-                    
-                    let himnosActual = localStorage.getItem("data-himnoVisible");
-                    const retrievedArray = JSON.parse(localStorage.getItem('favoritos'));
-                    if(retrievedArray.includes(himnosActual)) {
-                        const element = document.getElementById("eliminar-himno-favoritos");
-                        element.addEventListener('click', function(event) {
-                            let eliminadoHimno = retrievedArray.filter(x => x !== himnosActual);
-                            const jsonStringset = JSON.stringify(eliminadoHimno);
+          const jsonStringset = JSON.stringify(retrievedArray);
 
-                            localStorage.setItem("favoritos", jsonStringset);
-                            favoritos(1)
-                        });
-                    }
-                }
-    } else if(opcion === 3) {
-        if(localStorage.getItem("favoritos") == null || localStorage.getItem("favoritos") == undefined) {
-            const myArray = [];
+          localStorage.setItem("favoritos", jsonStringset);
+          console.log("retrievedArray");
+          favoritos(1)
+        });
+      } else {
+        eliminar()
 
-            const jsonString = JSON.stringify(myArray);
+        let himnosActual = localStorage.getItem("data-himnoVisible");
+        const retrievedArray = JSON.parse(localStorage.getItem('favoritos'));
+        if (retrievedArray.includes(himnosActual)) {
+          const element = document.getElementById("eliminar-himno-favoritos");
+          element.addEventListener('click', function (event) {
+            let eliminadoHimno = retrievedArray.filter(x => x !== himnosActual);
+            const jsonStringset = JSON.stringify(eliminadoHimno);
 
-            localStorage.setItem("favoritos", jsonString);
-            /*let objeto = localStorage.getItem("favoritos");
-            console.log(objeto[1]);*/
-        } else {
-            const retrievedArrayHimnosFavoritos = JSON.parse(localStorage.getItem('favoritos'));
-            document.getElementById("recientes").innerHTML = '';
-            document.getElementById("home").style.paddingBottom = '100px';
-            for (let i = 0; i < retrievedArrayHimnosFavoritos.length; i++) {
-                let iDos = retrievedArrayHimnosFavoritos[i];
-                console.log(retrievedArrayHimnosFavoritos[i], himnos[iDos].titulo);
-                document.getElementById("recientes").innerHTML += `
-                <a class="himno" href="#${himnos[iDos].numero}">
-                    <div class="contenido">
-                        <div class="numero">
-                        #${himnos[iDos].numero}
-                        </div>
-                        <div class="nombre">
-                            ${himnos[iDos].titulo}
-                        </div>
-                    </div>
-                </a>`;
-            }
-            if(retrievedArrayHimnosFavoritos.length !== 0) {
-            } else {
-                document.getElementById("recientes").innerHTML = `
-                <p>No hay favoritos actualmente.</p>`;
-            }
+            localStorage.setItem("favoritos", jsonStringset);
+            favoritos(1)
+          });
         }
+      }
+    } else if (opcion === 3) {
+      if (localStorage.getItem("favoritos") == null || localStorage.getItem("favoritos") == undefined) {
+        const myArray = [];
+
+        const jsonString = JSON.stringify(myArray);
+
+        localStorage.setItem("favoritos", jsonString);
+        /*let objeto = localStorage.getItem("favoritos");
+        console.log(objeto[1]);*/
+      } else {
+        const retrievedArrayHimnosFavoritos = JSON.parse(localStorage.getItem('favoritos'));
+        document.getElementById("recientes").innerHTML = '';
+        document.getElementById("home").style.paddingBottom = '100px';
+        for (let i = 0; i < retrievedArrayHimnosFavoritos.length; i++) {
+          let iDos = retrievedArrayHimnosFavoritos[i];
+          console.log(retrievedArrayHimnosFavoritos[i], himnos[iDos].titulo);
+          document.getElementById("recientes").innerHTML += `
+            <a class="himno" href="#${himnos[iDos].numero}">
+                <div class="contenido">
+                    <div class="numero">
+                    #${himnos[iDos].numero}
+                    </div>
+                    <div class="nombre">
+                        ${himnos[iDos].titulo}
+                    </div>
+                </div>
+            </a>`;
+        }
+        if (retrievedArrayHimnosFavoritos.length !== 0) {
+        } else {
+          document.getElementById("recientes").innerHTML = `
+            <p>No hay favoritos actualmente.</p>`;
+        }
+      }
     }
   };
 
   function memoriaBD(dato, data) {
-    if(dato === 'himnoreciente') {
-      if(!localStorage.getItem("data-himnoVisible")) {
+    if (dato === 'himnoreciente') {
+      if (!localStorage.getItem("data-himnoVisible")) {
         localStorage.setItem("data-himnoVisible", "")
       } else {
         localStorage.setItem("data-himnoVisible", data)
@@ -277,8 +277,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-    function cargarHome() {
-      document.getElementById("app").innerHTML = `
+  function cargarHome() {
+    document.getElementById("app").innerHTML = `
       <main class="pagina home" id="home">
           <div class="titulo">
             <div class="titulo">
@@ -297,14 +297,14 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
       </main>
         `;
-    }
-    
-    function himnosContinuar(himnos, numero) {
-      if(numero === '0') {
-        return
-      } else {
-        document.getElementById("continuar").innerHTML = '';
-        document.getElementById("continuar").innerHTML += `
+  }
+
+  function himnosContinuar(himnos, numero) {
+    if (numero === '0') {
+      return
+    } else {
+      document.getElementById("continuar").innerHTML = '';
+      document.getElementById("continuar").innerHTML += `
         <a class="himno" href="#${himnos[numero]['numero']}">
             <div class="titulo">
                 Continuar con
@@ -318,116 +318,119 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
         </a>`;
-      }
+    }
   }
 
-    function precargarHimnosPag(himnos) {
-      //document.getElementById("himnos").innerHTML
-      let preCargaHimnosPagVar = '';
-        for(let prop in himnos) {
-            preCargaHimnosPagVar += `
-            <a class="himno" href="#${himnos[prop]['numero']}">
-              <div class="contenido">
-                <div class="numero">
-                #${himnos[prop]['numero']}
-                </div>
-                <div class="titulo">
-                ${himnos[prop]['titulo']}
-                </div>
-              </div>
-            </a>`;
-        }
-        return preCargaHimnosPagVar;
+  function precargarHimnosPag(himnos) {
+    //document.getElementById("himnos").innerHTML
+    let preCargaHimnosPagVar = '';
+    for (let prop in himnos) {
+      preCargaHimnosPagVar += `
+        <a class="himno" href="#${himnos[prop]['numero']}">
+          <div class="contenido">
+            <div class="numero">
+            #${himnos[prop]['numero']}
+            </div>
+            <div class="titulo">
+            ${himnos[prop]['titulo']}
+            </div>
+          </div>
+        </a>`;
     }
-    const himnosPagVar = precargarHimnosPag(himnosVariable);
-    function mostrarHimnosPag(himnos) {
-      document.getElementById("app").innerHTML = `
+    return preCargaHimnosPagVar;
+  }
+  const himnosPagVar = precargarHimnosPag(himnosVariable);
+  function mostrarHimnosPag(himnos) {
+    document.getElementById("app").innerHTML = `
       <main class="pagina pag-himnos" id="pag-himnos">
+        <div class="informacion">
+          <p>Los himnos que ya a visto estaran resaltados de un color distinto.</p>
+        </div>
         <div class="himnos" id="himnos">
         </div>
       </main>
       `;
-      document.getElementById("himnos").innerHTML = himnosPagVar;
+    document.getElementById("himnos").innerHTML = himnosPagVar;
+  }
+
+
+  /*function searchhimno(himnosVariable) {
+    function buscador(himnosVariable) {
+        let textoDeBuscar = document.getElementById("texto-buscar").value;
+        document.getElementById("resultados").innerHTML = "";
+        document.getElementById("buscar-ayuda").innerHTML = "";
+        for(let prop in himnosVariable) {
+            let str = himnosVariable[prop]['titulo'].toLowerCase();
+            let re = textoDeBuscar.toLowerCase();
+            if(himnosVariable[prop]['numero'] == textoDeBuscar) {
+                document.getElementById("resultados").innerHTML = '';
+                document.getElementById("resultados").innerHTML += `
+                <div id="resultado">
+                    <a href="#${himnosVariable[prop]['numero']}">
+                        <span>${himnosVariable[prop]['numero']}</span>
+                        <span>${himnosVariable[prop]['titulo']}</span>
+                    </a>
+                </div>`;
+                
+                return;
+            } else if(str.search(re) != -1) {
+                document.getElementById("resultados").innerHTML += `
+                <div id="resultado">
+                    <a href="#${himnosVariable[prop]['numero']}">
+                        <span>${himnosVariable[prop]['numero']}</span>
+                        <span>${himnosVariable[prop]['titulo']}</span>
+                    </a>
+                </div>`;
+            }
+
+            for(let propDos in himnosVariable[prop]['referencias']) {
+                let strReferencias = himnosVariable[prop]['referencias'][propDos].toLowerCase();
+                if(strReferencias.search(re) != -1) {
+                    document.getElementById("resultados").innerHTML += `
+                    <div id="resultado">
+                      <a href="#${himnosVariable[prop]['numero']}">
+                            <span>${himnosVariable[prop]['numero']}</span>
+                            <span>${himnosVariable[prop]['titulo']}</span>
+                            <br>
+                            <br>
+                            <span>Referencias</span>
+                            <br>
+                            <span>${himnosVariable[prop]['referencias'][propDos]}</span>
+                        </a>
+                    </div>`;
+                }
+            }
+
+            for(let propDos in himnosVariable[prop]['autores']) {
+                let strReferencias = himnosVariable[prop]['autores'][propDos].toLowerCase();
+                if(strReferencias.search(re) != -1) {
+                    document.getElementById("resultados").innerHTML += `
+                    <div id="resultado">
+                      <a href="#${himnosVariable[prop]['numero']}">
+                            <span>${himnosVariable[prop]['numero']}</span>
+                            <span>${himnosVariable[prop]['titulo']}</span>
+                            <br>
+                            <br>
+                            <span>Autores</span>
+                            <br>
+                            <span>${himnosVariable[prop]['autores'][propDos]}</span>
+                        </a>
+                    </div>`;
+                }
+            }
+        };
     }
+    document.getElementById("form-buscar").addEventListener("submit", function(event) {
+        event.preventDefault();
+        buscador(himnosVariable);
+    });
+    document.getElementById("botton-buscar").addEventListener('click', () => {
+        buscador(himnosVariable);
+    });
+}*/
 
-
-    /*function searchhimno(himnosVariable) {
-      function buscador(himnosVariable) {
-          let textoDeBuscar = document.getElementById("texto-buscar").value;
-          document.getElementById("resultados").innerHTML = "";
-          document.getElementById("buscar-ayuda").innerHTML = "";
-          for(let prop in himnosVariable) {
-              let str = himnosVariable[prop]['titulo'].toLowerCase();
-              let re = textoDeBuscar.toLowerCase();
-              if(himnosVariable[prop]['numero'] == textoDeBuscar) {
-                  document.getElementById("resultados").innerHTML = '';
-                  document.getElementById("resultados").innerHTML += `
-                  <div id="resultado">
-                      <a href="#${himnosVariable[prop]['numero']}">
-                          <span>${himnosVariable[prop]['numero']}</span>
-                          <span>${himnosVariable[prop]['titulo']}</span>
-                      </a>
-                  </div>`;
-                  
-                  return;
-              } else if(str.search(re) != -1) {
-                  document.getElementById("resultados").innerHTML += `
-                  <div id="resultado">
-                      <a href="#${himnosVariable[prop]['numero']}">
-                          <span>${himnosVariable[prop]['numero']}</span>
-                          <span>${himnosVariable[prop]['titulo']}</span>
-                      </a>
-                  </div>`;
-              }
-
-              for(let propDos in himnosVariable[prop]['referencias']) {
-                  let strReferencias = himnosVariable[prop]['referencias'][propDos].toLowerCase();
-                  if(strReferencias.search(re) != -1) {
-                      document.getElementById("resultados").innerHTML += `
-                      <div id="resultado">
-                        <a href="#${himnosVariable[prop]['numero']}">
-                              <span>${himnosVariable[prop]['numero']}</span>
-                              <span>${himnosVariable[prop]['titulo']}</span>
-                              <br>
-                              <br>
-                              <span>Referencias</span>
-                              <br>
-                              <span>${himnosVariable[prop]['referencias'][propDos]}</span>
-                          </a>
-                      </div>`;
-                  }
-              }
-
-              for(let propDos in himnosVariable[prop]['autores']) {
-                  let strReferencias = himnosVariable[prop]['autores'][propDos].toLowerCase();
-                  if(strReferencias.search(re) != -1) {
-                      document.getElementById("resultados").innerHTML += `
-                      <div id="resultado">
-                        <a href="#${himnosVariable[prop]['numero']}">
-                              <span>${himnosVariable[prop]['numero']}</span>
-                              <span>${himnosVariable[prop]['titulo']}</span>
-                              <br>
-                              <br>
-                              <span>Autores</span>
-                              <br>
-                              <span>${himnosVariable[prop]['autores'][propDos]}</span>
-                          </a>
-                      </div>`;
-                  }
-              }
-          };
-      }
-      document.getElementById("form-buscar").addEventListener("submit", function(event) {
-          event.preventDefault();
-          buscador(himnosVariable);
-      });
-      document.getElementById("botton-buscar").addEventListener('click', () => {
-          buscador(himnosVariable);
-      });
-  }*/
-
-    function buscarPag() {
-      document.getElementById("app").innerHTML = `
+  function buscarPag() {
+    document.getElementById("app").innerHTML = `
       <main class="pagina buscar" id="buscar">
         <div class="fondo">
         <div class="ayuda" id="buscar-ayuda">
@@ -459,23 +462,23 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </main>
       `;
-      const inputField = document.getElementById('texto-buscar');
-      inputField.focus();
+    const inputField = document.getElementById('texto-buscar');
+    inputField.focus();
 
-  function searchhimno(himnosVariable) {
-    const himnos = himnosVariable;
-    let searchForm = document.getElementById("form-buscar");
-    let search = document.getElementById("texto-buscar");
-    let resultados = document.getElementById("resultados");
+    function searchhimno(himnosVariable) {
+      const himnos = himnosVariable;
+      let searchForm = document.getElementById("form-buscar");
+      let search = document.getElementById("texto-buscar");
+      let resultados = document.getElementById("resultados");
 
-    search.addEventListener('keyup', (e) => {
-      resultados.innerHTML = '';
-      if (search.value.length > 3){
-        for(let prop in himnosVariable) {
-          let str = himnos[prop]['titulo'].toLowerCase();
-          const busqueda = search.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-          if(str.search(busqueda) != -1) {
-            resultados.innerHTML += `
+      search.addEventListener('keyup', (e) => {
+        resultados.innerHTML = '';
+        if (search.value.length > 3) {
+          for (let prop in himnosVariable) {
+            let str = himnos[prop]['titulo'].toLowerCase();
+            const busqueda = search.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            if (str.search(busqueda) != -1) {
+              resultados.innerHTML += `
                 <a class="himno" href="#${himnosVariable[prop]['numero']}">
                   <div class="contenido">
                     <div class="numero">${himnosVariable[prop]['numero']}</div>
@@ -483,12 +486,12 @@ document.addEventListener('DOMContentLoaded', () => {
                   </div>
                 </a>
               `;
-          }
+            }
 
-          for(let propDos in himnosVariable[prop]['referencias']) {
-            let strReferencias = himnosVariable[prop]['referencias'][propDos].toLowerCase();
-            if(strReferencias.search(busqueda) != -1) {
-              document.getElementById("resultados").innerHTML += `
+            for (let propDos in himnosVariable[prop]['referencias']) {
+              let strReferencias = himnosVariable[prop]['referencias'][propDos].toLowerCase();
+              if (strReferencias.search(busqueda) != -1) {
+                document.getElementById("resultados").innerHTML += `
                 <a class="himno" href="#${himnosVariable[prop]['numero']}">
                   <div class="contenido">
                     <div class="numero">
@@ -499,12 +502,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                   </div>
                 </a>`;
+              }
             }
-          }
-          for(let propDos in himnosVariable[prop]['autores']) {
-            let strReferencias = himnosVariable[prop]['autores'][propDos].toLowerCase();
-            if(strReferencias.search(busqueda) != -1) {
-              document.getElementById("resultados").innerHTML += `
+            for (let propDos in himnosVariable[prop]['autores']) {
+              let strReferencias = himnosVariable[prop]['autores'][propDos].toLowerCase();
+              if (strReferencias.search(busqueda) != -1) {
+                document.getElementById("resultados").innerHTML += `
                 <a class="himno" href="#${himnosVariable[prop]['numero']}">
                   <div class="contenido">
                     <div class="numero">${himnosVariable[prop]['numero']}</div>
@@ -516,86 +519,86 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span>${himnosVariable[prop]['autores'][propDos]}</span>
                   </div>
                 </a>`;
-                  }
               }
-
-              }
-          } else if (e.key != 'Enter') {
+            }
 
           }
-        })
-  
-        searchForm.addEventListener('submit', (e)=>{
-              e.preventDefault()
-              console.log(parseInt(search.value))
-              let numero = parseInt(search.value)
-              if (numero > 0 && numero < 707){
-                location.href = `#${numero}`
-              }/* else {
+        } else if (e.key != 'Enter') {
+
+        }
+      })
+
+      searchForm.addEventListener('submit', (e) => {
+        e.preventDefault()
+        console.log(parseInt(search.value))
+        let numero = parseInt(search.value)
+        if (numero > 0 && numero < 707) {
+          location.href = `#${numero}`
+        }/* else {
                 resultados.innerHTML = "No existe el himno...";
               }*/
-            })
-        }
-        searchhimno(himnosVariable)
+      })
+    }
+    searchhimno(himnosVariable)
   }
 
-    function cargaHimno() {
-      document.getElementById("app").innerHTML = `
+  function cargaHimno() {
+    document.getElementById("app").innerHTML = `
       <main class="pagina mostrar-himno" id="mostrar-himno">
       </main>
       `;
-    }
+  }
 
-    function barraHimnoAbierto(opcion, himno, himnos) {
-      if(himno === '0') {
-        return;
-      } else {
-        document.getElementById("himno-reciente").innerHTML = `
+  function barraHimnoAbierto(opcion, himno, himnos) {
+    if (himno === '0') {
+      return;
+    } else {
+      document.getElementById("himno-reciente").innerHTML = `
         <li><a href="#${himno}">Himno #${himnos[himno].numero} - ${himnos[himno].titulo}</li>
         `;
-        if(opcion === 1) {
-            document.getElementById("reciente-nav").classList.add("mh");
-        } else {
-            document.getElementById("reciente-nav").classList.remove("mh");
-        }
-      }
-    }
-
-    function headerPagName(pagName) {
-      if(pagName) {
-        document.getElementById("nav-titulo").innerHTML = pagName;
+      if (opcion === 1) {
+        document.getElementById("reciente-nav").classList.add("mh");
       } else {
-        document.getElementById("nav-titulo").innerHTML = 'Home';
+        document.getElementById("reciente-nav").classList.remove("mh");
       }
     }
+  }
 
-    function menu() {
-      function borrarTodosLosDatos() {
-        document.getElementById("boton-borrar-datos").addEventListener('click', () => {
-            localStorage.clear();
-            location.reload(true);
-        });
-      }
-      function tamanoFuenteHimnosCambiar(id) {
-        const select = document.getElementById(id);
-        if(!localStorage.getItem("fuente-texto-himnos-opcion")) {
-          localStorage.setItem("fuente-texto-himnos-opcion", '1.084em');
-        } else {
-          select.value = localStorage.getItem("fuente-texto-himnos-opcion");
-        }
-            select.addEventListener('change', () => {
-                const valorSeleccionado = select.value;
-                const textoSeleccionado = select.options[select.selectedIndex].text;
-                /*console.log(`Valor seleccionado: ${valorSeleccionado}`);
-                console.log(`Texto seleccionado: ${textoSeleccionado}`);
-                alert(valorSeleccionado)*/
-                localStorage.setItem("fuente-texto-himnos-opcion", valorSeleccionado);
-                localStorage.setItem("fuente-texto-himnos-valor", textoSeleccionado);
+  function headerPagName(pagName) {
+    if (pagName) {
+      document.getElementById("nav-titulo").innerHTML = pagName;
+    } else {
+      document.getElementById("nav-titulo").innerHTML = 'Home';
+    }
+  }
 
-                //select.value = 'opcion3';
-            });
+  function menu() {
+    function borrarTodosLosDatos() {
+      document.getElementById("boton-borrar-datos").addEventListener('click', () => {
+        localStorage.clear();
+        location.reload(true);
+      });
+    }
+    function tamanoFuenteHimnosCambiar(id) {
+      const select = document.getElementById(id);
+      if (!localStorage.getItem("fuente-texto-himnos-opcion")) {
+        localStorage.setItem("fuente-texto-himnos-opcion", '1.084em');
+      } else {
+        select.value = localStorage.getItem("fuente-texto-himnos-opcion");
       }
-      document.getElementById("app").innerHTML = `
+      select.addEventListener('change', () => {
+        const valorSeleccionado = select.value;
+        const textoSeleccionado = select.options[select.selectedIndex].text;
+        /*console.log(`Valor seleccionado: ${valorSeleccionado}`);
+        console.log(`Texto seleccionado: ${textoSeleccionado}`);
+        alert(valorSeleccionado)*/
+        localStorage.setItem("fuente-texto-himnos-opcion", valorSeleccionado);
+        localStorage.setItem("fuente-texto-himnos-valor", textoSeleccionado);
+
+        //select.value = 'opcion3';
+      });
+    }
+    document.getElementById("app").innerHTML = `
       <main class="pagina pag-menu" id="pag-menu">
         <h2>Configuración</h2>
         <details name="Opciones">
@@ -630,17 +633,17 @@ document.addEventListener('DOMContentLoaded', () => {
       </ul>
     </main>
       `;
-      borrarTodosLosDatos();
-      tamanoFuenteHimnosCambiar("fuente-himnos-tamaño")
-    }
-    function acercaDe() {
-      function buttonReinstallApp() {
-        document.getElementById("btn-reinstall-app").addEventListener('click', () => {
-          updateServiceWorker();
-            location.reload(true);
-        });
-    }
-      document.getElementById("app").innerHTML = `
+    borrarTodosLosDatos();
+    tamanoFuenteHimnosCambiar("fuente-himnos-tamaño")
+  }
+  function buttonReinstallApp(id) {
+    document.getElementById(id).addEventListener('click', () => {
+      updateServiceWorker();
+      location.reload(true);
+    });
+  }
+  function acercaDe() {
+    document.getElementById("app").innerHTML = `
       <main class="pagina acercaDe" id="acercaDe">
         <h2>Himnario Presbiteriano by Cahuich.com</h2>
         <p>Una agradecimiento aqui ira.</p>
@@ -689,81 +692,81 @@ document.addEventListener('DOMContentLoaded', () => {
         </p>
       </main>
       `;
-      buttonReinstallApp()
-    }
+    buttonReinstallApp("btn-reinstall-app")
+  }
 
-    function home() {
-      cargarHome()
-      himnosContinuar(himnosVariable, localStorage.getItem('data-himnoVisible'))
-      barraHimnoAbierto(0, localStorage.getItem('data-himnoVisible'), himnosVariable);
-      document.getElementById("reciente-nav").style.display = 'none';
-      headerPagName(himnoURL);
-      favoritos(3, himnosVariable)
-      nombreDeUsuarioHome()
-    }
+  function home() {
+    cargarHome()
+    himnosContinuar(himnosVariable, localStorage.getItem('data-himnoVisible'))
+    barraHimnoAbierto(0, localStorage.getItem('data-himnoVisible'), himnosVariable);
+    document.getElementById("reciente-nav").style.display = 'none';
+    headerPagName(himnoURL);
+    favoritos(3, himnosVariable)
+    nombreDeUsuarioHome()
+  }
 
-    function subVisorDeEventos() {
-      window.scroll(0,0);
-          favoritos(1);
-          //favoritos(3, 0, himnosVariable);
-    }
+  function subVisorDeEventos() {
+    window.scroll(0, 0);
+    favoritos(1);
+    //favoritos(3, 0, himnosVariable);
+  }
   function visorDeEventos() {
     document.addEventListener('click', () => {
-        subVisorDeEventos();
+      subVisorDeEventos();
     });
   }
-    
-    //Iniciar funciones aqui
-    //visorDeEventos();
-    scroolUpDowm();
-    pantallaDeBievenidaIniciador()
 
-    let himnoURL = window.location.hash.replace('#', '');
+  //Iniciar funciones aqui
+  //visorDeEventos();
+  scroolUpDowm();
+  pantallaDeBievenidaIniciador()
 
-    window.addEventListener('hashchange', (e) => {
-        himnoURL = window.location.hash.replace('#', '')
-        barraHimnoAbierto(0, localStorage.getItem('data-himnoVisible'), himnosVariable);
-        headerPagName(himnoURL)
-        document.getElementById("reciente-nav").style.display = 'block';
-        document.getElementById("nav-pag").classList.remove("nav-scroll");
-        document.getElementById("barra-de-pagina").innerHTML = '';
+  let himnoURL = window.location.hash.replace('#', '');
 
-        if (himnoURL === 'Himnos') {
-            //cargar_himno(himnos[himnoURL])
-            mostrarHimnosPag(himnosVariable)
-            document.getElementById("nav-pag").classList.add("nav-scroll");
-        } else if (himnoURL === 'Buscar') {
-          //cargar_himno(himnos[himnoURL])
-          buscarPag();
-        } else if (himnoURL === 'Menu') {
-          //cargar_himno(himnos[himnoURL])
-          menu();
-        } else if (himnoURL === 'AcercaDe') {
-          //cargar_himno(himnos[himnoURL])
-          acercaDe();
-        } else if (himnoURL) {
-          //mostrarHimnosPag(himnosVariable)
-          cargaHimno()
-          mostarHimno(himnoURL);
-          memoriaBD('himnoreciente', himnoURL);
-          barraHimnoAbierto(1, localStorage.getItem('data-himnoVisible'), himnosVariable);
-          document.getElementById("nav-pag").classList.add("nav-scroll");
-          favoritos(1)
-        } else {
-            //cargar_home()
-            home(himnoURL)
-        }
-    }, false);
+  window.addEventListener('hashchange', (e) => {
+    himnoURL = window.location.hash.replace('#', '')
+    barraHimnoAbierto(0, localStorage.getItem('data-himnoVisible'), himnosVariable);
+    headerPagName(himnoURL)
+    document.getElementById("reciente-nav").style.display = 'block';
+    document.getElementById("nav-pag").classList.remove("nav-scroll");
+    document.getElementById("barra-de-pagina").innerHTML = '';
 
-    /*const himnoActual = localStorage.getItem('himnoActual');
-
-    if (himnoActual) {
+    if (himnoURL === 'Himnos') {
+      //cargar_himno(himnos[himnoURL])
+      mostrarHimnosPag(himnosVariable)
+      document.getElementById("nav-pag").classList.add("nav-scroll");
+    } else if (himnoURL === 'Buscar') {
+      //cargar_himno(himnos[himnoURL])
+      buscarPag();
+    } else if (himnoURL === 'Menu') {
+      //cargar_himno(himnos[himnoURL])
+      menu();
+    } else if (himnoURL === 'AcercaDe') {
+      //cargar_himno(himnos[himnoURL])
+      acercaDe();
+    } else if (himnoURL) {
+      //mostrarHimnosPag(himnosVariable)
+      cargaHimno()
+      mostarHimno(himnoURL);
+      memoriaBD('himnoreciente', himnoURL);
+      barraHimnoAbierto(1, localStorage.getItem('data-himnoVisible'), himnosVariable);
+      document.getElementById("nav-pag").classList.add("nav-scroll");
+      favoritos(1)
     } else {
+      //cargar_home()
       home(himnoURL)
-    }*/
+    }
+  }, false);
+
+  /*const himnoActual = localStorage.getItem('himnoActual');
+
+  if (himnoActual) {
+  } else {
     home(himnoURL)
+  }*/
+  home(himnoURL)
 });
 
-(function() {
+(function () {
   serviceWorkerInit();
 })();
