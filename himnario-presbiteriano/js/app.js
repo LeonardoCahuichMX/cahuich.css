@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   }
 
-  function actualizacion() {
+  /*function actualizacion() {
     const request = new XMLHttpRequest();
     request.open('GET', 'https://librarys.cahuich.com/versiones/hp/versiones.json', true);
     request.onload = function() {
@@ -99,13 +99,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const jsonData = JSON.parse(request.responseText);
         
         localStorage.setItem('versionJson', jsonData.version);
-        // Procesar el objeto JSON
       }
     };
     request.send();
 
     const versionJson = localStorage.getItem('versionJson');
-    //alert(versionJson+";"+webSiteData.version)
 
     if(versionJson !== webSiteData.version) {
       document.getElementById("actualizacion").style.display = 'block';
@@ -114,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <button type="button">Actualizar</button>`;
     }
   }
-  actualizacion();
+  actualizacion();*/
 
 
     function tamanoLetraHimno(id) {
