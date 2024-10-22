@@ -7,7 +7,7 @@ webSiteData = {
   nameMarquet: 'Himnario <b>Prebisteriano</b>',
   author: 'Leonardo Cahuich',
   dev: 'Leonardo Cahuich',
-  version: '0.0.1.4.4',
+  version: '0.0.1.4.5',
 }
 
 function serviceWorkerInit() {
@@ -23,6 +23,12 @@ function serviceWorkerInit() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+/*  document.getElementById('#splash').addEventListener('transitionend', (event) => {
+    event.target.remove();
+  });
+  requestAnimationFrame(() => {
+    document.getElementById('#splash').classList.add('animate');
+  });*/
 
     const himnosVariable = himnos;
 

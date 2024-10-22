@@ -16,6 +16,7 @@ var filesToCache = [
     '../cahuich-css/base/parts/code.css',
     '../cahuich-css/base/parts/misc.css',
     '../cahuich-css/base/parts/print.css',
+    './js/iossplah.js',
 ];
 
 var himnosCache = "himnos_v1";
