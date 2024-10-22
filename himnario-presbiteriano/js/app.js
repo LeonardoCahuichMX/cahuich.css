@@ -7,7 +7,7 @@ webSiteData = {
   nameMarquet: 'Himnario <b>Prebisteriano</b>',
   author: 'Leonardo Cahuich',
   dev: 'Leonardo Cahuich',
-  version: '0.0.1.4.10',
+  version: '0.0.1.4.11',
 }
 
 function serviceWorkerInit() {
@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let iDos = retrievedArrayHimnosFavoritos[i];
                 console.log(retrievedArrayHimnosFavoritos[i], himnos[iDos].titulo);
                 document.getElementById("recientes").innerHTML += `
-                <a href="#${himnos[iDos].numero}">
+                <a class="himno" href="#${himnos[iDos].numero}">
                     <div class="contenido">
                         <div class="numero">
                         #${himnos[iDos].numero}
@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         document.getElementById("continuar").innerHTML = '';
         document.getElementById("continuar").innerHTML += `
-        <a href="#${himnos[numero]['numero']}">
+        <a class="himno" href="#${himnos[numero]['numero']}">
             <div class="titulo">
                 Continuar con
             </div>
@@ -303,13 +303,15 @@ document.addEventListener('DOMContentLoaded', () => {
       let preCargaHimnosPagVar = '';
         for(let prop in himnos) {
             preCargaHimnosPagVar += `
-            <a href="#${himnos[prop]['numero']}">
+            <a class="himno" href="#${himnos[prop]['numero']}">
+              <div class="contenido">
                 <div class="numero">
                 #${himnos[prop]['numero']}
                 </div>
                 <div class="titulo">
                 ${himnos[prop]['titulo']}
                 </div>
+              </div>
             </a>`;
         }
         return preCargaHimnosPagVar;
@@ -409,7 +411,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <p><b>Puede usted buscar por:</b></p>
               <code>Numero</code>
               <code>Nombre</code>
-              <code>Autores</code>
+              <code>Autores</code><br>
               <code>Referencias biblicas</code>
             <br>
             <p>Al buscar por numero solo presiona en "→" para ir al himno</p>
@@ -448,16 +450,15 @@ document.addEventListener('DOMContentLoaded', () => {
       if (search.value.length > 3){
         for(let prop in himnosVariable) {
           let str = himnos[prop]['titulo'].toLowerCase();
-          let str2 = himnos[prop]['numero'];
           const busqueda = search.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
           if(str.search(busqueda) != -1) {
             resultados.innerHTML += `
-              <div id="resultado">
-                <a href="#${himnosVariable[prop]['numero']}">
-                  <span>${himnosVariable[prop]['numero']}</span>
-                  <span>${himnosVariable[prop]['titulo']}</span>
+                <a class="himno" href="#${himnosVariable[prop]['numero']}">
+                  <div class="contenido">
+                    <div class="numero">${himnosVariable[prop]['numero']}</div>
+                    <div class="titulo">${himnosVariable[prop]['titulo']}</div>
+                  </div>
                 </a>
-              </div>
               `;
           }
 
@@ -465,34 +466,33 @@ document.addEventListener('DOMContentLoaded', () => {
             let strReferencias = himnosVariable[prop]['referencias'][propDos].toLowerCase();
             if(strReferencias.search(busqueda) != -1) {
               document.getElementById("resultados").innerHTML += `
-                <div id="resultado">
-                  <a href="#${himnosVariable[prop]['numero']}">
-                  <span>${himnosVariable[prop]['numero']}</span>
-                  <span>${himnosVariable[prop]['titulo']}</span>
-                  <br>
-                  <br>
-                  <span>Referencias</span>
-                  <br>
-                  <span>${himnosVariable[prop]['referencias'][propDos]}</span>
-                  </a>
-                </div>`;
+                <a class="himno" href="#${himnosVariable[prop]['numero']}">
+                  <div class="contenido">
+                    <div class="numero">
+                    #${himnosVariable[prop]['numero']}
+                    </div>
+                    <div class="titulo">
+                    ${himnosVariable[prop]['titulo']}
+                    </div>
+                  </div>
+                </a>`;
             }
           }
           for(let propDos in himnosVariable[prop]['autores']) {
             let strReferencias = himnosVariable[prop]['autores'][propDos].toLowerCase();
             if(strReferencias.search(busqueda) != -1) {
               document.getElementById("resultados").innerHTML += `
-                <div id="resultado">
-                <a href="#${himnosVariable[prop]['numero']}">
-                <span>${himnosVariable[prop]['numero']}</span>
-                <span>${himnosVariable[prop]['titulo']}</span>
-                              <br>
-                              <br>
-                              <span>Autores</span>
-                              <br>
-                              <span>${himnosVariable[prop]['autores'][propDos]}</span>
-                          </a>
-                      </div>`;
+                <a class="himno" href="#${himnosVariable[prop]['numero']}">
+                  <div class="contenido">
+                    <div class="numero">${himnosVariable[prop]['numero']}</div>
+                    <div class="titulo">${himnosVariable[prop]['titulo']}</div>
+                    <br>
+                    <br>
+                    <span>Autores</span>
+                    <br>
+                    <span>${himnosVariable[prop]['autores'][propDos]}</span>
+                  </div>
+                </a>`;
                   }
               }
 
