@@ -260,21 +260,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function himnosContinuar(himnos, numero) {
-      document.getElementById("continuar").innerHTML = '';
-      document.getElementById("continuar").innerHTML += `
-      <a href="#${himnos[numero]['numero']}">
-          <div class="titulo">
-              Continuar con
-          </div>
-          <div class="contenido">
-              <div class="numero">
-              #${himnos[numero]['numero']}
-              </div>
-              <div class="nombre">
-                  ${himnos[numero]['titulo']}
-              </div>
-          </div>
-      </a>`;
+      if(numero !== '') {
+        document.getElementById("continuar").innerHTML = '';
+        document.getElementById("continuar").innerHTML += `
+        <a href="#${himnos[numero]['numero']}">
+            <div class="titulo">
+                Continuar con
+            </div>
+            <div class="contenido">
+                <div class="numero">
+                #${himnos[numero]['numero']}
+                </div>
+                <div class="nombre">
+                    ${himnos[numero]['titulo']}
+                </div>
+            </div>
+        </a>`;
+      }
   }
 
     function precargarHimnosPag(himnos) {
@@ -413,13 +415,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function barraHimnoAbierto(opcion, himno, himnos) {
-      document.getElementById("himno-reciente").innerHTML = `
+      if(himno !== '') {
+        document.getElementById("himno-reciente").innerHTML = `
         <li><a href="#${himno}">Himno #${himnos[himno].numero} - ${himnos[himno].titulo}</li>
-      `;
-      if(opcion === 1) {
-          document.getElementById("reciente-nav").classList.add("mh");
-      } else {
-          document.getElementById("reciente-nav").classList.remove("mh");
+        `;
+        if(opcion === 1) {
+            document.getElementById("reciente-nav").classList.add("mh");
+        } else {
+            document.getElementById("reciente-nav").classList.remove("mh");
+        }
       }
     }
 
@@ -582,8 +586,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let himnoURL = window.location.hash.replace('#', '');
 
     if(!localStorage.getItem('data-himnoVisible') || !localStorage.getItem('himnoActual')) {
-      localStorage.setItem('data-himnoVisible')
-      localStorage.setItem('himnoActual')
+      localStorage.setItem('data-himnoVisible', '')
+      localStorage.setItem('himnoActual', '')
     }
 
     window.addEventListener('hashchange', (e) => {
