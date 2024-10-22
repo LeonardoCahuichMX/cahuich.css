@@ -2,6 +2,14 @@
 import {scroolUpDowm} from '../../js/modulos/scroolUpDowm.js';
 import {himnos} from './modulos/himnos.js'
 
+webSiteData = {
+  name: 'Himnario Prebisteriano',
+  nameMarquet: 'Himnario <b>Prebisteriano</b>',
+  author: 'Leonardo Cahuich',
+  dev: 'Leonardo Cahuich',
+  version: '0.0.1.4.2',
+}
+
 function serviceWorkerInit() {
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
@@ -23,13 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
       <main class="pantalla-bienvenida" id="pantalla-bienvenida">
         <div class="fondo">
           <div class="fondo">
-            <h1>Bievenido a la app <span id="app-name"><script>insertar('app-name', webSiteData.nameMarquet)</script></span></h1>
+            <h1>Bievenido a la app <span id="app-name">${webSiteData.nameMarquet}</span></h1>
             <p>Tu nombre:</p>
             <form id="form-nombre-usuario">
               <input type="text" placeholder="Pon tu nombre o apodo aqui" style="display: inline-block;" id="text-nombre-usuario">
             </form>
             <div class="bievenida-resultado"></div>
-            <h6>Versión: <span id="version-bienvenida"><script>insertar('version-bienvenida', webSiteData.version)</script></span></h6>
+            <h6>Versión: <span id="version-bienvenida">${webSiteData.version}</span></h6>
 
             <button type="button" style="display: block;width: 90%;" id="button-nombre-usuario">Continuar</button>
           </div>
@@ -537,7 +545,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </p>
 
           <h3>Versión</h3>
-          <p id="version"><script>insertar('version', webSiteData.version)</script></p>
+          <p id="version">${webSiteData.version}</p>
                 
         </p>
       </main>
