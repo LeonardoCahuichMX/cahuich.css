@@ -7,7 +7,7 @@ webSiteData = {
   nameMarquet: 'Himnario <b>Prebisteriano</b>',
   author: 'Leonardo Cahuich',
   dev: 'Leonardo Cahuich',
-  version: '0.0.1.4.9',
+  version: '0.0.1.4.10',
 }
 
 function serviceWorkerInit() {
@@ -412,11 +412,11 @@ document.addEventListener('DOMContentLoaded', () => {
               <code>Autores</code>
               <code>Referencias biblicas</code>
             <br>
-            <p>Al buscar por numero solo presiona en buscar para it al himno</p>
+            <p>Al buscar por numero solo presiona en "→" para ir al himno</p>
           </div>
           <form id="form-buscar">
             <input type="search" placeholder="Buscar himnos..." id="texto-buscar">
-            <input type="submit" value="Buscar" id="btn-buscar">
+            <input type="submit" value="→" id="btn-buscar">
           </form>
           <!--<div class="ayuda" id="buscar-ayuda">
             <h3>Directrices:</h3>
