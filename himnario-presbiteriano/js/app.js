@@ -2,6 +2,18 @@
 import {scroolUpDowm} from '../../js/modulos/scroolUpDowm.js';
 import {himnos} from './modulos/himnos.js'
 
+function serviceWorkerInit() {
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('./regist_serviceWorker.js').then(function (registration) {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }, function (err) {
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    });
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const himnosVariable = himnos;
@@ -606,14 +618,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-/*(function() {
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function () {
-          navigator.serviceWorker.register('./regist_serviceWorker.js').then(function (registration) {
-            console.log('ServiceWorker registration successful with scope: ', registration.scope);
-          }, function (err) {
-            console.log('ServiceWorker registration failed: ', err);
-          });
-        });
-      }
-  })();*/
+(function() {
+  serviceWorkerInit();
+})();
