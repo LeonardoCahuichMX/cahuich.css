@@ -443,7 +443,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <p>Al buscar por numero solo presiona en "→" para ir al himno</p>
           </div>
           <form id="form-buscar">
-            <input type="search" placeholder="Buscar himnos..." id="texto-buscar">
+            <label for="search-input" style="display:none;">Search:</label>
+            <input type="search" name="q" placeholder="Buscar himnos..." id="texto-buscar">
             <input type="submit" value="→" id="btn-buscar">
           </form>
           <!--<div class="ayuda" id="buscar-ayuda">
