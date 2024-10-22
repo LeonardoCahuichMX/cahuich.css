@@ -7,7 +7,7 @@ webSiteData = {
   nameMarquet: 'Himnario <b>Prebisteriano</b>',
   author: 'Leonardo Cahuich',
   dev: 'Leonardo Cahuich',
-  version: '0.0.1.4.12.2',
+  version: '0.0.1.4.13',
 }
 
 function serviceWorkerInit() {
@@ -572,6 +572,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function buttonReinstallApp(id) {
+    document.getElementById(id).addEventListener('click', () => {
+      updateServiceWorker();
+      location.reload(true);
+    });
+  }
   function menu() {
     function borrarTodosLosDatos() {
       document.getElementById("boton-borrar-datos").addEventListener('click', () => {
@@ -628,19 +634,29 @@ document.addEventListener('DOMContentLoaded', () => {
             hasta que se conecte a internet.
           </h6>
         </details>
+        <details name="Opciones">
+          <summary>Sistema</summary>
+          <div class="caja-borrar-datos">
+            <div class="texto">
+              Reinstalar app
+            </div>
+            <button type="button" id="btn-reinstall-app">Reinstalar</button>
+          </div>
+          <h6 style="font-weight: normal;">Advertencia: Esta opcion recargara-reinstalara la app,
+            por lo que si no cuenta con conexion a internet, no podra acceder a esta.
+          </h6>
+          <hr>
+          <p>Versión</p>
+          <p id="version">${webSiteData.version}</p>
+        </details>
       <ul>
         <li><a href="#AcercaDe">Acerca de</a></li>
       </ul>
     </main>
       `;
     borrarTodosLosDatos();
-    tamanoFuenteHimnosCambiar("fuente-himnos-tamaño")
-  }
-  function buttonReinstallApp(id) {
-    document.getElementById(id).addEventListener('click', () => {
-      updateServiceWorker();
-      location.reload(true);
-    });
+    tamanoFuenteHimnosCambiar("fuente-himnos-tamaño");
+    buttonReinstallApp("btn-reinstall-app");
   }
   function acercaDe() {
     document.getElementById("app").innerHTML = `
@@ -679,20 +695,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <path fill="#ecedee" d="M226 208H94l5 57h127zm0-114H84l5 56h137zm0 261l-124-33 7 60 117 32z"/>
             <path fill="#fff" d="M226 265h69l-7 73-62 17v59l115-32 26-288H226v56h80l-6 58h-74z"/>
           </svg>
-          <hr>
-          <h3>Desarrollo</h3>
-          <button type="button" id="btn-reinstall-app">Reinstalar App</button>
-          <p>Advertencia: Esta opcion recargara-reinstalara la app,
-            por lo que si no cuenta con conexion a internet, no podra acceder a esta.
-          </p>
-
-          <h3>Versión</h3>
-          <p id="version">${webSiteData.version}</p>
-                
         </p>
       </main>
       `;
-    buttonReinstallApp("btn-reinstall-app")
   }
 
   function home() {
