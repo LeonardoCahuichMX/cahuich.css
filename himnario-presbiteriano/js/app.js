@@ -7,7 +7,7 @@ webSiteData = {
   nameMarquet: 'Himnario <b>Prebisteriano</b>',
   author: 'Leonardo Cahuich',
   dev: 'Leonardo Cahuich',
-  version: '0.0.1.4.2',
+  version: '0.0.1.4.3',
 }
 
 function serviceWorkerInit() {
