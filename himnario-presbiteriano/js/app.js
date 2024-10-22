@@ -581,6 +581,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let himnoURL = window.location.hash.replace('#', '');
 
+    if(!localStorage.getItem('data-himnoVisible') || !localStorage.getItem('himnoActual')) {
+      localStorage.setItem('data-himnoVisible')
+      localStorage.setItem('himnoActual')
+    }
+
     window.addEventListener('hashchange', (e) => {
         himnoURL = window.location.hash.replace('#', '')
         barraHimnoAbierto(0, localStorage.getItem('data-himnoVisible'), himnosVariable);
