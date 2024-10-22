@@ -7,7 +7,7 @@ webSiteData = {
   nameMarquet: 'Himnario <b>Prebisteriano</b>',
   author: 'Leonardo Cahuich',
   dev: 'Leonardo Cahuich',
-  version: '0.0.1.4.5',
+  version: '0.0.1.4.9',
 }
 
 function serviceWorkerInit() {
@@ -405,6 +405,15 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById("app").innerHTML = `
       <main class="pagina buscar" id="buscar">
         <div class="fondo">
+        <div class="ayuda" id="buscar-ayuda">
+            <p><b>Puede usted buscar por:</b></p>
+              <code>Numero</code>
+              <code>Nombre</code>
+              <code>Autores</code>
+              <code>Referencias biblicas</code>
+            <br>
+            <p>Al buscar por numero solo presiona en buscar para it al himno</p>
+          </div>
           <form id="form-buscar">
             <input type="search" placeholder="Buscar himnos..." id="texto-buscar">
             <input type="submit" value="Buscar" id="btn-buscar">
