@@ -7,7 +7,7 @@ webSiteData = {
   nameMarquet: 'Himnario <b>Prebisteriano</b>',
   author: 'Leonardo Cahuich',
   dev: 'Leonardo Cahuich',
-  version: '0.0.1.4.3',
+  version: '0.0.1.4.4',
 }
 
 function serviceWorkerInit() {
@@ -25,6 +25,11 @@ function serviceWorkerInit() {
 document.addEventListener('DOMContentLoaded', () => {
 
     const himnosVariable = himnos;
+
+    if(!localStorage.getItem('data-himnoVisible') || !localStorage.getItem('himnoActuale')) {
+      localStorage.setItem('data-himnoVisible', 1)
+      localStorage.setItem('himnoActual', 1)
+    }
 
     function pantallaDeBievenida() {
       document.body.innerHTML += `
@@ -54,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function pantallaDeBievenidaIniciador() {
       if(!localStorage.getItem('nombreUsuario')) {
-        //alert("hola")
         pantallaDeBievenida();
           function nombreUsuario() {
               const nombre = document.getElementById("text-nombre-usuario").value;
@@ -261,23 +265,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function himnosContinuar(himnos, numero) {
-      if(numero !== '') {
-        document.getElementById("continuar").innerHTML = '';
-        document.getElementById("continuar").innerHTML += `
-        <a href="#${himnos[numero]['numero']}">
-            <div class="titulo">
-                Continuar con
-            </div>
-            <div class="contenido">
-                <div class="numero">
-                #${himnos[numero]['numero']}
-                </div>
-                <div class="nombre">
-                    ${himnos[numero]['titulo']}
-                </div>
-            </div>
-        </a>`;
-      }
+      document.getElementById("continuar").innerHTML = '';
+      document.getElementById("continuar").innerHTML += `
+      <a href="#${himnos[numero]['numero']}">
+          <div class="titulo">
+              Continuar con
+          </div>
+          <div class="contenido">
+              <div class="numero">
+              #${himnos[numero]['numero']}
+              </div>
+              <div class="nombre">
+                  ${himnos[numero]['titulo']}
+              </div>
+          </div>
+      </a>`;
   }
 
     function precargarHimnosPag(himnos) {
@@ -416,15 +418,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function barraHimnoAbierto(opcion, himno, himnos) {
-      if(himno !== '') {
-        document.getElementById("himno-reciente").innerHTML = `
+      document.getElementById("himno-reciente").innerHTML = `
         <li><a href="#${himno}">Himno #${himnos[himno].numero} - ${himnos[himno].titulo}</li>
-        `;
-        if(opcion === 1) {
-            document.getElementById("reciente-nav").classList.add("mh");
-        } else {
-            document.getElementById("reciente-nav").classList.remove("mh");
-        }
+      `;
+      if(opcion === 1) {
+          document.getElementById("reciente-nav").classList.add("mh");
+      } else {
+          document.getElementById("reciente-nav").classList.remove("mh");
       }
     }
 
@@ -586,11 +586,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let himnoURL = window.location.hash.replace('#', '');
 
-    if(!localStorage.getItem('data-himnoVisible') || !localStorage.getItem('himnoActual')) {
-      localStorage.setItem('data-himnoVisible', '')
-      localStorage.setItem('himnoActual', '')
-    }
-
     window.addEventListener('hashchange', (e) => {
         himnoURL = window.location.hash.replace('#', '')
         barraHimnoAbierto(0, localStorage.getItem('data-himnoVisible'), himnosVariable);
@@ -627,13 +622,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, false);
 
-    const himnoActual = localStorage.getItem('himnoActual')
+    /*const himnoActual = localStorage.getItem('himnoActual');
 
     if (himnoActual) {
-        //cargar_himno(himnos[himnoActual])
     } else {
       home(himnoURL)
-    }
+    }*/
+    home(himnoURL)
 });
 
 (function() {
