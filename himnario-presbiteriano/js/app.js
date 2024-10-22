@@ -6,6 +6,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const himnosVariable = himnos;
 
+    function pantallaDeBievenida() {
+      document.getElementById("app").innerHTML = `
+      <main class="pantalla-bienvenida" id="pantalla-bienvenida">
+        <div class="fondo">
+          <div class="fondo">
+            <h1>Bievenido a la app <span id="app-name"><script>insertar('app-name', webSiteData.nameMarquet)</script></span></h1>
+            <p>Tu nombre:</p>
+            <form id="form-nombre-usuario">
+              <input type="text" placeholder="Pon tu nombre o apodo aqui" style="display: inline-block;" id="text-nombre-usuario">
+            </form>
+            <div class="bievenida-resultado"></div>
+            <h6>Versión: <span id="version-bienvenida"><script>insertar('version-bienvenida', webSiteData.version)</script></span></h6>
+
+            <button type="button" style="display: block;width: 90%;" id="button-nombre-usuario">Continuar</button>
+          </div>
+        </div>
+      </main>
+      `;
+    }
+
+    function nombreDeUsuarioHome() {
+      if(localStorage.getItem('nombreUsuario')) {
+        document.getElementById("nombre-usario-en-home").innerHTML = localStorage.getItem("nombreUsuario");
+      }
+    }
+    
+    function pantallaDeBievenidaIniciador() {
+      pantallaDeBievenida();
+      if(!localStorage.getItem('nombreUsuario')) {
+          function nombreUsuario() {
+              const nombre = document.getElementById("text-nombre-usuario").value;
+              localStorage.setItem("nombreUsuario", nombre);
+
+              document.getElementById("pantalla-bienvenida").style.display = 'none';
+          }
+
+          document.getElementById("form-nombre-usuario").addEventListener("submit", function(event) {
+              event.preventDefault();
+              nombreUsuario()
+              //alert("hola 2");
+          });
+          document.getElementById("button-nombre-usuario").addEventListener('click', () => {
+              nombreUsuario()
+              //alert("hola");
+          });
+      }
+  }
+
 
     function tamanoLetraHimno(id) {
       if(!localStorage.getItem("fuente-texto-himnos-opcion")) {
@@ -492,6 +540,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById("reciente-nav").style.display = 'none';
       headerPagName(himnoURL);
       favoritos(3, himnosVariable)
+      nombreDeUsuarioHome()
     }
 
     function subVisorDeEventos() {
@@ -508,6 +557,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //Iniciar funciones aqui
     //visorDeEventos();
     scroolUpDowm();
+    pantallaDeBievenidaIniciador()
 
     let himnoURL = window.location.hash.replace('#', '');
 

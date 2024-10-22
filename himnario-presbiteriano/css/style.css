@@ -508,7 +508,6 @@ body {
   width: 100%;
 
   z-index: 99999;
-  display: none;
   align-content: center;
   box-sizing: border-box;
 }
