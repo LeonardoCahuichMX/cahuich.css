@@ -216,7 +216,12 @@ textarea {
     margin-top: 50px;
   }
     .portada .img-app img {
-      box-shadow: 0 0 40px #666;
+      background-color: #000;
+      box-shadow: 0 10px 40px #666;
+      /*border: 10px solid #000;*/
+      border-radius: 10px !important;
+      outline: 5px solid #666;
+      /*outline-offset: -10px;*/
     }
 
 /* ==========================================================================

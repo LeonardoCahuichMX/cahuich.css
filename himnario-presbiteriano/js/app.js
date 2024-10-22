@@ -7,7 +7,7 @@ webSiteData = {
   nameMarquet: 'Himnario <b>Prebisteriano</b>',
   author: 'Leonardo Cahuich',
   dev: 'Leonardo Cahuich',
-  version: '0.0.1.4.13',
+  version: '0.0.1.4.13.2',
 }
 
 function serviceWorkerInit() {
@@ -636,6 +636,8 @@ document.addEventListener('DOMContentLoaded', () => {
         </details>
         <details name="Opciones">
           <summary>Sistema</summary>
+          <p><b>Advertencia:</b> Cuidado con las opciones en esta zona.</p>
+          <hr>
           <div class="caja-borrar-datos">
             <div class="texto">
               Reinstalar app

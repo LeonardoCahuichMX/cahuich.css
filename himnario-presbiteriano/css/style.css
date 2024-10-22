@@ -355,6 +355,10 @@ body {
 }
 
 
+/* ==========================================================================
+   Reciente Nav
+   ========================================================================== */
+
 #reciente-nav {
   width: 90%;
   height: 60px;
@@ -373,8 +377,14 @@ body {
 }
 
 #reciente-nav.mh {
-  background-color: transparent !important;
+  background-color: #111 !important;
   font-size: 3.5dvh !important;
+
+  padding: 10px;
+
+  align-content: center;
+
+  height: auto;
 
   font-weight: bold;
   text-align: center;
