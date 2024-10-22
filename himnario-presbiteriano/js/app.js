@@ -7,7 +7,7 @@ webSiteData = {
   nameMarquet: 'Himnario <b>Prebisteriano</b>',
   author: 'Leonardo Cahuich',
   dev: 'Leonardo Cahuich',
-  version: '0.0.1.4.11.1',
+  version: '0.0.1.4.11.2',
 }
 
 function serviceWorkerInit() {
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function actualizacion() {
     const request = new XMLHttpRequest();
-    request.open('GET', 'https://librarys.cahuich.com/himnario-presbiteriano/versiones.json', true);
+    request.open('GET', 'https://librarys.cahuich.com/versiones/hp/versiones.json', true);
     request.onload = function() {
       if (request.status === 200) {
         const jsonData = JSON.parse(request.responseText);
