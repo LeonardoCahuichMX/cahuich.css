@@ -400,6 +400,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="fondo">
           <form id="form-buscar">
             <input type="search" placeholder="Buscar himnos..." id="texto-buscar">
+            <input type="submit" value="Buscar" id="btn-buscar">
           </form>
           <!--<div class="ayuda" id="buscar-ayuda">
             <h3>Directrices:</h3>
@@ -431,6 +432,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (search.value.length > 3){
         for(let prop in himnosVariable) {
           let str = himnos[prop]['titulo'].toLowerCase();
+          let str2 = himnos[prop]['numero'];
           const busqueda = search.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
           if(str.search(busqueda) != -1) {
             resultados.innerHTML += `
@@ -490,9 +492,9 @@ document.addEventListener('DOMContentLoaded', () => {
               let numero = parseInt(search.value)
               if (numero > 0 && numero < 707){
                 location.href = `#${numero}`
-              } else {
+              }/* else {
                 resultados.innerHTML = "No existe el himno...";
-              }
+              }*/
             })
         }
         searchhimno(himnosVariable)

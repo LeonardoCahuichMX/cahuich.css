@@ -574,6 +574,8 @@ body {
 }
 
 .pagina.buscar #form-buscar {
+  display: grid;
+  grid-template-columns: 75% 25%;
 }
 .pagina.buscar .fondo input[type="search"] {
   width: 100%;
