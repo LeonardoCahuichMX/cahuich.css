@@ -7,7 +7,7 @@ webSiteData = {
   nameMarquet: 'Himnario <b>Prebisteriano</b>',
   author: 'Leonardo Cahuich',
   dev: 'Leonardo Cahuich',
-  version: '0.0.1.4.12',
+  version: '0.0.1.4.12.2',
 }
 
 function serviceWorkerInit() {
@@ -343,9 +343,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function mostrarHimnosPag(himnos) {
     document.getElementById("app").innerHTML = `
       <main class="pagina pag-himnos" id="pag-himnos">
-        <div class="informacion">
+        <!--<div class="informacion">
           <p>Los himnos que ya a visto estaran resaltados de un color distinto.</p>
-        </div>
+        </div>-->
         <div class="himnos" id="himnos">
         </div>
       </main>
