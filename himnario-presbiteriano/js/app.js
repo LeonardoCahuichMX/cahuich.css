@@ -24,7 +24,7 @@ function serviceWorkerInit() {
 function updateServiceWorker() {
   navigator.serviceWorker.getRegistration().then(registration => {
     registration.unregister().then(() => {
-      navigator.serviceWorker.register('/new-sw.js');
+      navigator.serviceWorker.register('./regist_serviceWorker.js');
     });
   });
 }
