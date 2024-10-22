@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const himnosVariable = himnos;
 
     function pantallaDeBievenida() {
-      document.getElementById("app").innerHTML = `
+      document.body.innerHTML += `
       <main class="pantalla-bienvenida" id="pantalla-bienvenida">
         <div class="fondo">
           <div class="fondo">
@@ -53,8 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function pantallaDeBievenidaIniciador() {
-      pantallaDeBievenida();
       if(!localStorage.getItem('nombreUsuario')) {
+        //alert("hola")
+        pantallaDeBievenida();
           function nombreUsuario() {
               const nombre = document.getElementById("text-nombre-usuario").value;
               localStorage.setItem("nombreUsuario", nombre);
