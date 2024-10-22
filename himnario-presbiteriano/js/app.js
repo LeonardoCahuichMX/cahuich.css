@@ -319,7 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    function searchhimno(himnosVariable) {
+    /*function searchhimno(himnosVariable) {
       function buscador(himnosVariable) {
           let textoDeBuscar = document.getElementById("texto-buscar").value;
           document.getElementById("resultados").innerHTML = "";
@@ -392,16 +392,16 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById("botton-buscar").addEventListener('click', () => {
           buscador(himnosVariable);
       });
-  }
+  }*/
+
     function buscarPag() {
       document.getElementById("app").innerHTML = `
       <main class="pagina buscar" id="buscar">
         <div class="fondo">
           <form id="form-buscar">
             <input type="search" placeholder="Buscar himnos..." id="texto-buscar">
-            <input type="button" value="Buscar" id="botton-buscar">
           </form>
-          <div class="ayuda" id="buscar-ayuda">
+          <!--<div class="ayuda" id="buscar-ayuda">
             <h3>Directrices:</h3>
             <p>Puede usted buscar por:</p>
             <ul>
@@ -411,13 +411,92 @@ document.addEventListener('DOMContentLoaded', () => {
               <li>Referencias biblicas</li>
             </ul>
             <br>
-          </div>
+          </div>-->
           <div id="resultados">
           </div>
         </div>
       </main>
       `;
-    }
+      const inputField = document.getElementById('texto-buscar');
+      inputField.focus();
+
+  function searchhimno(himnosVariable) {
+    const himnos = himnosVariable;
+    let searchForm = document.getElementById("form-buscar");
+    let search = document.getElementById("texto-buscar");
+    let resultados = document.getElementById("resultados");
+
+    search.addEventListener('keyup', (e) => {
+      resultados.innerHTML = '';
+      if (search.value.length > 3){
+        for(let prop in himnosVariable) {
+          let str = himnos[prop]['titulo'].toLowerCase();
+          const busqueda = search.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+          if(str.search(busqueda) != -1) {
+            resultados.innerHTML += `
+              <div id="resultado">
+                <a href="#${himnosVariable[prop]['numero']}">
+                  <span>${himnosVariable[prop]['numero']}</span>
+                  <span>${himnosVariable[prop]['titulo']}</span>
+                </a>
+              </div>
+              `;
+          }
+
+          for(let propDos in himnosVariable[prop]['referencias']) {
+            let strReferencias = himnosVariable[prop]['referencias'][propDos].toLowerCase();
+            if(strReferencias.search(busqueda) != -1) {
+              document.getElementById("resultados").innerHTML += `
+                <div id="resultado">
+                  <a href="#${himnosVariable[prop]['numero']}">
+                  <span>${himnosVariable[prop]['numero']}</span>
+                  <span>${himnosVariable[prop]['titulo']}</span>
+                  <br>
+                  <br>
+                  <span>Referencias</span>
+                  <br>
+                  <span>${himnosVariable[prop]['referencias'][propDos]}</span>
+                  </a>
+                </div>`;
+            }
+          }
+          for(let propDos in himnosVariable[prop]['autores']) {
+            let strReferencias = himnosVariable[prop]['autores'][propDos].toLowerCase();
+            if(strReferencias.search(busqueda) != -1) {
+              document.getElementById("resultados").innerHTML += `
+                <div id="resultado">
+                <a href="#${himnosVariable[prop]['numero']}">
+                <span>${himnosVariable[prop]['numero']}</span>
+                <span>${himnosVariable[prop]['titulo']}</span>
+                              <br>
+                              <br>
+                              <span>Autores</span>
+                              <br>
+                              <span>${himnosVariable[prop]['autores'][propDos]}</span>
+                          </a>
+                      </div>`;
+                  }
+              }
+
+              }
+          } else if (e.key != 'Enter') {
+
+          }
+        })
+  
+        searchForm.addEventListener('submit', (e)=>{
+              e.preventDefault()
+              console.log(parseInt(search.value))
+              let numero = parseInt(search.value)
+              if (numero > 0 && numero < 707){
+                location.href = `#${numero}`
+              } else {
+                resultados.innerHTML = "No existe el himno...";
+              }
+            })
+        }
+        searchhimno(himnosVariable)
+  }
 
     function cargaHimno() {
       document.getElementById("app").innerHTML = `
@@ -614,7 +693,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (himnoURL === 'Buscar') {
           //cargar_himno(himnos[himnoURL])
           buscarPag();
-          searchhimno(himnosVariable)
         } else if (himnoURL === 'Menu') {
           //cargar_himno(himnos[himnoURL])
           menu();
