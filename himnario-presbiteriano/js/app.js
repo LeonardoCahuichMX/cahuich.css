@@ -21,6 +21,13 @@ function serviceWorkerInit() {
     });
   }
 }
+function updateServiceWorker() {
+  navigator.serviceWorker.getRegistration().then(registration => {
+    registration.unregister().then(() => {
+      navigator.serviceWorker.register('/new-sw.js');
+    });
+  });
+}
 
 document.addEventListener('DOMContentLoaded', () => {
 /*  document.getElementById('#splash').addEventListener('transitionend', (event) => {
@@ -597,6 +604,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function acercaDe() {
       function buttonReinstallApp() {
         document.getElementById("btn-reinstall-app").addEventListener('click', () => {
+          updateServiceWorker();
             location.reload(true);
         });
     }
