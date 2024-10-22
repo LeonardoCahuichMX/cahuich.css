@@ -141,6 +141,20 @@ body {
   gap: 5px;
 }
 
+.actualizacion {
+  background-color: orange;
+  color: #000;
+  height: 140px;
+  align-content: center;
+  text-align: center;
+  display: none;
+}
+.actualizacion button {
+  display: inline;
+  background-color: #fff;
+  color: #000;
+}
+
 .nav {
   width: 100%;
   padding: 10px 5%;

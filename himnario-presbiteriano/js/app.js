@@ -91,6 +91,31 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   }
 
+  function actualizacion() {
+    const request = new XMLHttpRequest();
+    request.open('GET', './versiones.json', true);
+    request.onload = function() {
+      if (request.status === 200) {
+        const jsonData = JSON.parse(request.responseText);
+        
+        localStorage.setItem('versionJson', jsonData.version);
+        // Procesar el objeto JSON
+      }
+    };
+    request.send();
+
+    const versionJson = localStorage.getItem('versionJson');
+    //alert(versionJson+";"+webSiteData.version)
+
+    if(versionJson !== webSiteData.version) {
+      document.getElementById("actualizacion").style.display = 'block';
+      document.getElementById("actualizacion").innerHTML = `
+      <h3>Hay una nueva actualización</h3>
+      <button type="button">Actualizar</button>`;
+    }
+  }
+  actualizacion();
+
 
     function tamanoLetraHimno(id) {
       if(!localStorage.getItem("fuente-texto-himnos-opcion")) {
