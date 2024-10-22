@@ -32,9 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const himnosVariable = himnos;
 
-    if(!localStorage.getItem('data-himnoVisible') || !localStorage.getItem('himnoActuale')) {
-      localStorage.setItem('data-himnoVisible', 1)
-      localStorage.setItem('himnoActual', 1)
+    if(!localStorage.getItem('data-himnoVisible')) {
+      localStorage.setItem('data-himnoVisible', 0)
     }
 
     function pantallaDeBievenida() {
@@ -271,21 +270,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function himnosContinuar(himnos, numero) {
-      document.getElementById("continuar").innerHTML = '';
-      document.getElementById("continuar").innerHTML += `
-      <a href="#${himnos[numero]['numero']}">
-          <div class="titulo">
-              Continuar con
-          </div>
-          <div class="contenido">
-              <div class="numero">
-              #${himnos[numero]['numero']}
-              </div>
-              <div class="nombre">
-                  ${himnos[numero]['titulo']}
-              </div>
-          </div>
-      </a>`;
+      if(numero === '0') {
+        return
+      } else {
+        document.getElementById("continuar").innerHTML = '';
+        document.getElementById("continuar").innerHTML += `
+        <a href="#${himnos[numero]['numero']}">
+            <div class="titulo">
+                Continuar con
+            </div>
+            <div class="contenido">
+                <div class="numero">
+                #${himnos[numero]['numero']}
+                </div>
+                <div class="nombre">
+                    ${himnos[numero]['titulo']}
+                </div>
+            </div>
+        </a>`;
+      }
   }
 
     function precargarHimnosPag(himnos) {
@@ -424,13 +427,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function barraHimnoAbierto(opcion, himno, himnos) {
-      document.getElementById("himno-reciente").innerHTML = `
-        <li><a href="#${himno}">Himno #${himnos[himno].numero} - ${himnos[himno].titulo}</li>
-      `;
-      if(opcion === 1) {
-          document.getElementById("reciente-nav").classList.add("mh");
+      if(himno === '0') {
+        return;
       } else {
-          document.getElementById("reciente-nav").classList.remove("mh");
+        document.getElementById("himno-reciente").innerHTML = `
+        <li><a href="#${himno}">Himno #${himnos[himno].numero} - ${himnos[himno].titulo}</li>
+        `;
+        if(opcion === 1) {
+            document.getElementById("reciente-nav").classList.add("mh");
+        } else {
+            document.getElementById("reciente-nav").classList.remove("mh");
+        }
       }
     }
 
