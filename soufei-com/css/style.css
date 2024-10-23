@@ -83,6 +83,11 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
+:root, body, html {
+  background-color: #fff !important;
+  color: #000 !important;
+}
 /* ==========================================================================
    Nav
    ========================================================================== */
@@ -98,20 +103,20 @@ textarea {
   padding: 0 5%;
 
   display: grid;
-  grid-template-columns: 30% 40% 30%;
+  grid-template-columns: 15% 55% 30%;
   column-gap: 20px;
   row-gap: 20px;
 
   /*background-color: rgba(0, 0, 0, 0.8);*/
-  background-color: #000;
+  background-color: #f5f5f5;
 
 
-  color: #fff;
+  color: #000;
 
 }
 
 .scroll-down > #nav, .scroll-up > #nav {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(20px);
   }
   .scroll-down > #nav {
@@ -179,6 +184,98 @@ textarea {
   text-decoration: none;
 }
 
+#nav ul.right li, #nav ul.left li {
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
+}
+#nav:hover ul.right li, #nav:hover ul.left li {
+  opacity: 1;
+  transition: opacity .2s ease-in-out;
+}
+#nav #menu {
+  font-size: 190%;
+  opacity: 1 !important;
+}
+
+/* ==========================================================================
+   Portada
+   ========================================================================== */
+
+.new-new-portada {
+  background-color: #f5f5f5;
+  min-height: 100dvh;
+  align-content: center;
+  text-align: center;
+  padding-top: 100px;
+}
+.new-new-portada img {
+  border-radius: 10px;
+}
+.new-new-portada .titulo {
+  font-weight: bold;
+  font-size: 14dvh;
+  color: #000;
+  text-align: right;
+  line-height: 1;
+  width: 40%;
+  margin: 0 auto;
+  margin-top: -80px;
+}
+
+.seccion-1 {
+  min-height: 100dvh;
+  align-content: center;
+  .titulo {
+    font-size: 12dvh;
+    line-height: 1;
+    font-weight:500;
+    margin-left: 5%;
+  }
+  .contenido {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 20px;
+  }
+  .contenido .espanol {
+
+  }
+  .contenido .chino {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    height: 400px;
+  }
+}
+
+.seccion-2 {
+  background-color: #000;
+  color: #fff;
+  min-height: 100dvh;
+  padding-bottom: 50px;
+  .titulo {
+    font-size: 12dvh;
+    line-height: 1;
+    font-weight:500;
+    margin-right: 5%;
+    text-align: right;
+    transform: translateY(-20px);
+  }
+  .contenedor {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 50px;
+
+    display: grid;
+    grid-template-columns: 80% 20%;
+    gap: 20px;
+  }
+  .contenedor .contenido h2 {
+    color: #fff;
+  }
+}
 /* ==========================================================================
    Portada
    ========================================================================== */
@@ -453,7 +550,10 @@ textarea {
    Footer Dos
    ========================================================================== */
 
-
+footer {
+  border: none !important;
+  border-top: none !important;
+}
 .footerDos {
   padding: 50px 0;
   color: #555;

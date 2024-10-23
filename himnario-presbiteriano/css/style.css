@@ -120,7 +120,16 @@ body {
 }
 
 .pagina {
-  /*animation: opacityAnimacionParaPaginas5 .5s ease;*/
+  animation: paginas .2s ease;
+}
+@keyframes paginas {
+  0% {
+    transform: scale(98%);
+  }
+
+  100% {
+    transform: scale(100%);
+  }
 }
 
 .himno {
