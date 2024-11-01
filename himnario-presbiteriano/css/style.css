@@ -424,7 +424,7 @@ body {
    Home
    ========================================================================== */
 .home {
-  padding: 0 5%;
+  padding: 0;
 }
 
 .home>.titulo {
@@ -433,18 +433,17 @@ body {
   /*background: linear-gradient(to right, #b032fb, #41fa98);*/
   background: linear-gradient(180deg, rgba(65,250,152,1) 0%, rgba(0,0,0,1) 37%);
 
-  border-radius: 5px;
-
-  margin-top: 20px;
   margin-bottom: 20px;
 }
 
 .home>.titulo .titulo {
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(50px);
-  border-radius: 5px;
   padding: 20px 5%;
   padding-top: 100px;
+}
+.home .cont {
+  padding: 0 5%;
 }
 
 .home .botones {

@@ -257,14 +257,16 @@ document.addEventListener('DOMContentLoaded', () => {
             <span id="nombre-usario-en-home"></span>
             </div>
           </div>
-          <!--<div class="botones">
-            <button type="button">Favoritos</button>
-          </div>-->
-          <div class="continuar" id="continuar"></div>
-          <hr>
-          <h3>Favoritos</h3>
-          <div class="recientes" id="recientes">
-            <p>No hay favoritos actualmente.</p>
+          <div class="cont">
+            <!--<div class="botones">
+              <button type="button">Favoritos</button>
+            </div>-->
+            <div class="continuar" id="continuar"></div>
+            <hr>
+            <h3>Favoritos</h3>
+            <div class="recientes" id="recientes">
+              <p>No hay favoritos actualmente.</p>
+            </div>
           </div>
       </main>
         `;
