@@ -1,22 +1,40 @@
 :root {
+  --primary-color: #fff;
+  --secondary-color: #f3f3f3;
+  --action-color-one: #000;
+  --action-color-two: #f3f3f3;
+
   --background-body: #fff;
-  --background: #efefef;
-  --background-alt: #f7f7f7;
-  --selection: #9e9e9e;
-  --text-main: #363636;
+  --background: rgba(0,0,0, 0.1);
+  --background-alt: #0b0b0b;
+
+  --selection: rgba(0,0,0, 0.1);
+
+  --text-main: #000;
   --text-bright: #000;
-  --text-muted: #70777f;
-  --links: #0076d1;
-  --focus: #0096bfab;
-  --border: #dbdbdb;
-  --code: #000;
-  --animation-duration: 0.1s;
-  --button-base: #d0cfcf;
-  --button-hover: #9b9b9b;
+  --text-muted: #444;
+
+  --links: inherit;
+
+  --focus: rgba(0,0,0, 0.2);
+
+  --border: rgba(0,0,0, 0.05);
+
+  --code: var(--text-bright);
+
+  --animation-duration: 0.2s;
+
+  --button-base: transparent;
+  --button-hover: rgba(0,0,0, 0.1);
   --button-border: #888;
-  --form-placeholder: #949494;
-  --form-text: #1d1d1d;
-  --variable: #39a33c;
-  --highlight: #ff0;
-  --select-arrow: svg-load('./assets/select-arrow.svg', fill: #161f27);
+
+  /*--scrollbar-thumb-hover: color-mod(var(--scrollbar-thumb) lightness(-30%));*/
+  --form-placeholder: #a9a9a9;
+  --form-text: #000;
+
+  --variable: #d941e2;
+
+  --highlight: #efdb43;
+  
+  --select-arrow: svg-load('../assets/select-arrow.svg', fill: #efefef);
 }

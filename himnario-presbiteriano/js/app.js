@@ -728,6 +728,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //visorDeEventos();
   scroolUpDowm();
   pantallaDeBievenidaIniciador()
+  menu();
 
   let himnoURL = window.location.hash.replace('#', '');
 
@@ -736,13 +737,13 @@ document.addEventListener('DOMContentLoaded', () => {
     barraHimnoAbierto(0, localStorage.getItem('data-himnoVisible'), himnosVariable);
     headerPagName(himnoURL)
     document.getElementById("reciente-nav").style.display = 'block';
-    document.getElementById("nav-pag").classList.remove("nav-scroll");
+    document.getElementById("nav-fixed-area").classList.remove("nav-scroll");
     document.getElementById("barra-de-pagina").innerHTML = '';
 
     if (himnoURL === 'Himnos') {
       //cargar_himno(himnos[himnoURL])
       mostrarHimnosPag(himnosVariable)
-      document.getElementById("nav-pag").classList.add("nav-scroll");
+      document.getElementById("nav-fixed-area").classList.add("nav-scroll");
     } else if (himnoURL === 'Buscar') {
       //cargar_himno(himnos[himnoURL])
       buscarPag();
@@ -758,7 +759,7 @@ document.addEventListener('DOMContentLoaded', () => {
       mostarHimno(himnoURL);
       memoriaBD('himnoreciente', himnoURL);
       barraHimnoAbierto(1, localStorage.getItem('data-himnoVisible'), himnosVariable);
-      document.getElementById("nav-pag").classList.add("nav-scroll");
+      document.getElementById("nav-fixed-area").classList.add("nav-scroll");
       favoritos(1)
     } else {
       //cargar_home()

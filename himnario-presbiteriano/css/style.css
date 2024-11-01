@@ -107,6 +107,7 @@ body {
   animation: opacityAnimacionParaPaginas5 .5s ease;
 
   background-color: var(--fondo-primario) !important;
+  /*background: linear-gradient(to right, #000a16, #000112) !important;*/
 }
 
 @keyframes opacityAnimacionParaPaginas5 {
@@ -133,7 +134,8 @@ body {
 }
 
 .himno {
-  background-color: #222;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(40px);
   margin: 5px 0;
   padding: 20px;
 
@@ -215,7 +217,7 @@ body {
    Nav-pag
    ========================================================================== */
 
-#nav-pag {
+.nav-fixed-area {
   z-index: 999;
   position: fixed;
   bottom: 0;
@@ -223,8 +225,30 @@ body {
   width: 100%;
   height: auto;
 
+  margin: 0 !important;
+}
+
+.nav-scroll {
+  transform: translateY(0);
+  transition: .2s all ease-in-out !important;
+}
+
+.scroll-down .nav-scroll {
+  transform: translateY(100%);
+  transition: .2s all ease-in-out !important;
+}
+
+.scroll-up .nav-scroll {
+  transform: translateY(0);
+  transition: .2s all ease-in-out !important;
+}
+
+#nav-pag {
+  width: 100%;
+  height: auto;
+
   margin: 0 auto;
-  padding: 0 0%;
+  padding: 2px 0%;
 
   /*display: grid;
     grid-template-columns: auto 10%;
@@ -247,21 +271,6 @@ body {
   #nav-pag {
     padding-bottom: 20px;
   }
-}
-
-.nav-scroll {
-  transform: translateY(0);
-  transition: .2s all ease-in-out !important;
-}
-
-.scroll-down .nav-scroll {
-  transform: translateY(120px);
-  transition: .2s all ease-in-out !important;
-}
-
-.scroll-up .nav-scroll {
-  transform: translateY(0);
-  transition: .2s all ease-in-out !important;
 }
 
 /*#nav-pag ul.left {
@@ -369,19 +378,15 @@ body {
    ========================================================================== */
 
 #reciente-nav {
-  width: 90%;
   height: 60px;
   background-color: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
 
-  margin: 0 auto;
-
-  border-radius: 5px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 
   font-size: 2dvh;
 
-  z-index: 999;
   align-content: center;
 }
 
@@ -509,9 +514,10 @@ body {
 .pag-menu {
   padding: 0 5%;
 
-  margin-top: 20px;
+  /*margin-top: 20px;*/
 
-  min-height: 100dvh;
+  width: 100%;
+  height: auto;
 }
 
 .pag-menu ul {

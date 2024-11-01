@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>Ngo Soufei</title>
   <link rel="stylesheet" href="css/style.css">
 
-  <link rel="stylesheet" href="../cahuich-css/base/bluids/light.css">
+  <link id="theme-pag" rel="stylesheet" href="../cahuich-css/base/bluids/light.css">
 
   <meta name="description" content="">
 
@@ -22,11 +22,12 @@
   <link rel="apple-touch-icon" href="icon.png">
 
   <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#000">
+  <meta name="theme-color" content="#fff">
   <script>
     function insertar(id, variable) {
       document.getElementById(id).innerHTML += variable;
     }
+
     webSiteData = {
       name: 'Ngo Soufei',
       nameMarquet: 'Ngo <b>Soufei</b>',
@@ -38,243 +39,208 @@
 </head>
 
 <body id="inicio">
-  <header id="nav">
-    <div class="titulo">
-      <a class="btn-nav" id="btn-nav-1" href="#">
-        <script>insertar("btn-nav-1", webSiteData.nameMarquet);</script>
-      </a>
+  <div class="load-pag" id="load-pag">
+    <div class="titulo-lp">
+      Ngo Soufei
     </div>
-    <ul class="left">
-      <li><a href="#caracteristicas">Caracteristicas</a></li>
-      <li><a href="">Instalar</a></li>
-      <!--<li><a id="btn paginaUno" href="#uso">Uso</a></li>-->
-    </ul>
-    <ul class="right">
-      <li><a id="external-link" href="https://github.com/LeonardoCahuichMX/cahuich.css">
-          <svg style="margin-right: 5px;align-content: center;margin-top: -2px" width="25" height="25"
-            viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink">
-            <title>github</title>
+    <div class="cargando texto-rotate-infinite">
+      Cargando
+    </div>
+  </div>
+  <div id="app">
+    <div class="pagina">
+      <section class="new-new-portada">
+        <img width="400px" height="auto" src="./img/globo.jpg">
+        <div class="titulo-portada">
+          Ngo Soufei
+        </div>
+        <div class="sub-titulo-portada">
+          Simplemente<br> hago lo que<br> me gusta.
+        </div>
+      </section>
+      <section class="seccion-1">
+        <div class="titulo">
+          Este es un titulo<br> de la seccion
+        </div>
+        <div class="contenido">
+          <div class="espanol">
+            <p>Siempre me parece que (si se permite) uno debe vivir por su pasión y dejar unos frutos.
+              Después de una profunda consideración, me daba cuenta de que el arte era el camino y fruto de mí.
+              Por lo tanto, viajé de cantón, un desierto de arte, a Barcelona, un centro de arte, para estudiar,
+              explorar y vivir. En cientos de creación, me reconozco, reflexiono de mi identidad, reconozco la relación
+              con el mundo,
+              y desarrollo mi propio idioma artística. Escultura y pintura son mi poesía.</p>
+          </div>
+          <div class="chino">
+            <p>我總覺得，如果有機會，人生要為了熱愛而活，然後留下一些果實。</p>
+            <p>經過深思熟慮，發現原來藝術就是我的道路和果實。
+              於是，我從藝術荒漠廣州來到藝術之都巴塞羅那，求學、探索、生活。在一次次創作中，重新認識自己，反思身分，
+              認識與世界的關係，也在創造自己的表達方式。雕塑和繪畫都是我的詩歌。</p>
+          </div>
+        </div>
+      </section>
+      <section class="seccion-0">
+        <div class="contenedor">
+          <div class="contenido">
+            <div class="titulo">
+              Conoce mi dia a dia en instagram
+            </div>
+            <div class="contenido">
+              <svg width="20px" height="20px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
+                <g>
+                  <path
+                    d="M127.999746,23.06353 C162.177385,23.06353 166.225393,23.1936027 179.722476,23.8094161 C192.20235,24.3789926 198.979853,26.4642218 203.490736,28.2166477 C209.464938,30.5386501 213.729395,33.3128586 218.208268,37.7917319 C222.687141,42.2706052 225.46135,46.5350617 227.782844,52.5092638 C229.535778,57.0201472 231.621007,63.7976504 232.190584,76.277016 C232.806397,89.7746075 232.93647,93.8226147 232.93647,128.000254 C232.93647,162.177893 232.806397,166.225901 232.190584,179.722984 C231.621007,192.202858 229.535778,198.980361 227.782844,203.491244 C225.46135,209.465446 222.687141,213.729903 218.208268,218.208776 C213.729395,222.687649 209.464938,225.461858 203.490736,227.783352 C198.979853,229.536286 192.20235,231.621516 179.722476,232.191092 C166.227425,232.806905 162.179418,232.936978 127.999746,232.936978 C93.8200742,232.936978 89.772067,232.806905 76.277016,232.191092 C63.7971424,231.621516 57.0196391,229.536286 52.5092638,227.783352 C46.5345536,225.461858 42.2700971,222.687649 37.7912238,218.208776 C33.3123505,213.729903 30.538142,209.465446 28.2166477,203.491244 C26.4637138,198.980361 24.3784845,192.202858 23.808908,179.723492 C23.1930946,166.225901 23.0630219,162.177893 23.0630219,128.000254 C23.0630219,93.8226147 23.1930946,89.7746075 23.808908,76.2775241 C24.3784845,63.7976504 26.4637138,57.0201472 28.2166477,52.5092638 C30.538142,46.5350617 33.3123505,42.2706052 37.7912238,37.7917319 C42.2700971,33.3128586 46.5345536,30.5386501 52.5092638,28.2166477 C57.0196391,26.4642218 63.7971424,24.3789926 76.2765079,23.8094161 C89.7740994,23.1936027 93.8221066,23.06353 127.999746,23.06353 M127.999746,0 C93.2367791,0 88.8783247,0.147348072 75.2257637,0.770274749 C61.601148,1.39218523 52.2968794,3.55566141 44.1546281,6.72008828 C35.7374966,9.99121548 28.5992446,14.3679613 21.4833489,21.483857 C14.3674532,28.5997527 9.99070739,35.7380046 6.71958019,44.1551362 C3.55515331,52.2973875 1.39167714,61.6016561 0.769766653,75.2262718 C0.146839975,88.8783247 0,93.2372872 0,128.000254 C0,162.763221 0.146839975,167.122183 0.769766653,180.774236 C1.39167714,194.398852 3.55515331,203.703121 6.71958019,211.845372 C9.99070739,220.261995 14.3674532,227.400755 21.4833489,234.516651 C28.5992446,241.632547 35.7374966,246.009293 44.1546281,249.28042 C52.2968794,252.444847 61.601148,254.608323 75.2257637,255.230233 C88.8783247,255.85316 93.2367791,256 127.999746,256 C162.762713,256 167.121675,255.85316 180.773728,255.230233 C194.398344,254.608323 203.702613,252.444847 211.844864,249.28042 C220.261995,246.009293 227.400247,241.632547 234.516143,234.516651 C241.632039,227.400755 246.008785,220.262503 249.279912,211.845372 C252.444339,203.703121 254.607815,194.398852 255.229725,180.774236 C255.852652,167.122183 256,162.763221 256,128.000254 C256,93.2372872 255.852652,88.8783247 255.229725,75.2262718 C254.607815,61.6016561 252.444339,52.2973875 249.279912,44.1551362 C246.008785,35.7380046 241.632039,28.5997527 234.516143,21.483857 C227.400247,14.3679613 220.261995,9.99121548 211.844864,6.72008828 C203.702613,3.55566141 194.398344,1.39218523 180.773728,0.770274749 C167.121675,0.147348072 162.762713,0 127.999746,0 Z M127.999746,62.2703115 C91.698262,62.2703115 62.2698034,91.69877 62.2698034,128.000254 C62.2698034,164.301738 91.698262,193.730197 127.999746,193.730197 C164.30123,193.730197 193.729689,164.301738 193.729689,128.000254 C193.729689,91.69877 164.30123,62.2703115 127.999746,62.2703115 Z M127.999746,170.667175 C104.435741,170.667175 85.3328252,151.564259 85.3328252,128.000254 C85.3328252,104.436249 104.435741,85.3333333 127.999746,85.3333333 C151.563751,85.3333333 170.666667,104.436249 170.666667,128.000254 C170.666667,151.564259 151.563751,170.667175 127.999746,170.667175 Z M211.686338,59.6734287 C211.686338,68.1566129 204.809755,75.0337031 196.326571,75.0337031 C187.843387,75.0337031 180.966297,68.1566129 180.966297,59.6734287 C180.966297,51.1902445 187.843387,44.3136624 196.326571,44.3136624 C204.809755,44.3136624 211.686338,51.1902445 211.686338,59.6734287 Z"
+                    fill="#0A0A08"></path>
+                </g>
+              </svg>
+              <a href="https://www.instagram.com/sophia_mukho/">sophia_mukho</a>
+            </div>
+          </div>
+          <div class="img">
+            <img width="auto" height="auto" src="./img/462998132_1678220672751635_4689857910354545388_n.jpg">
+            <a href="https://www.instagram.com/stories/highlights/17995560083686810/">Ver la publicación...</a>
+          </div>
+        </div>
+      </section>
+      <section class="titulo-seccion titulo">
+        Novedad
+      </section>
+      <section class="seccion-2">
+        <div class="titulo">
+          Exposición<br>colectiva
+        </div>
+        <div class="contenedor">
+          <div class="img">
+            <img width="auto" height="auto" src="./img/IMG_8807.JPG">
+          </div>
+          <div class="contenido">
+            <h2>Te invito a visitar la exposición "Dona" en la Galería DarteArte</h2>
+            <p>Ahí estaré presentando en conjunto a otras artistas.</p>
+            <p><b>Dirección:</b> Galería DarteArte, Carrer dels Pellaires, 33, Sant Martí, 08019 Barcelona.</p>
+            <p>Info de galería: @darteartepoblenou</p>
+            <p>Horario: Viernes 20 Sep 19H - el 20 Oct.</p>
+          </div>
+        </div>
+      </section>
+      <section class="seccion-3">
+        <div class="titulo">
+          Muñecos de papel<br>a punto de partir
+        </div>
+        <div class="sub-zh-titulo">
+          Muñecos de papel<br>a punto de partir
+        </div>
+        <div class="contenedor">
+          <div class="contenido">
+            <h2>Te invito a visitar la exposición "Dona" en la Galería DarteArte</h2>
+            <p>Ahí estaré presentando en conjunto a otras artistas.</p>
+            <p><b>Dirección:</b> Galería DarteArte, Carrer dels Pellaires, 33, Sant Martí, 08019 Barcelona.</p>
+            <p>Info de galería: @darteartepoblenou</p>
+            <p>Horario: Viernes 20 Sep 19H - el 20 Oct.</p>
+            <button type="button">Ir a la obra</button>
+          </div>
+          <div class="img">
+            <img width="auto" height="auto" src="./img/IMG_9477.JPG">
+          </div>
+        </div>
+      </section>
+      <section class="seccion-4">
+        <div class="img">
+          <div class="titulo">
+            Conoce mis otras obras
+          </div>
+        </div>
+        <div class="sub-seccion">
+          <div class="titulo">
+            Conoce mis otras obras
+          </div>
+          <div class="contenido">
+            <p>Siempre me parece que (si se permite) uno debe vivir por su pasión y dejar unos frutos.
+              Después de una profunda consideración, me daba cuenta de que el arte era el camino y fruto de mí.
+              Por lo tanto, viajé de cantón, un desierto de arte, a Barcelona, un centro de arte, para estudiar,
+              explorar y vivir. En cientos de creación, me reconozco, reflexiono de mi identidad, reconozco la relación
+              con el mundo,
+              y desarrollo mi propio idioma artística. Escultura y pintura son mi poesía.</p>
+          </div>
+        </div>
+        <div class="obras">
+          <div class="obra">
+            <div class="titulo">Titulo de obra</div>
+          </div>
+          <div class="obra">
+            <div class="titulo">Titulo de obra</div>
+          </div>
+          <div class="obra">
+            <div class="titulo">Titulo de obra</div>
+          </div>
+          <div class="obra">
+            <div class="titulo">Titulo de obra</div>
+          </div>
+        </div>
+        <div class="sub-titulo-seccion">
+          <a href="">Ver el resto de mis obras</a>
+        </div>
+      </section>
+      <section class="titulo-seccion titulo">
+        Actividades
+      </section>
+      <div class="seccion-5">
+        <div class="contenedor">
+          <div class="caja">
+            <div class="titulo">
+              Titulo de caja
+            </div>
+          </div>
+          <div class="caja">
+            <div class="titulo">
+              Titulo de caja
+            </div>
+          </div>
+          <div class="caja">
+            <div class="titulo">
+              Titulo de caja
+            </div>
+          </div>
+          <div class="caja">
+            <div class="titulo">
+              Titulo de caja
+            </div>
+          </div>
+          <div class="caja">
+            <div class="titulo">
+              Titulo de caja
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="titulo-seccion-right titulo">
+        Sobre mi
+      </section>
+      <section class="sobre-mi">
+        <img src="./img/IMG_9914.JPG" width="400px" height="author">
+        <div class="titulo">
+          <svg width="50px" height="50px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
             <g>
               <path
-                d="M12.0000994,0.296208061 C5.37349618,0.296208061 0,5.66871064 0,12.2963074 C0,17.5982657 3.43839372,22.0964151 8.20640035,23.6831673 C8.80612709,23.7942498 9.02630512,23.4228485 9.02630512,23.1058956 C9.02630512,22.8197436 9.01517698,21.8744486 9.01001035,20.8717245 C5.67157111,21.5976364 4.96712069,19.4558685 4.96712069,19.4558685 C4.42124609,18.0688266 3.63472575,17.7000085 3.63472575,17.7000085 C2.54595736,16.9552186 3.71679568,16.9705197 3.71679568,16.9705197 C4.9218133,17.0551731 5.55631547,18.2071334 5.55631547,18.2071334 C6.6266032,20.0416852 8.36358518,19.5113105 9.04836267,19.2046908 C9.15606708,18.4290998 9.46705865,17.8997187 9.81024216,17.600054 C7.14485616,17.2966137 4.34295178,16.2676591 4.34295178,11.6695551 C4.34295178,10.3594164 4.81172426,9.28893008 5.5793666,8.44855747 C5.45477126,8.14630949 5.04402403,6.925792 5.69561582,5.27286715 C5.69561582,5.27286715 6.70330783,4.95035006 8.99649761,6.50292302 C9.95371571,6.23704018 10.9802857,6.10370133 12.0000994,6.09913086 C13.0199131,6.10370133 14.047278,6.23704018 15.0062843,6.50292302 C17.2966922,4.95035006 18.302993,5.27286715 18.302993,5.27286715 C18.9561747,6.925792 18.5452287,8.14630949 18.4206334,8.44855747 C19.1900642,9.28893008 19.6556571,10.3594164 19.6556571,11.6695551 C19.6556571,16.2785885 16.8483875,17.2934344 14.1762451,17.5905157 C14.6066653,17.9629107 14.9901884,18.6931941 14.9901884,19.8127637 C14.9901884,21.418394 14.9762783,22.7106482 14.9762783,23.1058956 C14.9762783,23.4252331 15.1922831,23.7994165 15.8005547,23.6815776 C20.565978,22.0930369 24,17.5964772 24,12.2963074 C24,5.66871064 18.6272988,0.296208061 12.0000994,0.296208061 Z M4.49442743,17.390603 C4.46799811,17.4502179 4.37420386,17.4681024 4.28875572,17.4271669 C4.20171783,17.3880196 4.15283356,17.3067445 4.18105132,17.2469309 C4.20688448,17.1855273 4.30087743,17.1684377 4.38771659,17.2095721 C4.47495321,17.2487192 4.52463236,17.3307892 4.49442743,17.390603 Z M5.08469899,17.9172944 C5.02746861,17.9703518 4.91559116,17.9457109 4.83968139,17.8618525 C4.76118832,17.7781928 4.74648331,17.6663153 4.80450855,17.6124631 C4.86352738,17.5594058 4.97202668,17.5842453 5.05071845,17.6679051 C5.12921149,17.7525583 5.14451268,17.8636409 5.08469899,17.9172944 Z M5.48964763,18.5911781 C5.41612249,18.6422484 5.29589893,18.5943576 5.22157891,18.4876468 C5.14805375,18.3809359 5.14805375,18.2529624 5.22316865,18.2016936 C5.29768736,18.1504246 5.41612249,18.196527 5.49143607,18.3024429 C5.56476252,18.4109421 5.56476252,18.5389156 5.48964763,18.5911781 Z M6.17450243,19.3716306 C6.10872723,19.4441624 5.96863203,19.4246881 5.86609423,19.3257272 C5.76117187,19.2289521 5.73196052,19.091639 5.79793444,19.0191074 C5.8645045,18.9463771 6.00539458,18.966845 6.10872723,19.065011 C6.21285475,19.1615873 6.2446494,19.2998941 6.17450243,19.3716306 Z M7.05961079,19.6351026 C7.03059819,19.7290957 6.89566959,19.7718197 6.75974741,19.7318777 C6.62402397,19.6907433 6.53519763,19.5806544 6.56262053,19.4856678 C6.59083828,19.3910788 6.72636301,19.3465662 6.86327877,19.3892902 C6.99880351,19.4302258 7.08782857,19.53952 7.05961079,19.6351026 Z M8.06690128,19.7468606 C8.07027944,19.8458214 7.95502379,19.9278914 7.81234527,19.9296799 C7.66887188,19.9328594 7.55282137,19.8527766 7.55123163,19.7554054 C7.55123163,19.655451 7.66390395,19.5741759 7.80737735,19.5717913 C7.9500559,19.5690092 8.06690128,19.6484958 8.06690128,19.7468606 Z M9.05645129,19.708929 C9.07354093,19.8055053 8.97438132,19.9046648 8.83269637,19.9310942 C8.69339603,19.9565298 8.56442893,19.8969149 8.54674316,19.8011335 C8.52945483,19.7021726 8.63040287,19.6030131 8.7695045,19.5773787 C8.91138816,19.5527378 9.03836809,19.610763 9.05645129,19.708929 Z"
-                fill="currentColor"></path>
+                d="M127.999746,23.06353 C162.177385,23.06353 166.225393,23.1936027 179.722476,23.8094161 C192.20235,24.3789926 198.979853,26.4642218 203.490736,28.2166477 C209.464938,30.5386501 213.729395,33.3128586 218.208268,37.7917319 C222.687141,42.2706052 225.46135,46.5350617 227.782844,52.5092638 C229.535778,57.0201472 231.621007,63.7976504 232.190584,76.277016 C232.806397,89.7746075 232.93647,93.8226147 232.93647,128.000254 C232.93647,162.177893 232.806397,166.225901 232.190584,179.722984 C231.621007,192.202858 229.535778,198.980361 227.782844,203.491244 C225.46135,209.465446 222.687141,213.729903 218.208268,218.208776 C213.729395,222.687649 209.464938,225.461858 203.490736,227.783352 C198.979853,229.536286 192.20235,231.621516 179.722476,232.191092 C166.227425,232.806905 162.179418,232.936978 127.999746,232.936978 C93.8200742,232.936978 89.772067,232.806905 76.277016,232.191092 C63.7971424,231.621516 57.0196391,229.536286 52.5092638,227.783352 C46.5345536,225.461858 42.2700971,222.687649 37.7912238,218.208776 C33.3123505,213.729903 30.538142,209.465446 28.2166477,203.491244 C26.4637138,198.980361 24.3784845,192.202858 23.808908,179.723492 C23.1930946,166.225901 23.0630219,162.177893 23.0630219,128.000254 C23.0630219,93.8226147 23.1930946,89.7746075 23.808908,76.2775241 C24.3784845,63.7976504 26.4637138,57.0201472 28.2166477,52.5092638 C30.538142,46.5350617 33.3123505,42.2706052 37.7912238,37.7917319 C42.2700971,33.3128586 46.5345536,30.5386501 52.5092638,28.2166477 C57.0196391,26.4642218 63.7971424,24.3789926 76.2765079,23.8094161 C89.7740994,23.1936027 93.8221066,23.06353 127.999746,23.06353 M127.999746,0 C93.2367791,0 88.8783247,0.147348072 75.2257637,0.770274749 C61.601148,1.39218523 52.2968794,3.55566141 44.1546281,6.72008828 C35.7374966,9.99121548 28.5992446,14.3679613 21.4833489,21.483857 C14.3674532,28.5997527 9.99070739,35.7380046 6.71958019,44.1551362 C3.55515331,52.2973875 1.39167714,61.6016561 0.769766653,75.2262718 C0.146839975,88.8783247 0,93.2372872 0,128.000254 C0,162.763221 0.146839975,167.122183 0.769766653,180.774236 C1.39167714,194.398852 3.55515331,203.703121 6.71958019,211.845372 C9.99070739,220.261995 14.3674532,227.400755 21.4833489,234.516651 C28.5992446,241.632547 35.7374966,246.009293 44.1546281,249.28042 C52.2968794,252.444847 61.601148,254.608323 75.2257637,255.230233 C88.8783247,255.85316 93.2367791,256 127.999746,256 C162.762713,256 167.121675,255.85316 180.773728,255.230233 C194.398344,254.608323 203.702613,252.444847 211.844864,249.28042 C220.261995,246.009293 227.400247,241.632547 234.516143,234.516651 C241.632039,227.400755 246.008785,220.262503 249.279912,211.845372 C252.444339,203.703121 254.607815,194.398852 255.229725,180.774236 C255.852652,167.122183 256,162.763221 256,128.000254 C256,93.2372872 255.852652,88.8783247 255.229725,75.2262718 C254.607815,61.6016561 252.444339,52.2973875 249.279912,44.1551362 C246.008785,35.7380046 241.632039,28.5997527 234.516143,21.483857 C227.400247,14.3679613 220.261995,9.99121548 211.844864,6.72008828 C203.702613,3.55566141 194.398344,1.39218523 180.773728,0.770274749 C167.121675,0.147348072 162.762713,0 127.999746,0 Z M127.999746,62.2703115 C91.698262,62.2703115 62.2698034,91.69877 62.2698034,128.000254 C62.2698034,164.301738 91.698262,193.730197 127.999746,193.730197 C164.30123,193.730197 193.729689,164.301738 193.729689,128.000254 C193.729689,91.69877 164.30123,62.2703115 127.999746,62.2703115 Z M127.999746,170.667175 C104.435741,170.667175 85.3328252,151.564259 85.3328252,128.000254 C85.3328252,104.436249 104.435741,85.3333333 127.999746,85.3333333 C151.563751,85.3333333 170.666667,104.436249 170.666667,128.000254 C170.666667,151.564259 151.563751,170.667175 127.999746,170.667175 Z M211.686338,59.6734287 C211.686338,68.1566129 204.809755,75.0337031 196.326571,75.0337031 C187.843387,75.0337031 180.966297,68.1566129 180.966297,59.6734287 C180.966297,51.1902445 187.843387,44.3136624 196.326571,44.3136624 C204.809755,44.3136624 211.686338,51.1902445 211.686338,59.6734287 Z"
+                fill="#0A0A08"></path>
             </g>
           </svg>
-          Github</a></li>
-      <li><a id="external-link" href="">Blog</a></li>
-      <li id="menu"><a>☰</a></li>
-    </ul>
-  </header>
-  <section class="new-new-portada">
-    <img width="400px" height="auto" src="./img/globo.jpg">
-    <div class="titulo">
-      Hola a mi o<br> Ngo o<br> ke
-    </div>
-  </section>
-  <section class="seccion-1">
-    <div class="titulo">
-      Este es un titulo<br> de la seccion
-    </div>
-    <div class="contenido">
-      <div class="chino">
-        <p>我總覺得，如果有機會，人生要為了熱愛而活，然後留下一些果實。</p>
-        <p>經過深思熟慮，發現原來藝術就是我的道路和果實。
-        於是，我從藝術荒漠廣州來到藝術之都巴塞羅那，求學、探索、生活。在一次次創作中，重新認識自己，反思身分，
-        認識與世界的關係，也在創造自己的表達方式。雕塑和繪畫都是我的詩歌。</p>
-      </div>
-      <div class="espanol">
-        <p>Siempre me parece que (si se permite) uno debe vivir por su pasión y dejar unos frutos.
-        Después de una profunda consideración, me daba cuenta de que el arte era el camino y fruto de mí.
-        Por lo tanto, viajé de cantón, un desierto de arte, a Barcelona, un centro de arte, para estudiar,
-        explorar y vivir. En cientos de creación, me reconozco, reflexiono de mi identidad, reconozco la relación con el mundo,
-        y desarrollo mi propio idioma artística. Escultura y pintura son mi poesía.</p>
-      </div>
-    </div>
-  </section>
-  <section class="seccion-2">
-    <div class="titulo">
-      Conoce mi arte en<br>una exposición
-    </div>
-    <div class="contenedor">
-      <div class="img">
-        <img width="auto" height="auto" src="./img/IMG_8663.jpeg">
-      </div>
-      <div class="contenido">
-        <h2>Te invito a visitar la exposición "Dona" en la Galería DarteArte</h2>
-        <p>Ahí estaré presentando en conjunto a otras artistas.</p>
-        <p><b>Dirección:</b> Galería DarteArte, Carrer dels Pellaires, 33, Sant Martí, 08019 Barcelona.</p>
-        <p>Info de galería: @darteartepoblenou</p>
-        <p>Horario: Viernes 20 Sep 19H - el 20 Oct.</p>
-      </div>
-    </div>
-  </section>
-  <!--<section class="new-portada">
-    <div class="fondo">
-      <div class="titulo">
-        El Himnario Presbiteriano en tu telefono (IOS, Android)
-      </div>
-      <div class="contenido">
-        Obsidian is the private and flexible writing app that adapts to the way you think.ß
-      </div>
-      <div class="botones">
-        <a class="install">Ir a la aplicación</a>
-      </div>
-      <div class="img">
-        <img width="200px" height="100%" src="./img/app-2.jpeg">
-        <img width="200px" height="100%" src="./img/app-3.jpeg">
-        <img width="200px" height="100%" src="./img/app-4.jpeg">
-        <img width="300px" height="100%" src="./img/app.jpeg">
-      </div>
-    </div>
-  </section>
-  <div id="caracteristicas"></div>
-  <section class="presentacion">
-    <img width="200px" height="100%" src="../himnario-presbiteriano/icon.svg">
-    <div class="titulo">
-      Solo el himnario y nada mas.
-    </div>
-    <div class="contenido">
-      <p>Dentro de la app solo encontraras los himnos y otras cuentas opciones, nada de inicios de sesion, nada de red social, nada.</p>
-      <p></p>
-    </div>
-  </section>
-  <section class="caracteristica">
-    <div class="titulo">
-      Caracteristicas
-    </div>
-    <div class="contenedor-first">
-      <div class="caja">
-        <div class="titulo">
-          Moderno y acualizado
+          <a href="https://www.instagram.com/sophia_mukho/">sophia_mukho</a>
         </div>
         <div class="contenido">
-          <p>Dentro de la app solo encontraras los himnos y otras cuentas opciones, nada de inicios de sesion, nada de red social, nada.</p>
+          <p>Siempre me parece que (si se permite) uno debe vivir por su pasión y dejar unos frutos.
+            Después de una profunda consideración, me daba cuenta de que el arte era el camino y fruto de mí.
+            Por lo tanto, viajé de cantón, un desierto de arte, a Barcelona, un centro de arte, para estudiar,
+            explorar y vivir. En cientos de creación, me reconozco, reflexiono de mi identidad, reconozco la relación
+            con
+            el mundo,
+            y desarrollo mi propio idioma artística. Escultura y pintura son mi poesía.</p>
         </div>
-      </div>
-      <div class="caja">
-        <div class="titulo">
-          Ligero
-        </div>
-        <div class="contenido">
-          <p>Dentro de la app solo encontraras los himnos y otras cuentas opciones, nada de inicios de sesion, nada de red social, nada.</p>
-        </div>
-      </div>
+      </section>
     </div>
-    <div class="contenedor">
-      <div class="caja js">
-        <svg width="100px" height="100px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 630">
-          <rect width="630" height="630" fill="#f7df1e" />
-          <path
-            d="m423.2 492.19c12.69 20.72 29.2 35.95 58.4 35.95 24.53 0 40.2-12.26 40.2-29.2 0-20.3-16.1-27.49-43.1-39.3l-14.8-6.35c-42.72-18.2-71.1-41-71.1-89.2 0-44.4 33.83-78.2 86.7-78.2 37.64 0 64.7 13.1 84.2 47.4l-46.1 29.6c-10.15-18.2-21.1-25.37-38.1-25.37-17.34 0-28.33 11-28.33 25.37 0 17.76 11 24.95 36.4 35.95l14.8 6.34c50.3 21.57 78.7 43.56 78.7 93 0 53.3-41.87 82.5-98.1 82.5-54.98 0-90.5-26.2-107.88-60.54zm-209.13 5.13c9.3 16.5 17.76 30.45 38.1 30.45 19.45 0 31.72-7.61 31.72-37.2v-201.3h59.2v202.1c0 61.3-35.94 89.2-88.4 89.2-47.4 0-74.85-24.53-88.81-54.075z" />
-        </svg>
-        <div class="titulo">
-          Caracteristica
-        </div>
-        <div class="contenido">
-          <p>Dentro de la app solo encontraras los himnos y otras cuentas opciones, nada de inicios de sesion, nada de red social, nada.</p>
-        </div>
-      </div>
-      <div class="caja">
-        <div class="titulo">
-          Caracteristica
-        </div>
-        <div class="contenido">
-          <p>Dentro de la app solo encontraras los himnos y otras cuentas opciones, nada de inicios de sesion, nada de red social, nada.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="acercade" id="acercade">
-    <div class="titulo">
-      Conoce mas acerca del detras de escena
-    </div>
-    <div class="contenedor">
-      <div class="contenido">
-        <p>Dentro de la app solo encontraras los himnos y otras cuentas opciones, nada de inicios de sesion, nada de red social, nada.
-          Dentro de la app solo encontraras los himnos y otras cuentas opciones, nada de inicios de sesion, nada de red social, nada.
-          Dentro de la app solo encontraras los himnos y otras cuentas opciones, nada de inicios de sesion, nada de red social, nada.
-          Dentro de la app solo encontraras los himnos y otras cuentas opciones, nada de inicios de sesion, nada de red social, nada.
-          Dentro de la app solo encontraras los himnos y otras cuentas opciones, nada de inicios de sesion, nada de red social, nada.
-        </p>
-      </div>
-      <div class="img">
-        <img src="./img/code.png">
-      </div>
-    </div>
-  </section>-->
-  <!--<section class="portada">
-    <div class="sub-titulo">
-      by Cahuich.com
-    </div>
-    <div class="titulo">
-      El Himnario Presbiteriano en tu telefono (IOS, Android)
-    </div>
-    <div class="botones">
-      <a class="install">Ir a la aplicación</a>
-    </div>
-    <div class="img-app">
-      <img width="300px" height="100%" src="./img/app.jpeg">
-    </div>
-  </section>
-  <section class="description">
-    <div class="caja">
-      <article>
-        <h1>Moderna</h1>
-        <p>Este es un texto de ejemplo que llevara en esta descripcion de esta caracteristica.</p>
-      </article>
-      <article>
-        <h1>Actualizada</h1>
-        <p>Este es un texto de ejemplo que llevara en esta descripcion de esta caracteristica.</p>
-      </article>
-      <article>
-        <h1>Ligera</h1>
-        <h3 style="margin-top: -20px;">Solo <strong id="ligera">
-            <script>insertar("ligera", webSiteData.pesoApp);</script>
-          </strong></h3>
-        <p>Este es un texto de ejemplo que llevara en esta descripcion de esta caracteristica.</p>
-      </article>
-      <article>
-        <h1>Moderna</h1>
-        <p>Este es un texto de ejemplo que llevara en esta descripcion de esta caracteristica.</p>
-      </article>
-    </div>
-    <div class="caja">
-      <article>
-        <h1>En IOS & Android</h1>
-        <p>Este es un texto de ejemplo que llevara en esta descripcion de esta caracteristica.</p>
-      </article>
-      <article>
-        <h1>Moderna</h1>
-        <p>Este es un texto de ejemplo que llevara en esta descripcion de esta caracteristica.</p>
-      </article>
-      <article>
-        <h1>Powered By Cahuich.librarys</h1>
-        <p>Este es un texto de ejemplo que llevara en esta descripcion de esta caracteristica.</p>
-      </article>
-      <article>
-        <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 630">
-          <rect width="630" height="630" fill="#f7df1e" />
-          <path
-            d="m423.2 492.19c12.69 20.72 29.2 35.95 58.4 35.95 24.53 0 40.2-12.26 40.2-29.2 0-20.3-16.1-27.49-43.1-39.3l-14.8-6.35c-42.72-18.2-71.1-41-71.1-89.2 0-44.4 33.83-78.2 86.7-78.2 37.64 0 64.7 13.1 84.2 47.4l-46.1 29.6c-10.15-18.2-21.1-25.37-38.1-25.37-17.34 0-28.33 11-28.33 25.37 0 17.76 11 24.95 36.4 35.95l14.8 6.34c50.3 21.57 78.7 43.56 78.7 93 0 53.3-41.87 82.5-98.1 82.5-54.98 0-90.5-26.2-107.88-60.54zm-209.13 5.13c9.3 16.5 17.76 30.45 38.1 30.45 19.45 0 31.72-7.61 31.72-37.2v-201.3h59.2v202.1c0 61.3-35.94 89.2-88.4 89.2-47.4 0-74.85-24.53-88.81-54.075z" />
-        </svg>
-        <h1>JavaScript Vanilla</h1>
-        <p>Solo <strong id="ligera2">
-            <script>insertar("ligera2", webSiteData.pesoApp);</script>
-          </strong>, solo tiene lo que usa y nada mas.</p>
-      </article>
-    </div>
-  </section>-->
-  <footer class="footerDos">
-    <div class="contenedor">
-      <div class="caja">Contacto y Equipo</div>
-      <div class="caja">Terminos de uso</div>
-      <div class="caja">Privacidad y cookies</div>
-      <div class="caja" id="copyright">
-        <script>insertar("copyright", webSiteData.author);</script> © 2024
-      </div>
-    </div>
-  </footer>
+  </div>
   <script type="module" src="js/app.js"></script>
 </body>
 

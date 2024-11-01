@@ -15,7 +15,7 @@ import {btnTop} from '../../js/modulos/btnTopDiv.js';
 //import {clicCajaContent} from './modulos/clicCajaContent.js';
 //import {portadaRedimencionar} from './modulos/portadaRedimencionar.js';
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     console.info("Pagina cargada");
 
     let odjetoConPaginas = pagePaginator();
@@ -31,11 +31,11 @@ window.addEventListener('load', function() {
     /* Arranque de funciones */
 
     btnTop();
-    
+
     anclaAnimation(true)/* Para ver datos de debug poner true despues del true hash*/
     clickNavAShowPag();
     scroolUpDowm();
 
     navScroll();
-    
+
 });
