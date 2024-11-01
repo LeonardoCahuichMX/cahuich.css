@@ -119,7 +119,10 @@ document.addEventListener('DOMContentLoaded', () => {
               ${himnos[numero]['intro']}
               </div>
           </div>
-              <br>-->`;
+              <br>-->
+          <div class="intro" style="width: 80%; margin: 0 auto;">
+            ${himnos[numero]['intro']}
+          </div><br><br`;
     for (let prop in himnos[numero]['referencias']) {
       document.getElementById("mostrar-himno").innerHTML += `
                       <div class="referencia">

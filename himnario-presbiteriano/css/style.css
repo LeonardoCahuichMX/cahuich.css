@@ -134,7 +134,7 @@ body {
 }
 
 .himno {
-  background-color: #222;
+  background-color: #111;
   margin: 5px 0;
   padding: 20px;
 
@@ -150,13 +150,13 @@ body {
   }
 }
   .himno:hover {
-    background-color: #333;
+    background-color: #222;
   }
   .himno:focus, .himno:focus-within {
-    background-color: #444;
+    background-color: #333;
   }
   .himno:visited,.himno:focus-visible {
-    background-color: #444;
+    background-color: #333;
   }
 
 .himno .contenido {
@@ -337,6 +337,8 @@ body {
   transition: 0.2s ease-in-out all;
   appearance: auto;
   text-align: center;
+
+  opacity: 50%;
 }
 
 #nav-pag ul li.icono a {
@@ -353,7 +355,7 @@ body {
   border-radius: 5px;
   transition: 0.2s ease-in-out all;
 
-  color: #b032fb;
+  opacity: 100%;
 }
 
 #nav-pag ul li a::after {
