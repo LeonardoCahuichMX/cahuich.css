@@ -30,6 +30,12 @@ function updateServiceWorker() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  /*  document.getElementById('#splash').addEventListener('transitionend', (event) => {
+      event.target.remove();
+    });
+    requestAnimationFrame(() => {
+      document.getElementById('#splash').classList.add('animate');
+    });*/
 
   const himnosVariable = himnos;
 
@@ -84,6 +90,29 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   }
+
+  /*function actualizacion() {
+    const request = new XMLHttpRequest();
+    request.open('GET', 'https://librarys.cahuich.com/versiones/hp/versiones.json', true);
+    request.onload = function() {
+      if (request.status === 200) {
+        const jsonData = JSON.parse(request.responseText);
+        
+        localStorage.setItem('versionJson', jsonData.version);
+      }
+    };
+    request.send();
+
+    const versionJson = localStorage.getItem('versionJson');
+
+    if(versionJson !== webSiteData.version) {
+      document.getElementById("actualizacion").style.display = 'block';
+      document.getElementById("actualizacion").innerHTML = `
+      <h3>Hay una nueva actualización</h3>
+      <button type="button">Actualizar</button>`;
+    }
+  }
+  actualizacion();*/
 
 
   function tamanoLetraHimno(id) {
@@ -295,6 +324,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function precargarHimnosPag(himnos) {
     //document.getElementById("himnos").innerHTML
     let preCargaHimnosPagVar = '';
+    function mostrarHimnosPag(himnos) {
       if(!localStorage.getItem("data-pagHimnos")) {
         for (let prop in himnos) {
           preCargaHimnosPagVar += `
@@ -315,6 +345,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     return preCargaHimnosPagVar;
   }
+}
   const himnosPagVar = precargarHimnosPag(himnosVariable);
   function mostrarHimnosPag(himnos) {
     document.getElementById("app").innerHTML = `
@@ -328,6 +359,82 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
     document.getElementById("himnos").innerHTML = himnosPagVar;
   }
+
+
+  /*function searchhimno(himnosVariable) {
+    function buscador(himnosVariable) {
+        let textoDeBuscar = document.getElementById("texto-buscar").value;
+        document.getElementById("resultados").innerHTML = "";
+        document.getElementById("buscar-ayuda").innerHTML = "";
+        for(let prop in himnosVariable) {
+            let str = himnosVariable[prop]['titulo'].toLowerCase();
+            let re = textoDeBuscar.toLowerCase();
+            if(himnosVariable[prop]['numero'] == textoDeBuscar) {
+                document.getElementById("resultados").innerHTML = '';
+                document.getElementById("resultados").innerHTML += `
+                <div id="resultado">
+                    <a href="#${himnosVariable[prop]['numero']}">
+                        <span>${himnosVariable[prop]['numero']}</span>
+                        <span>${himnosVariable[prop]['titulo']}</span>
+                    </a>
+                </div>`;
+                
+                return;
+            } else if(str.search(re) != -1) {
+                document.getElementById("resultados").innerHTML += `
+                <div id="resultado">
+                    <a href="#${himnosVariable[prop]['numero']}">
+                        <span>${himnosVariable[prop]['numero']}</span>
+                        <span>${himnosVariable[prop]['titulo']}</span>
+                    </a>
+                </div>`;
+            }
+
+            for(let propDos in himnosVariable[prop]['referencias']) {
+                let strReferencias = himnosVariable[prop]['referencias'][propDos].toLowerCase();
+                if(strReferencias.search(re) != -1) {
+                    document.getElementById("resultados").innerHTML += `
+                    <div id="resultado">
+                      <a href="#${himnosVariable[prop]['numero']}">
+                            <span>${himnosVariable[prop]['numero']}</span>
+                            <span>${himnosVariable[prop]['titulo']}</span>
+                            <br>
+                            <br>
+                            <span>Referencias</span>
+                            <br>
+                            <span>${himnosVariable[prop]['referencias'][propDos]}</span>
+                        </a>
+                    </div>`;
+                }
+            }
+
+            for(let propDos in himnosVariable[prop]['autores']) {
+                let strReferencias = himnosVariable[prop]['autores'][propDos].toLowerCase();
+                if(strReferencias.search(re) != -1) {
+                    document.getElementById("resultados").innerHTML += `
+                    <div id="resultado">
+                      <a href="#${himnosVariable[prop]['numero']}">
+                            <span>${himnosVariable[prop]['numero']}</span>
+                            <span>${himnosVariable[prop]['titulo']}</span>
+                            <br>
+                            <br>
+                            <span>Autores</span>
+                            <br>
+                            <span>${himnosVariable[prop]['autores'][propDos]}</span>
+                        </a>
+                    </div>`;
+                }
+            }
+        };
+    }
+    document.getElementById("form-buscar").addEventListener("submit", function(event) {
+        event.preventDefault();
+        buscador(himnosVariable);
+    });
+    document.getElementById("botton-buscar").addEventListener('click', () => {
+        buscador(himnosVariable);
+    });
+}*/
 
   function buscarPag() {
     document.getElementById("app").innerHTML = `
