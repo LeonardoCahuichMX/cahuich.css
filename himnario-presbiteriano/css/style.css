@@ -125,14 +125,16 @@ body {
   animation: pantalla-carga 1s ease;
   animation-delay: 1s;
   animation-fill-mode: both;
+  opacity: 0;
 }
 
 @keyframes pantalla-carga {
   0% {
+    opacity: 100%;
     scale: 1;
   }
   99% {
-    scale: 4;
+    scale: 2;
     opacity: 0%;
   }
   100% {
