@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.innerHTML += `
       <main class="pantalla-bienvenida" id="pantalla-bienvenida">
         <div class="fondo">
-          <div class="fondo">
             <h1>Bievenido a la app <span id="app-name">${webSiteData.nameMarquet}</span></h1>
             <p>Tu nombre:</p>
             <form id="form-nombre-usuario">
@@ -51,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
             <h6>Versión: <span id="version-bienvenida">${webSiteData.version}</span></h6>
 
             <button type="button" style="display: block;width: 90%;" id="button-nombre-usuario">Continuar</button>
-          </div>
         </div>
       </main>
       `;

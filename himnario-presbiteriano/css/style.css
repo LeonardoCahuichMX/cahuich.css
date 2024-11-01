@@ -610,7 +610,7 @@ body {
   top: 0;
   left: 0;
 
-  background: #000;
+  background: linear-gradient(to right, #b032fb, #41fa98);
 
   height: 100dvh;
   width: 100%;
@@ -621,32 +621,16 @@ body {
 }
 
 .pantalla-bienvenida>.fondo {
-  background: linear-gradient(to right, #b032fb, #41fa98);
-  height: 95%;
-  width: 90%;
 
+  background-color: rgba(0, 0, 0, .9);
+  backdrop-filter: blur(40px);
+  height: 100%;
+  width: 100%;
+
+  padding: 20px 10%;
+
+  text-align: center;
   box-sizing: border-box;
-
-  margin: 0px auto;
-
-  border-radius: 10px;
-
-  align-content: center;
-}
-
-.pantalla-bienvenida>.fondo>.fondo {
-  background-color: rgba(0, 0, 0, 1);
-  backdrop-filter: blur(100px);
-  height: 95%;
-  width: 90%;
-
-  box-sizing: border-box;
-
-  padding: 20px 5%;
-
-  margin: 20px auto;
-
-  border-radius: 10px;
 
   align-content: center;
 }
