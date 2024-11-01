@@ -429,7 +429,9 @@ body {
 .home>.titulo {
   font-size: var(--titulo-portada);
 
-  background: linear-gradient(to right, #b032fb, #41fa98);
+  /*background: linear-gradient(to right, #b032fb, #41fa98);*/
+  background: linear-gradient(180deg, rgba(65,250,152,1) 0%, rgba(0,0,0,1) 37%);
+
   border-radius: 5px;
 
   margin-top: 20px;
