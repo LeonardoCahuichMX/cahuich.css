@@ -383,11 +383,13 @@ body {
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
 
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-
   font-size: 2dvh;
 
   align-content: center;
+
+  width: 90%;
+  margin:  0 auto;
+  border-radius: 5px;
 }
 
 #reciente-nav.mh {
@@ -514,10 +516,9 @@ body {
 .pag-menu {
   padding: 0 5%;
 
-  /*margin-top: 20px;*/
+  margin-top: 20px;
 
-  width: 100%;
-  height: auto;
+  min-height: 100dvh;
 }
 
 .pag-menu ul {
