@@ -110,6 +110,36 @@ body {
   /*background: linear-gradient(to right, #000a16, #000112) !important;*/
 }
 
+.Pantalla-carga {
+  position: fixed;
+  z-index: 9999999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+
+  background-color: #000;
+
+  align-content: center;
+  text-align: center;
+  animation: pantalla-carga 1s ease;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes pantalla-carga {
+  0% {
+    scale: 1;
+  }
+  99% {
+    scale: 4;
+    opacity: 0%;
+  }
+  100% {
+    display: none;
+  }
+}
+
 @keyframes opacityAnimacionParaPaginas5 {
   0% {
     opacity: 0%;
