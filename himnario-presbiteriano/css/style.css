@@ -350,9 +350,11 @@ body {
 #nav-pag ul li a:focus-visible,
 #nav-pag ul li a:focus-within {
   appearance: auto;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 5px;
+  /*background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;*/
   transition: 0.2s ease-in-out all;
+
+  color: #41fa98;
 }
 
 #nav-pag ul li a::after {
