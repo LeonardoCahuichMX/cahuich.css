@@ -7,7 +7,7 @@ webSiteData = {
   nameMarquet: 'Himnario <b>Prebisteriano</b>',
   author: 'Leonardo Cahuich',
   dev: 'Leonardo Cahuich',
-  version: '0.0.1.4.13.4',
+  version: '0.0.1.4.14',
 }
 
 function serviceWorkerInit() {
@@ -577,7 +577,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <p><b>Licencia:</b> MIT License</p>
         <hr>
         <h3>Datos tecnicos</h3>
-        <p><b>Desarrollador: </b><span id="desarrollador"><script>insertar('desarrollador', webSiteData.dev)</script></span></p>
+        <p><b>Desarrollador: </b><span id="desarrollador">${webSiteData.dev}</span></p>
         <br>
         <p>Esta aplicación esta construida usando</p>
         <h3>Cahuich.<b>librarys</b></h3>
