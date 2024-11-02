@@ -33532,14 +33532,23 @@ himnos[708] = {
 		nombre: 'Yo soy Jehová tu Dios, que te saqué de la tierra de Egipto, de casa de servidumbre.',
 		lineas: [
 			'1- No tendrás dioses ajenos delante de mí.',
+			'',
 			'2- No te harás imagen, ni ninguna semejanza de lo que esté arriba en el cielo, ni abajo en la tierra, ni en las aguas debajo de la tierra. No te inclinarás a ellas, ni las honrarás; porque yo soy Jehová tu Dios, fuerte, celoso, que visito la maldad de los padres sobre los hijos hasta la tercera y cuarta generación de los que me aborrecen, y hago misericordia a millares, a los que me aman y guardan mis mandamientos.',
+			'',
 			'3- No tomarás el nombre de Jehová tu Dios en vano; porque no dará por inocente Jehová al que tomare su nombre en vano.',
+			'',
 			'4- Acuérdate del día de reposo para santificarlo. Seis días trabajarás, y harástoda tu obra; mas el séptimo día es reposo para Jehová tu Dios; no hagasen él obra alguna, tú, ni tu hijo, ni tu hija, ni tu siervo, ni tu criada, nitu bestia, ni tu extranjero que está dentro de tus puertas. Porque en seis días hizo Jehová los cielos y la tierra, el mar, y todas las cosas que en ellos hay, y reposó en el séptimo día; por tanto, Jehová bendijo el día de reposo y lo santificó.',
+			'',
 			'5- Honra a tu padre y a tu madre, para que tus días se alarguen en la tierra que Jehová tu Dios te da.',
+			'',
 			'6- No matarás.',
+			'',
 			'7- No cometerás adulterio.',
+			'',
 			'8- No hurtarás.',
+			'',
 			'9- No hablarás contra tu prójimo falso testimonio.',
+			'',
 			'10-No codiciarás la casa de tu prójimo, no codiciarás la mujer de tu prójimo, ni su siervo, ni su criada, ni su buey, ni su asno, ni cosa alguna de tu prójimo.']
 	}
 	]

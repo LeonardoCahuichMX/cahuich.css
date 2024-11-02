@@ -482,6 +482,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function buttonReinstallApp(id) {
     document.getElementById(id).addEventListener('click', () => {
       updateServiceWorker();
+      localStorage.removeItem("data-pagHimnos");
       location.reload(true);
     });
   }
