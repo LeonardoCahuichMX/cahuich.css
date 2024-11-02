@@ -461,7 +461,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     } else {
       document.getElementById("himno-reciente").innerHTML = `
-        <li><a href="#${himno}">Himno #${himnos[himno].numero} - ${himnos[himno].titulo}</li>
+        <li><a href="#${himno}">#${himnos[himno].numero} - ${himnos[himno].titulo}</li>
         `;
       if (opcion === 1) {
         document.getElementById("reciente-nav").classList.add("mh");
