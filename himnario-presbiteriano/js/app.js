@@ -259,6 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
           </div>
           <div class="cont">
+            <div class="btn-contribuir"><a href="#Contribuir">Aprende mas sobre la app</a></div>
             <!--<div class="botones">
               <button type="button">Favoritos</button>
             </div>-->
@@ -606,6 +607,31 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
   }
 
+  function contribuir() {
+    document.getElementById("app").innerHTML = `
+    <main class="pagina contribuir" id="contribuir">
+      <div class="fondo">
+        <div class="titulo">
+          ¡Gracias por usar la Himnario App!
+        </div>
+        <div class="contenido">
+          <p>Estamos peridicamente actualizando la app,
+          ademas de agregando caracteristicas pocas pero utiles.</p>
+          <hr>
+          <p>Nos vendria bien tu ayuda en:</p>
+          <ul>
+            <li>Himnario App Iglesia</li>
+            <li>Audios de himnos en piano</li>
+          </ul>
+          <hr>
+          <p>Puedes ayudarnos escribiendonos a este correo electronico:</p>
+          <p><a href="mailto:info@cahuich.com">info@cahuich.com</a>
+        </div>
+      </div>
+    </main>
+    `;
+  }
+
   function home() {
     cargarHome()
     himnosContinuar(himnosVariable, localStorage.getItem('data-himnoVisible'))
@@ -655,6 +681,9 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (himnoURL === 'AcercaDe') {
       //cargar_himno(himnos[himnoURL])
       acercaDe();
+    } else if (himnoURL === 'Contribuir') {
+      //cargar_himno(himnos[himnoURL])
+      contribuir();
     } else if (himnoURL) {
       //mostrarHimnosPag(himnosVariable)
       cargaHimno()

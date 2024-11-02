@@ -621,7 +621,7 @@ body {
 }
 
 .pantalla-bienvenida>.fondo {
-
+|
   background-color: rgba(0, 0, 0, .9);
   backdrop-filter: blur(40px);
   height: 100%;
@@ -694,6 +694,35 @@ body {
   padding: 10px 20px;
   border-radius: 5px;
   margin-bottom: 10px;
+}
+
+.btn-contribuir {
+  /*background: linear-gradient(to top, rgba(0, 75, 76, 1), rgba(110, 79, 14, 1));*/
+  background-color: rgb(13, 60, 61);
+  padding: 15px 20px;
+  border-radius: 5px;
+}
+
+.contribuir {
+  padding: 20px 0%;
+
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 5px;
+  margin-top: 10px;
+  .fondo {
+    padding: 20px 5%;
+    .titulo {
+      background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+      color: #000;
+      font-size: 4dvh;
+      padding: 20px 5%;
+      border-radius: 5px;
+    }
+    .contenido {
+      margin-top: 20px;
+    }
+  }
 }
 
 /*#splash {
