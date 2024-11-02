@@ -176,11 +176,14 @@ body {
   grid-template-columns: 1fr;
   gap: 5px;
 
+  text-decoration: none;
+
   >.titulo {
     opacity: 50%;
     margin-bottom: 20px;
   }
 }
+
   .himno:hover {
     background-color: #222;
   }
@@ -701,6 +704,9 @@ body {
   background-color: rgb(13, 60, 61);
   padding: 15px 20px;
   border-radius: 5px;
+}
+.btn-contribuir a {
+  text-decoration: none;
 }
 
 .contribuir {
