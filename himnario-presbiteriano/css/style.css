@@ -235,7 +235,7 @@ body {
   left: 0;
 
   z-index: 99999;
-  transition: .2s all ease-in-out !important;
+  transition: .2s background-color ease-in-out !important;
 }
 
 .scroll-down .nav, .scroll-up .nav {
@@ -246,7 +246,8 @@ body {
   width: 96% !important;
   left: 2% !important;*/
   background-color: #000;
-  transition: .2s all ease-in-out !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: .2s background-color ease-in-out !important;
 }
 
 .nav :first-child {
@@ -611,8 +612,6 @@ body {
   padding: 0 5%;
 
   margin-top: 20px;
-
-  min-height: 100dvh;
 }
 
 .pag-menu ul {
