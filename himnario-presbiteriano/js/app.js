@@ -7,7 +7,7 @@ webSiteData = {
   nameMarquet: 'Himnario <b>App</b>',
   author: 'Leonardo Cahuich',
   dev: 'Leonardo Cahuich',
-  version: '0.0.1.4.14',
+  version: '0.0.1.4.14 (Alpha)',
 }
 
 function serviceWorkerInit() {
@@ -258,7 +258,8 @@ document.addEventListener('DOMContentLoaded', () => {
               Hola, 
               <span id="nombre-usario-en-home"></span>
             </div>
-            <div class="btn-contribuir"><a href="#Contribuir">Aprende mas sobre la app</a></div>
+            <p style="margin-left: 5px;margin-bottom: 10px">Himnario App esta en busca de ayuda</p>
+            <div class="btn-contribuir"><a href="#Contribuir">¿Quieres contribuir?</a></div>
             </div>
           </div>
           <div class="cont">
