@@ -254,12 +254,14 @@ document.addEventListener('DOMContentLoaded', () => {
       <main class="pagina home" id="home">
           <div class="titulo">
             <div class="titulo">
-            Hola, 
-            <span id="nombre-usario-en-home"></span>
+            <div class="cont">
+              Hola, 
+              <span id="nombre-usario-en-home"></span>
+            </div>
+            <div class="btn-contribuir"><a href="#Contribuir">Aprende mas sobre la app</a></div>
             </div>
           </div>
           <div class="cont">
-            <div class="btn-contribuir"><a href="#Contribuir">Aprende mas sobre la app</a></div>
             <!--<div class="botones">
               <button type="button">Favoritos</button>
             </div>-->

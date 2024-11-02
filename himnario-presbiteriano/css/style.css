@@ -483,8 +483,6 @@ body {
 }
 
 .home>.titulo {
-  font-size: var(--titulo-portada);
-
   /*background: linear-gradient(to right, #b032fb, #41fa98);*/
   /*background: linear-gradient(180deg, rgba(65,250,152,1) 0%, rgba(0,0,0,1) 37%);*/
   background-image: url("../img/leaves-507545_1920.webp");
@@ -497,21 +495,35 @@ body {
   background-clip: initial;
 
   margin-bottom: 20px;
+  border-radius: 5px;
 
-  margin: 0px 0%;
+  margin: 2px 2%;
 }
 
 .home>.titulo .titulo {
   background-color: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   padding: 20px 5%;
   border-radius: 5px;
   height: 400px;
   align-content: end;
   margin-bottom: 20px;
+  .cont {
+    font-size: var(--titulo-portada);
+  }
 }
 
-.home .cont {
+
+.btn-contribuir {
+  /*background: linear-gradient(to top, rgba(0, 75, 76, 1), rgba(110, 79, 14, 1));*/
+  background-color: rgba(0, 0, 0, 0.2);
+
+  padding: 15px 20px;
+  border-radius: 5px;
+}
+
+.home > .cont {
   padding: 0 5%;
 }
 
@@ -729,13 +741,6 @@ body {
   padding: 10px 20px;
   border-radius: 5px;
   margin-bottom: 10px;
-}
-
-.btn-contribuir {
-  /*background: linear-gradient(to top, rgba(0, 75, 76, 1), rgba(110, 79, 14, 1));*/
-  background-color: rgb(13, 60, 61);
-  padding: 15px 20px;
-  border-radius: 5px;
 }
 
 .btn-contribuir a {
