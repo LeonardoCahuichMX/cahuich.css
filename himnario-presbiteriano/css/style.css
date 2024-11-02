@@ -235,12 +235,17 @@ body {
   left: 0;
 
   z-index: 99999;
+  transition: .2s all ease-in-out !important;
 }
 
 .scroll-down .nav, .scroll-up .nav {
   background-color: rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
+  border-radius: 5px;
+  width: 96% !important;
+  left: 2% !important;
+  transition: .2s all ease-in-out !important;
 }
 
 .nav :first-child {
