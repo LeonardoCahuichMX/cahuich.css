@@ -33501,3 +33501,123 @@ himnos[706] = {
 			'lo que respira alabe al Señor. Amén.']
 	}]
 }
+himnos[707] = {
+	numero: 707,
+	titulo: 'LA ORACIÓN DEL PADRENUESTRO',
+	intro: '',
+	referencias: [
+	'(Mateo 6.9-13)',
+	],
+	autores: [
+		'',
+	],
+	versos: [{
+		nombre: '',
+		lineas: [
+			'Padre nuestro que estás en los cielos, santificado sea tu nombre. Venga tu reino. Hágase tu voluntad, como en el cielo, así también en la tierra. El pan nuestro de cada día, dánoslo hoy. Y perdónanos nuestras deudas, como también nosotros perdonamos a nuestros deudores. Y no nos metas en tentación, mas líbranos del mal; porque tuyo es el reino, y el poder, y la gloria, por todos los siglos. Amén.']
+	}
+	]
+}
+himnos[708] = {
+	numero: 708,
+	titulo: 'LOS DIEZ MANDAMIENTOS',
+	intro: '',
+	referencias: [
+	'(Éxodo 20.2-17)',
+	],
+	autores: [
+		'',
+	],
+	versos: [{
+		nombre: 'Yo soy Jehová tu Dios, que te saqué de la tierra de Egipto, de casa de servidumbre.',
+		lineas: [
+			'1- No tendrás dioses ajenos delante de mí.',
+			'2- No te harás imagen, ni ninguna semejanza de lo que esté arriba en el cielo, ni abajo en la tierra, ni en las aguas debajo de la tierra. No te inclinarás a ellas, ni las honrarás; porque yo soy Jehová tu Dios, fuerte, celoso, que visito la maldad de los padres sobre los hijos hasta la tercera y cuarta generación de los que me aborrecen, y hago misericordia a millares, a los que me aman y guardan mis mandamientos.',
+			'3- No tomarás el nombre de Jehová tu Dios en vano; porque no dará por inocente Jehová al que tomare su nombre en vano.',
+			'4- Acuérdate del día de reposo para santificarlo. Seis días trabajarás, y harástoda tu obra; mas el séptimo día es reposo para Jehová tu Dios; no hagasen él obra alguna, tú, ni tu hijo, ni tu hija, ni tu siervo, ni tu criada, nitu bestia, ni tu extranjero que está dentro de tus puertas. Porque en seis días hizo Jehová los cielos y la tierra, el mar, y todas las cosas que en ellos hay, y reposó en el séptimo día; por tanto, Jehová bendijo el día de reposo y lo santificó.',
+			'5- Honra a tu padre y a tu madre, para que tus días se alarguen en la tierra que Jehová tu Dios te da.',
+			'6- No matarás.',
+			'7- No cometerás adulterio.',
+			'8- No hurtarás.',
+			'9- No hablarás contra tu prójimo falso testimonio.',
+			'10-No codiciarás la casa de tu prójimo, no codiciarás la mujer de tu prójimo, ni su siervo, ni su criada, ni su buey, ni su asno, ni cosa alguna de tu prójimo.']
+	}
+	]
+}
+himnos[709] = {
+	numero: 709,
+	titulo: 'EL GRAN MANDAMIENTO',
+	intro: '',
+	referencias: [
+	'(Marcos 12.29-31)',
+	],
+	autores: [
+		'',
+	],
+	versos: [{
+		nombre: '',
+		lineas: [
+			'El primer mandamiento de todos es: Oye, Israel, el Señor nuestro Dios, el Señor uno es. Y amarás al Señor tu Dios con todo tu corazón, y con toda tu alma, y con toda tu mente y con todas tus fuerzas. Éste es el principal mandamiento. Y el segundo es semejante: Amarás a tu prójimo como a ti mismo. No hay otro mandamiento mayor que éstos.']
+	}
+	]
+}
+himnos[710] = {
+	numero: 710,
+	titulo: 'CREDO DE LOS APÓSTOLES',
+	intro: '',
+	referencias: [
+	'',
+	],
+	autores: [
+		'',
+	],
+	versos: [{
+		nombre: '',
+		lineas: [
+			'Creo en Dios padre Todopoderoso, Creador del cielo y de la tierra, y en Jesucristo, su único Hijo, y Señor nuestro, que fue concebido del Espíritu Santo, nació de la Virgen María, padeció bajo el poder de Poncio Pilato; fue crucificado, muerto y sepultado; descendió a los infiernos; al tercer día resucitó de entre los muertos; subió al cielo, y está sentado a la diestra de Dios Padre Todopoderoso; y desde allí vendrá al fin del mundo a juzgar a los vivos y a los muertos. Creo en el Espíritu Santo, la Santa Iglesia Universal, la comunión de los santos, el perdón de los pecados, la resurrección de la carne y la vida perdurable. Amén.']
+	}
+	]
+}
+himnos[711] = {
+	numero: 711,
+	titulo: 'CREDO NICENO',
+	intro: '',
+	referencias: [
+	'',
+	],
+	autores: [
+		'',
+	],
+	versos: [{
+		nombre: '',
+		lineas: [
+			'Creemos en un solo Dios, Padre Todopoderoso, Creador del cielo y de la tierra, de todo lo visible y lo invisible. Creemos en un solo Señor, Jesucristo, Hijo único de Dios, nacido del Padre antes de todos los siglos: Dios de Dios, Luz de Luz, Dios verdadero de Dios verdadero, engendrado, no creado, de la misma naturaleza que el Padre, por quien todo fue hecho, que por nosotros los hombres y por nuestra salvación bajó del cielo, y por obra del Espíritu Santo se encarnó de María, Virgen, y se hizo hombre, y por nuestra causa fue crucificado en tiempos de Poncio Pilato: padeció y fue sepultado, y resucitó al tercer día, según las Es- crituras, y subió al cielo, y está sentado a la derecha del Padre, y de nuevo vendrá con gloria para juzgar a vivos y muertos, y su reino no tendrá fin. Creemos en el Espíritu Santo, Señor y dador de vida, que procede del Padre y del Hijo, que con el Padre y el Hijo recibe una misma adoración y gloria, y que habló por los profetas.',
+			'Creemos en la Iglesia, que es una, santa, universal y apostólica. Reconocemos un solo bautismo para el perdón de los pecados. Esperamos la resurrección de los muertos y la vida del mundo futuro. Amén.']
+	}
+	]
+}
+himnos[712] = {
+	numero: 712,
+	titulo: 'LAS BIENAVENTURANZAS',
+	intro: '',
+	referencias: [
+	'(Mateo 5.3-12)',
+	],
+	autores: [
+		'',
+	],
+	versos: [{
+		nombre: '',
+		lineas: [
+			'Bienaventurados los pobres en espíritu, porque de ellos es el reino de los cielos.',
+			'Bienaventurados los que lloran, porque ellos recibirán consolación.',
+			'Bienaventurados los mansos, porque ellos recibirán la tierra por heredad.',
+			'Bienaventurados los que tienen hambre y sed de justicia, porque ellos serán saciados.',
+			'Bienaventurados los misericordiosos, porque ellos alcanzarán misericordia.',
+			'Bienaventurados los de limpio corazón, porque ellos verán a Dios.',
+			'Bienaventurados los pacificadores, porque ellos serán llamados hijos de Dios.',
+			'Bienaventurados los que padecen persecución por causa de la justicia, porque de ellos es el reino de los cielos.',
+			'Bienaventurados sois cuando por mi causa os vituperen y os persigan, y digan toda clase de mal contra vosotros, mintiendo. Gozaos y alegraos, porque vuestro galardón es grande en los cielos; porque así persiguieron a los profetas que fueron antes de vosotros.']
+	}
+	]
+}
