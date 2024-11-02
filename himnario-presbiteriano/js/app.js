@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
               </div>
           </div>
               <br>-->
-          <div class="intro" style="width: 80%; margin: 0 auto;">
+          <div class="intro">
             ${himnos[numero]['intro']}
           </div><br><br`;
     for (let prop in himnos[numero]['referencias']) {
@@ -621,7 +621,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <p>Nos vendria bien tu ayuda en:</p>
           <ul>
             <li>Himnario App Iglesia</li>
-            <li>Audios de himnos en piano</li>
+            <li>Audios de himnos en piano y organo.</li>
           </ul>
           <hr>
           <p>Puedes ayudarnos escribiendonos a este correo electronico:</p>

@@ -219,11 +219,19 @@ body {
   width: 100%;
   padding: 10px 5%;
 
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
 
   display: grid;
   grid-template-columns: 50% 50%;
   gap: 5px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 99999;
 }
 
 .nav :first-child {
@@ -428,6 +436,7 @@ body {
   width: 90%;
   margin:  0 auto;
   border-radius: 5px;
+  margin-top: 60px;
 }
 
 #reciente-nav.mh {
@@ -462,6 +471,7 @@ body {
    ========================================================================== */
 .home {
   padding: 0;
+  margin-top: 60px;
 }
 
 .home>.titulo {
@@ -531,11 +541,14 @@ body {
    ========================================================================== */
 
 .mostrar-himno {
-  padding: 20px 5%;
+  padding: 20px 10%;
   margin-bottom: 100px;
   background-color: #000;
 
   text-align: center;
+}
+.mostrar-himno .intro {
+  width: 80%; margin: 0 auto;
 }
 
 .mostrar-himno .parte {
