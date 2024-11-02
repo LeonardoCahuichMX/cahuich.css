@@ -4,7 +4,7 @@ import { himnos } from './modulos/himnos.js'
 
 webSiteData = {
   name: 'Himnario Prebisteriano',
-  nameMarquet: 'Himnario <b>Prebisteriano</b>',
+  nameMarquet: 'Himnario <b>App</b>',
   author: 'Leonardo Cahuich',
   dev: 'Leonardo Cahuich',
   version: '0.0.1.4.14',
